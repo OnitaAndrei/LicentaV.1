@@ -167,8 +167,81 @@ namespace LicentaV._1
             sideColor Orange = new sideColor(orange, Color.Orange);
             sideColor Blue = new sideColor(blue, Color.Blue);
             sideColor Green = new sideColor(green, Color.Green);
-
-            sideColor[] sideColors = { Yellow, Red, Orange, Blue, White, Green };
+            sideColor[] sideColors = { Red, Red, Red, Red, Red, Red };
+            float[][] pointsP = { ap, bp, cp, dp, ep, fp, gp, hp };
+            pointsP = pointsP.OrderBy(entry => entry[2]).ToArray();
+            if (ap[2] >= pointsP[7][2])
+            {
+                sideColors[0] = Green;
+                sideColors[1] = Orange;
+                sideColors[2] = White;
+                sideColors[3] = Blue;
+                sideColors[4] = Red;
+                sideColors[5] = Yellow;
+            }
+            else if (bp[2] >= pointsP[7][2])
+            {
+                sideColors[0] = Green;
+                sideColors[1] = Orange;
+                sideColors[2] = Yellow;
+                sideColors[3] = Blue;
+                sideColors[4] = Red;
+                sideColors[5] = White;
+            }
+            else if (cp[2] >= pointsP[7][2])
+            {
+                sideColors[0] = Blue;
+                sideColors[1] = Orange;
+                sideColors[2] = Yellow;
+                sideColors[3] = Green;
+                sideColors[4] = Red;
+                sideColors[5] = White;
+            }
+            else if (dp[2] >= pointsP[7][2])
+            {
+                sideColors[0] = Blue;
+                sideColors[1] = Orange;
+                sideColors[2] = White;
+                sideColors[3] = Green;
+                sideColors[4] = Red;
+                sideColors[5] = Yellow;
+            }
+            else if (ep[2] >= pointsP[7][2])
+            {
+                sideColors[0] = Green;
+                sideColors[1] = Red;
+                sideColors[2] = White;
+                sideColors[3] = Blue;
+                sideColors[4] = Orange;
+                sideColors[5] = Yellow;
+            }
+            else if (fp[2] >= pointsP[7][2])
+            {
+                sideColors[0] = Green;
+                sideColors[1] = Red;
+                sideColors[2] = Yellow;
+                sideColors[3] = Blue;
+                sideColors[4] = Orange;
+                sideColors[5] = White;
+            }
+            else if (gp[2] >= pointsP[7][2])
+            {
+                sideColors[0] = Yellow;
+                sideColors[1] = Red;
+                sideColors[2] = Blue;
+                sideColors[3] = White;
+                sideColors[4] = Orange;
+                sideColors[5] = Green;
+            }
+            else if (hp[2] >= pointsP[7][2])
+            {
+                sideColors[0] = White;
+                sideColors[1] = Red;
+                sideColors[2] = Blue;
+                sideColors[3] = Yellow;
+                sideColors[4] = Orange;
+                sideColors[5] = Green;
+            }
             foreach (sideColor sideColor in sideColors)
             {
                 grp.FillPolygon(new SolidBrush(sideColor.color), sideColor.points);
