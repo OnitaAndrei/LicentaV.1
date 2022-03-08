@@ -10,16 +10,6 @@ using System.Windows.Forms;
 
 namespace LicentaV._1
 {
-    public class sideColor
-    {
-        public PointF[] points;
-        public Color color;
-        public sideColor(PointF[] Points, Color Color)
-        {
-            this.points = Points;
-            this.color = Color;
-        }
-    }
     public partial class Form1 : Form
     {
         float[] a = { 1, 1, 1 };
@@ -30,6 +20,42 @@ namespace LicentaV._1
         float[] f = { -1, -1, 1 };
         float[] g = { -1, -1, -1 };
         float[] h = { -1, 1, -1 };
+        int[,] whiteFace =
+        {
+            { 0, 0, 0 },
+            { 0, 0, 0 },
+            { 0, 0, 0 }
+        };
+        int[,] yellowFace =
+        {
+            { 1, 1, 1 },
+            { 1, 1, 1 },
+            { 1, 1, 1 }
+        };
+        int[,] blueFace =
+        {
+            { 2, 2, 2 },
+            { 2, 2, 2 },
+            { 2, 2, 2 }
+        };
+        int[,] greenFace =
+        {
+            { 3, 3, 3 },
+            { 3, 3, 3 },
+            { 3, 3, 3 }
+        };
+        int[,] redFace =
+        {
+            { 4, 4, 4 },
+            { 4, 4, 4 },
+            { 4, 4, 4 }
+        };
+        int[,] orangeFace =
+        {
+            { 5, 5, 5 },
+            { 5, 5, 5 },
+            { 5, 5, 5 }
+        };
         public Form1()
         {
             InitializeComponent();
@@ -91,17 +117,21 @@ namespace LicentaV._1
 
             return result;
         }
-
+        int size = 100;
         private void Form1_Load(object sender, EventArgs ea)
         {
-            
+            for (int i = 0; i < 3; i++) {             
+                a[i] *= size;
+                b[i] *= size;
+                c[i] *= size;
+                d[i] *= size;
+                e[i] *= size;
+                f[i] *= size;
+                g[i] *= size;
+                h[i] *= size;                
+            }
         }
-        
-        public void drawLine(float a1,float a2, float b1,float b2,Pen pen)
-        {
-            int size = 100;
-            grp.DrawLine(pen, a1 * size + 200, a2 * size + 200, b1 * size + 200, b2 * size + 200);
-        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -111,7 +141,7 @@ namespace LicentaV._1
         {
             img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             grp = Graphics.FromImage(img);
-            grp.Clear(Color.Coral);
+            grp.Clear(Color.DimGray);
             float[] ap = rotate(a);
             float[] bp = rotate(b);
             float[] cp = rotate(c);
@@ -120,45 +150,55 @@ namespace LicentaV._1
             float[] fp = rotate(f);
             float[] gp = rotate(g);
             float[] hp = rotate(h);
-
+            for (int i = 0; i < 3; i++)
+            {
+                ap[i] += pictureBox1.Width/2;
+                bp[i] += pictureBox1.Width/2;
+                cp[i] += pictureBox1.Width/2;
+                dp[i] += pictureBox1.Width/2;
+                ep[i] += pictureBox1.Width/2;
+                fp[i] += pictureBox1.Width/2;
+                gp[i] += pictureBox1.Width/2;
+                hp[i] += pictureBox1.Width/2;
+            }
             PointF[] yellow = {
-                 new PointF(ap[0]*100+200, ap[1]*100+200),
-                new PointF(dp[0]*100+200, dp[1]*100+200),
-                new PointF(hp[0]*100+200, hp[1]*100+200),
-                new PointF(ep[0]*100+200, ep[1]*100+200),
+                 new PointF(ap[0], ap[1]),
+                new PointF(dp[0], dp[1]),
+                new PointF(hp[0], hp[1]),
+                new PointF(ep[0], ep[1]),
             };
             PointF[] orange = {
-                new PointF (ep[0]*100+200, ep[1]*100+200),
-                new PointF(fp[0]*100+200, fp[1]*100+200),
-                new PointF(gp[0]*100+200, gp[1]*100+200),
-                new PointF(hp[0]*100+200, hp[1]*100+200),
+                new PointF (ep[0], ep[1]),
+                new PointF(fp[0], fp[1]),
+                new PointF(gp[0], gp[1]),
+                new PointF(hp[0], hp[1]),
             };
 
             PointF[] blue = {
-                new PointF (ap[0]*100+200, ap[1]*100+200),
-                new PointF(bp[0]*100+200, bp[1]*100+200),
-                new PointF(fp[0]*100+200, fp[1]*100+200),
-                new PointF (ep[0]*100+200, ep[1]*100+200),
+                new PointF (ap[0], ap[1]),
+                new PointF(bp[0], bp[1]),
+                new PointF(fp[0], fp[1]),
+                new PointF (ep[0], ep[1]),
             };
 
             PointF[] red = {
-                new PointF (ap[0]*100+200, ap[1]*100+200),
-                new PointF(bp[0]*100+200, bp[1]*100+200),
-                new PointF(cp[0]*100+200, cp[1]*100+200),
-                new PointF(dp[0]*100+200, dp[1]*100+200),
+                new PointF (ap[0], ap[1]),
+                new PointF(bp[0], bp[1]),
+                new PointF(cp[0], cp[1]),
+                new PointF(dp[0], dp[1]),
             };
             PointF[] green = {
-                new PointF(cp[0]*100+200, cp[1]*100+200),
-                new PointF(dp[0]*100+200, dp[1]*100+200),
-                new PointF(hp[0]*100+200, hp[1]*100+200),
-                new PointF(gp[0]*100+200, gp[1]*100+200),
+                new PointF(cp[0], cp[1]),
+                new PointF(dp[0], dp[1]),
+                new PointF(hp[0], hp[1]),
+                new PointF(gp[0], gp[1]),
             };
 
             PointF[] white = {
-                 new PointF(bp[0]*100+200, bp[1]*100+200),
-                new PointF(cp[0]*100+200, cp[1]*100+200),
-                new PointF(gp[0]*100+200, gp[1]*100+200),
-                new PointF(fp[0]*100+200, fp[1]*100+200),
+                 new PointF(bp[0], bp[1]),
+                new PointF(cp[0], cp[1]),
+                new PointF(gp[0], gp[1]),
+                new PointF(fp[0], fp[1]),
             };
 
             sideColor Yellow = new sideColor(yellow, Color.Yellow);
@@ -244,10 +284,20 @@ namespace LicentaV._1
             }
             foreach (sideColor sideColor in sideColors)
             {
-                grp.FillPolygon(new SolidBrush(sideColor.color), sideColor.points);
+                //grp.FillPolygon(new SolidBrush(sideColor.color), sideColor.points);
+                grp.FillPolygon(new SolidBrush(Color.Black), sideColor.points);
             }
-
             pictureBox1.Image = img;
+        }
+    }
+    public class sideColor
+    {
+        public PointF[] points;
+        public Color color;
+        public sideColor(PointF[] Points, Color Color)
+        {
+            this.points = Points;
+            this.color = Color;
         }
     }
 }
