@@ -20,42 +20,52 @@ namespace LicentaV._1
         float[] f = { -1, -1, 1 };
         float[] g = { -1, -1, -1 };
         float[] h = { -1, 1, -1 };
-        int[,] whiteFace =
+        float[] a1 = { 1, 1, 1 };
+        float[] b1 = { 1, -1, 1 };
+        float[] c1 = { 1, -1, -1 };
+        float[] d1 = { 1, 1, -1 };
+        float[] e1 = { -1, 1, 1 };
+        float[] f1 = { -1, -1, 1 };
+        float[] g1 = { -1, -1, -1 };
+        float[] h1 = { -1, 1, -1 };
+        string[,] whiteFace =
         {
-            { 0, 0, 0 },
-            { 0, 0, 0 },
-            { 0, 0, 0 }
+            { "Ac", "As", "Bc" },
+            { "Ds", "0", "Bs" },
+            { "Dc", "Cs", "Cc" }
         };
-        int[,] yellowFace =
+        string[,] orangeFace =
+{
+            { "Ec", "Es", "Fc" },
+            { "Hc", "0", "Fs" },
+            { "Hc", "Gs", "Gc" }
+        };
+        string[,] greenFace =
+{
+            { "Ic", "Is", "Jc" },
+            { "Ls", "0", "Js" },
+            { "Lc", "Ks",  "Kc"}
+        };
+        string[,] redFace =
         {
-            { 1, 1, 1 },
-            { 1, 1, 1 },
-            { 1, 1, 1 }
+            { "Mc", "Ms", "Nc" },
+            { "Ps", "0", "Ns" },
+            { "Pc", "Os", "Oc" }
         };
-        int[,] blueFace =
+        string[,] blueFace =
         {
-            { 2, 2, 2 },
-            { 2, 2, 2 },
-            { 2, 2, 2 }
+            { "Qc", "Qs", "Rc" },
+            { "Ts", "0", "Rs" },
+            { "Tc", "Ss", "Sc" }
         };
-        int[,] greenFace =
-        {
-            { 3, 3, 3 },
-            { 3, 3, 3 },
-            { 3, 3, 3 }
+        string[,] yellowFace =
+{
+            { "Uc", "Us", "Vc" },
+            { "Xs", "0", "Vs" },
+            { "Xc", "Ws", "Wc" }
         };
-        int[,] redFace =
-        {
-            { 4, 4, 4 },
-            { 4, 4, 4 },
-            { 4, 4, 4 }
-        };
-        int[,] orangeFace =
-        {
-            { 5, 5, 5 },
-            { 5, 5, 5 },
-            { 5, 5, 5 }
-        };
+
+
         public Form1()
         {
             InitializeComponent();
@@ -117,24 +127,88 @@ namespace LicentaV._1
 
             return result;
         }
-        int size = 100;
+
+        Cube cube1  = new Cube(55 , 55, 55);
+        Cube cube2  = new Cube(100, 55, 55);
+        Cube cube3  = new Cube(145, 55, 55);
+        Cube cube4  = new Cube(55 , 55, 100);
+        Cube cube5  = new Cube(100, 55, 100);
+        Cube cube6  = new Cube(145, 55, 100);
+        Cube cube7  = new Cube(55 , 55, 145);
+        Cube cube8  = new Cube(100, 55, 145);
+        Cube cube9  = new Cube(145, 55, 145);
+        Cube cube10 = new Cube(55 , 100, 55);
+        Cube cube11 = new Cube(100, 100, 55);
+        Cube cube12 = new Cube(145, 100, 55);
+        Cube cube13 = new Cube(55 , 100, 100);        
+        Cube cube14 = new Cube(145, 100, 100);
+        Cube cube15 = new Cube(55 , 100, 145);
+        Cube cube16 = new Cube(100, 100, 145);
+        Cube cube17 = new Cube(145, 100, 145);
+        Cube cube18 = new Cube(55 , 145, 55);
+        Cube cube19 = new Cube(100, 145, 55);
+        Cube cube20 = new Cube(145, 145, 55);
+        Cube cube21 = new Cube(55 , 145, 100);
+        Cube cube22 = new Cube(100, 145, 100);
+        Cube cube23 = new Cube(145, 145, 100);
+        Cube cube24 = new Cube(55 , 145, 145);
+        Cube cube25 = new Cube(100, 145, 145);
+        Cube cube26 = new Cube(145, 145, 145);
+        Cube[] cubes = new Cube[26];
+
         private void Form1_Load(object sender, EventArgs ea)
         {
-            for (int i = 0; i < 3; i++) {             
-                a[i] *= size;
-                b[i] *= size;
-                c[i] *= size;
-                d[i] *= size;
-                e[i] *= size;
-                f[i] *= size;
-                g[i] *= size;
-                h[i] *= size;                
+
+            cubes[0] = cube1;
+            cubes[1] = cube2;
+            cubes[2] = cube3;
+            cubes[3] = cube4;
+            cubes[4] = cube5;
+            cubes[5] = cube6;
+            cubes[6] = cube7;
+            cubes[7] = cube8;
+            cubes[8] = cube9;
+            cubes[9] = cube10;
+            cubes[10] = cube11;
+            cubes[11] = cube12;
+            cubes[12] = cube13;
+            cubes[13] = cube14;
+            cubes[14] = cube15;
+            cubes[15] = cube16;
+            cubes[16] = cube17;
+            cubes[17] = cube18;
+            cubes[18] = cube19;
+            cubes[19] = cube20;
+            cubes[20] = cube21;
+            cubes[21] = cube22;
+            cubes[22] = cube23;
+            cubes[23] = cube24;
+            cubes[24] = cube25;
+            cubes[25] = cube26;                 
+
+            img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            grp = Graphics.FromImage(img);
+            grp.Clear(Color.DimGray);
+            foreach (Cube cube in cubes)
+            {
+                cube.RotateCubeY(20);
+                cube.RotateCubeX(20);
+                grp.DrawLine(new Pen(Color.Black), cube.a[0], cube.a[1], cube.b[0], cube.b[1]);
+                grp.DrawLine(new Pen(Color.Black), cube.c[0], cube.c[1], cube.b[0], cube.b[1]);
+                grp.DrawLine(new Pen(Color.Black), cube.c[0], cube.c[1], cube.d[0], cube.d[1]);
+                grp.DrawLine(new Pen(Color.Black), cube.a[0], cube.a[1], cube.d[0], cube.d[1]);
+
+                grp.DrawLine(new Pen(Color.Black), cube.e[0], cube.e[1], cube.f[0], cube.f[1]);
+                grp.DrawLine(new Pen(Color.Black), cube.g[0], cube.g[1], cube.f[0], cube.f[1]);
+                grp.DrawLine(new Pen(Color.Black), cube.g[0], cube.g[1], cube.h[0], cube.h[1]);
+                grp.DrawLine(new Pen(Color.Black), cube.e[0], cube.e[1], cube.h[0], cube.h[1]);
+
+                grp.DrawLine(new Pen(Color.Black), cube.e[0], cube.e[1], cube.a[0], cube.a[1]);
+                grp.DrawLine(new Pen(Color.Black), cube.b[0], cube.b[1], cube.f[0], cube.f[1]);
+                grp.DrawLine(new Pen(Color.Black), cube.g[0], cube.g[1], cube.c[0], cube.c[1]);
+                grp.DrawLine(new Pen(Color.Black), cube.d[0], cube.d[1], cube.h[0], cube.h[1]);
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            pictureBox1.Image = img;
         }
 
         private void timer1_Tick(object sender, EventArgs ea)
@@ -284,10 +358,66 @@ namespace LicentaV._1
             }
             foreach (sideColor sideColor in sideColors)
             {
-                //grp.FillPolygon(new SolidBrush(sideColor.color), sideColor.points);
-                grp.FillPolygon(new SolidBrush(Color.Black), sideColor.points);
+                grp.FillPolygon(new SolidBrush(sideColor.color), sideColor.points);
+                //grp.FillPolygon(new SolidBrush(Color.Black), sideColor.points);
             }
             pictureBox1.Image = img;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (trackBary.Value==360)
+            {
+                trackBary.Value = 0;
+            }
+            trackBary.Value++;
+        }
+
+        private void Smove_Click(object sender, EventArgs em)
+        {
+            if (timer3.Enabled == false) { 
+            timer3.Start();
+            }
+            else
+                timer3.Stop();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            grp = Graphics.FromImage(img);
+            grp.Clear(Color.DimGray);
+
+            foreach (Cube cube in cubes)
+            {
+                cube.RotateCubeX(trackBary.Value);
+                /*if (cube.a[2] > 200)
+                {*/
+                    grp.DrawLine(new Pen(Color.Black), cube.e[0], cube.e[1], cube.a[0], cube.a[1]);
+                    grp.DrawLine(new Pen(Color.Black), cube.a[0], cube.a[1], cube.b[0], cube.b[1]);
+                    grp.DrawLine(new Pen(Color.Black), cube.a[0], cube.a[1], cube.d[0], cube.d[1]);
+                /*{
+                if (cube.c[2] > 200)
+                {*/
+                    grp.DrawLine(new Pen(Color.Black), cube.g[0], cube.g[1], cube.c[0], cube.c[1]);
+                    grp.DrawLine(new Pen(Color.Black), cube.c[0], cube.c[1], cube.b[0], cube.b[1]);
+                    grp.DrawLine(new Pen(Color.Black), cube.c[0], cube.c[1], cube.d[0], cube.d[1]);
+                /*}                            
+                if(cube.f[2] > 200) 
+                {*/
+                    grp.DrawLine(new Pen(Color.Black), cube.b[0], cube.b[1], cube.f[0], cube.f[1]);
+                    grp.DrawLine(new Pen(Color.Black), cube.g[0], cube.g[1], cube.f[0], cube.f[1]);
+                    grp.DrawLine(new Pen(Color.Black), cube.e[0], cube.e[1], cube.f[0], cube.f[1]);                    
+                /*}
+                if(cube.h[2] > 200)
+                {*/
+                    grp.DrawLine(new Pen(Color.Black), cube.e[0], cube.e[1], cube.h[0], cube.h[1]);
+                    grp.DrawLine(new Pen(Color.Black), cube.g[0], cube.g[1], cube.h[0], cube.h[1]);
+                    grp.DrawLine(new Pen(Color.Black), cube.d[0], cube.d[1], cube.h[0], cube.h[1]);
+                /*}*/
+            }
+            pictureBox1.Image = img;
+
         }
     }
     public class sideColor
