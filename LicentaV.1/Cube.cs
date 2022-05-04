@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LicentaV._1
 {
-    internal class Cube
+    public class Cube
     {
-        static int size = 20;
+        static int size = 40;
         public float[] a = { size, size, size };
         public float[] b = { size, -size, size };
         public float[] c = { size, -size, -size };
@@ -53,7 +54,7 @@ namespace LicentaV._1
             this.g[2] += z + 100;
             this.h[2] += z + 100;
         }
-        private void RotatePointX(float[] point, int angle)
+        public void RotatePointX(float[] point, int angle)
         {
             double radiant = angle * Math.PI / 180.0;
             float aux0 = point[0] - 200;
@@ -75,7 +76,7 @@ namespace LicentaV._1
             point[1] = result[1];
             point[2] = result[2];
         }
-        private void RotatePointY(float[] point, int angle)
+        public void RotatePointY(float[] point, int angle)
         {
             double radiant = angle * Math.PI / 180.0;
             float aux0 = point[0] - 200;
@@ -97,7 +98,7 @@ namespace LicentaV._1
             point[1] = result[1];
             point[2] = result[2];
         }
-        private void RotatePointZ(float[] point, int angle)
+        public void RotatePointZ(float[] point, int angle)
         {
             double radiant = angle * Math.PI / 180.0;
             float aux0 = point[0] - 200;
@@ -151,6 +152,72 @@ namespace LicentaV._1
             RotatePointY(f, angle);
             RotatePointY(g, angle);
             RotatePointY(h, angle);
-        }       
+        }
+        public PointF[] getTop()
+        {
+           PointF[] top = 
+                {
+                new PointF(b[0], b[1]),
+                new PointF(c[0], c[1]),
+                new PointF(g[0], g[1]),
+                new PointF(f[0], f[1])
+                };
+            return top;
+        }
+        public PointF[] getBottom()
+        {
+            PointF[] bottom =
+                 {
+                new PointF(a[0], a[1]),
+                new PointF(d[0], d[1]),
+                new PointF(h[0], h[1]),
+                new PointF(e[0], e[1])
+                };
+            return bottom;
+        }
+        public PointF[] getRight()
+        {
+            PointF[]  right=
+                 {
+                new PointF(b[0], b[1]),
+                new PointF(c[0], c[1]),
+                new PointF(d[0], d[1]),
+                new PointF(a[0], a[1])
+                };
+            return right;
+        }
+        public PointF[] getLeft()
+        {
+            PointF[] left =
+                 {
+                new PointF(f[0], f[1]),
+                new PointF(g[0], g[1]),
+                new PointF(h[0], h[1]),
+                new PointF(e[0], e[1])
+                };
+            return left;
+        }
+        public PointF[] getBack()
+        {
+            PointF[] front =
+                 {
+                new PointF(g[0], g[1]),
+                new PointF(c[0], c[1]),
+                new PointF(d[0], d[1]),
+                new PointF(h[0], h[1])
+                };
+            return front;
+        }
+        public PointF[] getFront()
+        {
+            PointF[] back =
+                 {
+                new PointF(a[0], a[1]),
+                new PointF(b[0], b[1]),
+                new PointF(f[0], f[1]),
+                new PointF(e[0], e[1])
+                };
+            return back;
+        }
     }
 }

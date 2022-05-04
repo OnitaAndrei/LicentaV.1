@@ -30,16 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.trackBary = new System.Windows.Forms.TrackBar();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.yLabel = new System.Windows.Forms.Label();
-            this.zLabel = new System.Windows.Forms.Label();
-            this.trackBarz = new System.Windows.Forms.TrackBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.xLabel = new System.Windows.Forms.Label();
-            this.trackBarx = new System.Windows.Forms.TrackBar();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.Umove = new System.Windows.Forms.Button();
             this.Dmove = new System.Windows.Forms.Button();
             this.Rmove = new System.Windows.Forms.Button();
@@ -58,12 +48,17 @@
             this.Zmove = new System.Windows.Forms.Button();
             this.Ymove = new System.Windows.Forms.Button();
             this.Xmove = new System.Windows.Forms.Button();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.UmoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.BpMove = new System.Windows.Forms.Button();
+            this.FpMove = new System.Windows.Forms.Button();
+            this.LpMove = new System.Windows.Forms.Button();
+            this.RpMove = new System.Windows.Forms.Button();
+            this.DpMove = new System.Windows.Forms.Button();
+            this.UpMove = new System.Windows.Forms.Button();
+            this.UpMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.DmoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.DpMoveTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBary)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarz)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarx)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -75,100 +70,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // trackBary
-            // 
-            this.trackBary.Location = new System.Drawing.Point(1191, 97);
-            this.trackBary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.trackBary.Maximum = 360;
-            this.trackBary.Name = "trackBary";
-            this.trackBary.Size = new System.Drawing.Size(350, 69);
-            this.trackBary.TabIndex = 1;
-            this.trackBary.Value = 90;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // yLabel
-            // 
-            this.yLabel.AutoSize = true;
-            this.yLabel.Location = new System.Drawing.Point(1347, 146);
-            this.yLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.yLabel.Name = "yLabel";
-            this.yLabel.Size = new System.Drawing.Size(51, 20);
-            this.yLabel.TabIndex = 2;
-            this.yLabel.Text = "label1";
-            // 
-            // zLabel
-            // 
-            this.zLabel.AutoSize = true;
-            this.zLabel.Location = new System.Drawing.Point(1347, 225);
-            this.zLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.zLabel.Name = "zLabel";
-            this.zLabel.Size = new System.Drawing.Size(51, 20);
-            this.zLabel.TabIndex = 4;
-            this.zLabel.Text = "label2";
-            // 
-            // trackBarz
-            // 
-            this.trackBarz.Location = new System.Drawing.Point(1191, 175);
-            this.trackBarz.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.trackBarz.Maximum = 360;
-            this.trackBarz.Name = "trackBarz";
-            this.trackBarz.Size = new System.Drawing.Size(350, 69);
-            this.trackBarz.TabIndex = 3;
-            this.trackBarz.Value = 45;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1316, 68);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "x:";
-            // 
-            // xLabel
-            // 
-            this.xLabel.AutoSize = true;
-            this.xLabel.Location = new System.Drawing.Point(1347, 68);
-            this.xLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.xLabel.Name = "xLabel";
-            this.xLabel.Size = new System.Drawing.Size(51, 20);
-            this.xLabel.TabIndex = 7;
-            this.xLabel.Text = "label4";
-            // 
-            // trackBarx
-            // 
-            this.trackBarx.Location = new System.Drawing.Point(1191, 18);
-            this.trackBarx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.trackBarx.Maximum = 360;
-            this.trackBarx.Name = "trackBarx";
-            this.trackBarx.Size = new System.Drawing.Size(350, 69);
-            this.trackBarx.TabIndex = 6;
-            this.trackBarx.Value = 45;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1316, 146);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "y:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1316, 225);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(21, 20);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "z:";
-            // 
             // Umove
             // 
             this.Umove.Location = new System.Drawing.Point(18, 18);
@@ -178,6 +79,7 @@
             this.Umove.TabIndex = 10;
             this.Umove.Text = "U";
             this.Umove.UseVisualStyleBackColor = true;
+            this.Umove.Click += new System.EventHandler(this.Umove_Click);
             // 
             // Dmove
             // 
@@ -188,6 +90,7 @@
             this.Dmove.TabIndex = 11;
             this.Dmove.Text = "D";
             this.Dmove.UseVisualStyleBackColor = true;
+            this.Dmove.Click += new System.EventHandler(this.Dmove_Click);
             // 
             // Rmove
             // 
@@ -231,7 +134,7 @@
             // 
             // BWmove
             // 
-            this.BWmove.Location = new System.Drawing.Point(438, 105);
+            this.BWmove.Location = new System.Drawing.Point(438, 191);
             this.BWmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BWmove.Name = "BWmove";
             this.BWmove.Size = new System.Drawing.Size(75, 77);
@@ -241,7 +144,7 @@
             // 
             // FWmove
             // 
-            this.FWmove.Location = new System.Drawing.Point(354, 105);
+            this.FWmove.Location = new System.Drawing.Point(354, 191);
             this.FWmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FWmove.Name = "FWmove";
             this.FWmove.Size = new System.Drawing.Size(75, 77);
@@ -251,7 +154,7 @@
             // 
             // LWmove
             // 
-            this.LWmove.Location = new System.Drawing.Point(270, 105);
+            this.LWmove.Location = new System.Drawing.Point(270, 191);
             this.LWmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LWmove.Name = "LWmove";
             this.LWmove.Size = new System.Drawing.Size(75, 77);
@@ -261,7 +164,7 @@
             // 
             // RWmove
             // 
-            this.RWmove.Location = new System.Drawing.Point(186, 105);
+            this.RWmove.Location = new System.Drawing.Point(186, 191);
             this.RWmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RWmove.Name = "RWmove";
             this.RWmove.Size = new System.Drawing.Size(75, 77);
@@ -271,7 +174,7 @@
             // 
             // DWmove
             // 
-            this.DWmove.Location = new System.Drawing.Point(102, 105);
+            this.DWmove.Location = new System.Drawing.Point(102, 191);
             this.DWmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DWmove.Name = "DWmove";
             this.DWmove.Size = new System.Drawing.Size(75, 77);
@@ -281,7 +184,7 @@
             // 
             // UWmove
             // 
-            this.UWmove.Location = new System.Drawing.Point(18, 105);
+            this.UWmove.Location = new System.Drawing.Point(18, 191);
             this.UWmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UWmove.Name = "UWmove";
             this.UWmove.Size = new System.Drawing.Size(75, 77);
@@ -291,7 +194,7 @@
             // 
             // Smove
             // 
-            this.Smove.Location = new System.Drawing.Point(438, 191);
+            this.Smove.Location = new System.Drawing.Point(438, 277);
             this.Smove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Smove.Name = "Smove";
             this.Smove.Size = new System.Drawing.Size(75, 77);
@@ -302,7 +205,7 @@
             // 
             // Emove
             // 
-            this.Emove.Location = new System.Drawing.Point(354, 191);
+            this.Emove.Location = new System.Drawing.Point(354, 277);
             this.Emove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Emove.Name = "Emove";
             this.Emove.Size = new System.Drawing.Size(75, 77);
@@ -312,7 +215,7 @@
             // 
             // Mmove
             // 
-            this.Mmove.Location = new System.Drawing.Point(270, 191);
+            this.Mmove.Location = new System.Drawing.Point(270, 277);
             this.Mmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Mmove.Name = "Mmove";
             this.Mmove.Size = new System.Drawing.Size(75, 77);
@@ -322,7 +225,7 @@
             // 
             // Zmove
             // 
-            this.Zmove.Location = new System.Drawing.Point(186, 191);
+            this.Zmove.Location = new System.Drawing.Point(186, 277);
             this.Zmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Zmove.Name = "Zmove";
             this.Zmove.Size = new System.Drawing.Size(75, 77);
@@ -332,7 +235,7 @@
             // 
             // Ymove
             // 
-            this.Ymove.Location = new System.Drawing.Point(102, 191);
+            this.Ymove.Location = new System.Drawing.Point(102, 277);
             this.Ymove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Ymove.Name = "Ymove";
             this.Ymove.Size = new System.Drawing.Size(75, 77);
@@ -342,7 +245,7 @@
             // 
             // Xmove
             // 
-            this.Xmove.Location = new System.Drawing.Point(18, 191);
+            this.Xmove.Location = new System.Drawing.Point(18, 277);
             this.Xmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Xmove.Name = "Xmove";
             this.Xmove.Size = new System.Drawing.Size(75, 77);
@@ -350,13 +253,87 @@
             this.Xmove.Text = "x";
             this.Xmove.UseVisualStyleBackColor = true;
             // 
-            // timer2
+            // UmoveTimer
             // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.UmoveTimer.Interval = 10;
+            this.UmoveTimer.Tick += new System.EventHandler(this.UmoveTimer_Tick);
             // 
-            // timer3
+            // BpMove
             // 
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            this.BpMove.Location = new System.Drawing.Point(438, 105);
+            this.BpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BpMove.Name = "BpMove";
+            this.BpMove.Size = new System.Drawing.Size(75, 77);
+            this.BpMove.TabIndex = 33;
+            this.BpMove.Text = "B\'";
+            this.BpMove.UseVisualStyleBackColor = true;
+            // 
+            // FpMove
+            // 
+            this.FpMove.Location = new System.Drawing.Point(354, 105);
+            this.FpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FpMove.Name = "FpMove";
+            this.FpMove.Size = new System.Drawing.Size(75, 77);
+            this.FpMove.TabIndex = 32;
+            this.FpMove.Text = "F\'";
+            this.FpMove.UseVisualStyleBackColor = true;
+            // 
+            // LpMove
+            // 
+            this.LpMove.Location = new System.Drawing.Point(270, 105);
+            this.LpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LpMove.Name = "LpMove";
+            this.LpMove.Size = new System.Drawing.Size(75, 77);
+            this.LpMove.TabIndex = 31;
+            this.LpMove.Text = "L\'";
+            this.LpMove.UseVisualStyleBackColor = true;
+            // 
+            // RpMove
+            // 
+            this.RpMove.Location = new System.Drawing.Point(186, 105);
+            this.RpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RpMove.Name = "RpMove";
+            this.RpMove.Size = new System.Drawing.Size(75, 77);
+            this.RpMove.TabIndex = 30;
+            this.RpMove.Text = "R\'";
+            this.RpMove.UseVisualStyleBackColor = true;
+            // 
+            // DpMove
+            // 
+            this.DpMove.Location = new System.Drawing.Point(102, 105);
+            this.DpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DpMove.Name = "DpMove";
+            this.DpMove.Size = new System.Drawing.Size(75, 77);
+            this.DpMove.TabIndex = 29;
+            this.DpMove.Text = "D\'";
+            this.DpMove.UseVisualStyleBackColor = true;
+            this.DpMove.Click += new System.EventHandler(this.DpMove_Click);
+            // 
+            // UpMove
+            // 
+            this.UpMove.Location = new System.Drawing.Point(18, 105);
+            this.UpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.UpMove.Name = "UpMove";
+            this.UpMove.Size = new System.Drawing.Size(75, 77);
+            this.UpMove.TabIndex = 28;
+            this.UpMove.Text = "U\'";
+            this.UpMove.UseVisualStyleBackColor = true;
+            this.UpMove.Click += new System.EventHandler(this.UpMove_Click);
+            // 
+            // UpMoveTimer
+            // 
+            this.UpMoveTimer.Interval = 10;
+            this.UpMoveTimer.Tick += new System.EventHandler(this.UpMoveTimer_Tick);
+            // 
+            // DmoveTimer
+            // 
+            this.DmoveTimer.Interval = 10;
+            this.DmoveTimer.Tick += new System.EventHandler(this.DmoveTimer_Tick);
+            // 
+            // DpMoveTimer
+            // 
+            this.DpMoveTimer.Interval = 10;
+            this.DpMoveTimer.Tick += new System.EventHandler(this.DpMoveTimer_Tick);
             // 
             // Form1
             // 
@@ -364,6 +341,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1558, 692);
+            this.Controls.Add(this.BpMove);
+            this.Controls.Add(this.FpMove);
+            this.Controls.Add(this.LpMove);
+            this.Controls.Add(this.RpMove);
+            this.Controls.Add(this.DpMove);
+            this.Controls.Add(this.UpMove);
             this.Controls.Add(this.Smove);
             this.Controls.Add(this.Emove);
             this.Controls.Add(this.Mmove);
@@ -382,42 +365,19 @@
             this.Controls.Add(this.Rmove);
             this.Controls.Add(this.Dmove);
             this.Controls.Add(this.Umove);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.xLabel);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.zLabel);
-            this.Controls.Add(this.trackBarz);
-            this.Controls.Add(this.yLabel);
-            this.Controls.Add(this.trackBary);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.trackBarx);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBary)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarz)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarx)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TrackBar trackBary;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label yLabel;
-        private System.Windows.Forms.Label zLabel;
-        private System.Windows.Forms.TrackBar trackBarz;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label xLabel;
-        private System.Windows.Forms.TrackBar trackBarx;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button Umove;
         private System.Windows.Forms.Button Dmove;
         private System.Windows.Forms.Button Rmove;
@@ -436,8 +396,16 @@
         private System.Windows.Forms.Button Zmove;
         private System.Windows.Forms.Button Ymove;
         private System.Windows.Forms.Button Xmove;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer UmoveTimer;
+        private System.Windows.Forms.Button BpMove;
+        private System.Windows.Forms.Button FpMove;
+        private System.Windows.Forms.Button LpMove;
+        private System.Windows.Forms.Button RpMove;
+        private System.Windows.Forms.Button DpMove;
+        private System.Windows.Forms.Button UpMove;
+        private System.Windows.Forms.Timer UpMoveTimer;
+        private System.Windows.Forms.Timer DmoveTimer;
+        private System.Windows.Forms.Timer DpMoveTimer;
     }
 }
 
