@@ -54,7 +54,27 @@ namespace LicentaV._1
         {
             InitializeComponent();
         }
-
+        private void timerFirstHalf()
+        {
+            img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            grp = Graphics.FromImage(img);
+            grp.Clear(Color.DimGray);
+            foreach (Cube cube in cubes)
+            {
+                cube.RotateCubeX(20);
+                cube.RotateCubeY(20);
+            }
+        }
+        private void timerSecondHalf()
+        {
+            foreach (Cube cube in cubes)
+            {
+                cube.RotateCubeY(-20);
+                cube.RotateCubeX(-20);
+            }
+            colorCube();
+            pictureBox1.Image = img;
+        }
         Graphics grp;
         Bitmap img;
         Cube cube1 = new Cube(10, 10, 10);
@@ -84,6 +104,26 @@ namespace LicentaV._1
         Cube cube25 = new Cube(100, 190, 190);
         Cube cube26 = new Cube(190, 190, 190);
         Cube[] cubes = new Cube[26];
+        public void wait(int milliseconds)
+        {
+            var timer1 = new System.Windows.Forms.Timer();
+            if (milliseconds == 0 || milliseconds < 0) return;
+
+            timer1.Interval = milliseconds;
+            timer1.Enabled = true;
+            timer1.Start();
+
+            timer1.Tick += (s, e) =>
+            {
+                timer1.Enabled = false;
+                timer1.Stop();
+            };
+
+            while (timer1.Enabled)
+            {
+                Application.DoEvents();
+            }
+        }
         public void colorSquare(Cube cube)
         {
             Cube[] topCubes = 
@@ -395,19 +435,79 @@ namespace LicentaV._1
             colorCube();
             pictureBox1.Image = img;
         }
+        private void rotateDp()
+        {
+            Cube aux = bottomCubes[0];
+
+            bottomCubes[0] = bottomCubes[6];
+            bottomCubes[6] = bottomCubes[8];
+            bottomCubes[8] = bottomCubes[2];
+            bottomCubes[2] = aux;
+            aux = bottomCubes[1];
+            bottomCubes[1] = bottomCubes[3];
+            bottomCubes[3] = bottomCubes[7];
+            bottomCubes[7] = bottomCubes[5];
+            bottomCubes[5] = aux;
+
+            backCubes[6] = bottomCubes[0];
+            backCubes[7] = bottomCubes[1];
+            backCubes[8] = bottomCubes[2];
+
+            rightCubes[6] = bottomCubes[2];
+            rightCubes[7] = bottomCubes[5];
+            rightCubes[8] = bottomCubes[8];
+
+            frontCubes[6] = bottomCubes[6];
+            frontCubes[7] = bottomCubes[7];
+            frontCubes[8] = bottomCubes[8];
+
+            leftCubes[6] = bottomCubes[0];
+            leftCubes[7] = bottomCubes[3];
+            leftCubes[8] = bottomCubes[6];
+        }
+        private void rotateD()
+        {
+            Cube aux = bottomCubes[0];
+
+            bottomCubes[0] = bottomCubes[2];
+            bottomCubes[2] = bottomCubes[8];
+            bottomCubes[8] = bottomCubes[6];
+            bottomCubes[6] = aux;
+            aux = bottomCubes[1];
+            bottomCubes[1] = bottomCubes[5];
+            bottomCubes[5] = bottomCubes[7];
+            bottomCubes[7] = bottomCubes[3];
+            bottomCubes[3] = aux;
+
+            backCubes[6] = bottomCubes[0];
+            backCubes[7] = bottomCubes[1];
+            backCubes[8] = bottomCubes[2];
+
+            rightCubes[6] = bottomCubes[2];
+            rightCubes[7] = bottomCubes[5];
+            rightCubes[8] = bottomCubes[8];
+
+            frontCubes[6] = bottomCubes[6];
+            frontCubes[7] = bottomCubes[7];
+            frontCubes[8] = bottomCubes[8];
+
+            leftCubes[6] = bottomCubes[0];
+            leftCubes[7] = bottomCubes[3];
+            leftCubes[8] = bottomCubes[6];
+        }
         private void rotateRp()
         {
-            Cube aux0 = rightCubes[0];
-            Cube aux1 = rightCubes[1];
+            Cube aux = rightCubes[0];
 
             rightCubes[0] = rightCubes[6];
             rightCubes[6] = rightCubes[8];
             rightCubes[8] = rightCubes[2];
-            rightCubes[2] = aux0;
+            rightCubes[2] = aux;
+            aux = rightCubes[1];
             rightCubes[1] = rightCubes[3];
             rightCubes[3] = rightCubes[7];
             rightCubes[7] = rightCubes[5];
-            rightCubes[5] = aux1;
+            rightCubes[5] = aux;
 
             backCubes[2] = rightCubes[0];
             backCubes[5] = rightCubes[3];
@@ -421,23 +521,23 @@ namespace LicentaV._1
             frontCubes[5] = rightCubes[5];
             frontCubes[8] = rightCubes[8];
 
-            bottomCubes[2] = topCubes[6];
-            bottomCubes[5] = topCubes[7];
-            bottomCubes[8] = topCubes[8];
+            bottomCubes[2] = rightCubes[6];
+            bottomCubes[5] = rightCubes[7];
+            bottomCubes[8] = rightCubes[8];
         }
         private void rotateR()
         {
-            Cube aux0 = rightCubes[0];
-            Cube aux1 = rightCubes[1];
+            Cube aux = rightCubes[0];            
 
             rightCubes[0] = rightCubes[2];
             rightCubes[2] = rightCubes[8];
             rightCubes[8] = rightCubes[6];
-            rightCubes[6] = aux0;
+            rightCubes[6] = aux;
+            aux = rightCubes[1];
             rightCubes[1] = rightCubes[5];
             rightCubes[5] = rightCubes[7];
             rightCubes[7] = rightCubes[3];
-            rightCubes[3] = aux1;
+            rightCubes[3] = aux;
 
             backCubes[2] = rightCubes[0];
             backCubes[5] = rightCubes[3];
@@ -451,23 +551,22 @@ namespace LicentaV._1
             frontCubes[5] = rightCubes[5];
             frontCubes[8] = rightCubes[8];
 
-            bottomCubes[2] = topCubes[6];
-            bottomCubes[5] = topCubes[7];
-            bottomCubes[8] = topCubes[8];
+            bottomCubes[2] = rightCubes[6];
+            bottomCubes[5] = rightCubes[7];
+            bottomCubes[8] = rightCubes[8];
         }
         private void rotateU()
         {
-            Cube aux0 = topCubes[0];
-            Cube aux1 = topCubes[1];
-
+            Cube aux = topCubes[0];
             topCubes[0] = topCubes[6];
             topCubes[6] = topCubes[8];
             topCubes[8] = topCubes[2];
-            topCubes[2] = aux0;            
+            topCubes[2] = aux;
+            aux = topCubes[1];
             topCubes[1] = topCubes[3];            
             topCubes[3] = topCubes[7];
             topCubes[7] = topCubes[5];
-            topCubes[5] = aux1;
+            topCubes[5] = aux;
 
             backCubes[0] = topCubes[0];
             backCubes[1] = topCubes[1];
@@ -487,17 +586,17 @@ namespace LicentaV._1
         }
         private void rotateUp()
         {
-            Cube aux0 = topCubes[0];
-            Cube aux1 = topCubes[1];
+            Cube aux = topCubes[0];
 
             topCubes[0] = topCubes[2];
             topCubes[2] = topCubes[8];
             topCubes[8] = topCubes[6];
-            topCubes[6] = aux0;
+            topCubes[6] = aux;
+            aux = topCubes[1];
             topCubes[1] = topCubes[5];
             topCubes[5] = topCubes[7];
             topCubes[7] = topCubes[3];
-            topCubes[3] = aux1;
+            topCubes[3] = aux;
 
             backCubes[0] = topCubes[0];
             backCubes[1] = topCubes[1];
@@ -515,8 +614,102 @@ namespace LicentaV._1
             leftCubes[1] = topCubes[3];
             leftCubes[2] = topCubes[6];
         }
-        private void Smove_Click(object sender, EventArgs em)
+        private void rotateF()
         {
+            Cube aux = frontCubes[0];
+
+            frontCubes[0] = frontCubes[6];
+            frontCubes[6] = frontCubes[8];
+            frontCubes[8] = frontCubes[2];
+            frontCubes[2] = aux;
+            aux = frontCubes[1];
+            frontCubes[1] = frontCubes[3];
+            frontCubes[3] = frontCubes[7];
+            frontCubes[7] = frontCubes[5];
+            frontCubes[5] = aux;
+
+            topCubes[6] = frontCubes[0];
+            topCubes[7] = frontCubes[1];
+            topCubes[8] = frontCubes[2];
+
+            rightCubes[2] = frontCubes[2];
+            rightCubes[5] = frontCubes[5];
+            rightCubes[8] = frontCubes[8];
+
+            bottomCubes[6] = frontCubes[6];
+            bottomCubes[7] = frontCubes[7];
+            bottomCubes[8] = frontCubes[8];
+
+            leftCubes[2] = frontCubes[0];
+            leftCubes[5] = frontCubes[3];
+            leftCubes[8] = frontCubes[6];
+        }
+        private void rotateFp()
+        {
+            Cube aux = frontCubes[0];
+
+            frontCubes[0] = frontCubes[2];
+            frontCubes[2] = frontCubes[8];
+            frontCubes[8] = frontCubes[6];
+            frontCubes[6] = aux;
+            aux = frontCubes[1];
+            frontCubes[1] = frontCubes[5];
+            frontCubes[5] = frontCubes[7];
+            frontCubes[7] = frontCubes[3];
+            frontCubes[3] = aux;
+
+            topCubes[6] = frontCubes[0];
+            topCubes[7] = frontCubes[1];
+            topCubes[8] = frontCubes[2];
+
+            rightCubes[2] = frontCubes[2];
+            rightCubes[5] = frontCubes[5];
+            rightCubes[8] = frontCubes[8];
+
+            bottomCubes[6] = frontCubes[6];
+            bottomCubes[7] = frontCubes[7];
+            bottomCubes[8] = frontCubes[8];
+
+            leftCubes[2] = frontCubes[0];
+            leftCubes[5] = frontCubes[3];
+            leftCubes[8] = frontCubes[6];
+        }
+        private void rotateX()
+        {           
+        }
+            private void Smove_Click(object sender, EventArgs em)
+        { 
+            /* R U R' U' R' F R2 U' R' U' R U R' F*/
+            RmoveTimer.Start();
+            wait(200);
+            UmoveTimer.Start();
+            wait(200);
+            RpMoveTimer.Start();
+            wait(200);
+            UpMoveTimer.Start();
+            wait(200);
+            RpMoveTimer.Start();
+            wait(200);
+            FmoveTimer.Start();
+            wait(200);
+            RmoveTimer.Start();
+            wait(200);
+            RmoveTimer.Start();
+            wait(200);
+            UpMoveTimer.Start();
+            wait(200);
+            RpMoveTimer.Start();
+            wait(200);
+            UpMoveTimer.Start();
+            wait(200);
+            RmoveTimer.Start();
+            wait(200);
+            UmoveTimer.Start();
+            wait(200);
+            RpMoveTimer.Start();
+            wait(200);
+            FpMoveTimer.Start();
+            wait(200);
         }       
         private void Umove_Click(object sender, EventArgs e)
         {           
@@ -538,36 +731,41 @@ namespace LicentaV._1
         {
             RmoveTimer.Start();
         }
-
+        private void Fmove_Click(object sender, EventArgs e)
+        {
+            FmoveTimer.Start();
+        }
         private void RpMove_Click(object sender, EventArgs e)
         {
             RpMoveTimer.Start();
         }
+        private void FpMove_Click(object sender, EventArgs e)
+        {
+            FpMoveTimer.Start();
+        }
+        private void Xmove_Click(object sender, EventArgs e)
+        {
+            XmoveTimer.Start();
+        }
+        private void Zmove_Click(object sender, EventArgs e)
+        {
+            ZmoveTimer.Start();
+        }
+        private void Ymove_Click(object sender, EventArgs e)
+        {
+            YmoveTimer.Start();
+        }
         int cws = 90;
         int ccws = 0;        
-
         private void UmoveTimer_Tick(object sender, EventArgs e)
         {
-            img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            grp = Graphics.FromImage(img);
-            grp.Clear(Color.DimGray);
-            foreach (Cube cube in cubes)
-            {
-                cube.RotateCubeX(20);
-                cube.RotateCubeY(20);
-            }
+            timerFirstHalf();
             foreach (Cube cube in topCubes)
             {
                 cube.RotateCubeY(-10);
             }
-            foreach (Cube cube in cubes)
-            {
-                cube.RotateCubeY(-20);
-                cube.RotateCubeX(-20);
-            }
             rotateU();
-            colorCube();
-            pictureBox1.Image = img;
+            timerSecondHalf();
             cws -= 10;
             if (cws == 0)
             {
@@ -577,26 +775,13 @@ namespace LicentaV._1
         }        
         private void UpMoveTimer_Tick(object sender, EventArgs e)
         {
-            img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            grp = Graphics.FromImage(img);
-            grp.Clear(Color.DimGray);
-            foreach (Cube cube in cubes)
-            {
-                cube.RotateCubeX(20);
-                cube.RotateCubeY(20);
-            }
+            timerFirstHalf();
             foreach(Cube cube in topCubes)
             {
                 cube.RotateCubeY(10);
             }
-            foreach (Cube cube in cubes)
-            {
-                cube.RotateCubeY(-20);
-                cube.RotateCubeX(-20);
-            }
             rotateUp();
-            colorCube();
-            pictureBox1.Image = img;
+            timerSecondHalf();
             ccws += 10;
             if (ccws == 90)
             {
@@ -607,25 +792,13 @@ namespace LicentaV._1
 
         private void DmoveTimer_Tick(object sender, EventArgs e)
         {
-            img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            grp = Graphics.FromImage(img);
-            grp.Clear(Color.DimGray);
-            foreach (Cube cube in cubes)
-            {
-                cube.RotateCubeX(20);
-                cube.RotateCubeY(20);
-            }
+            timerFirstHalf();
             foreach (Cube cube in bottomCubes)
             {
                 cube.RotateCubeY(10);
             }
-            foreach (Cube cube in cubes)
-            {
-                cube.RotateCubeY(-20);
-                cube.RotateCubeX(-20);
-            }
-            colorCube();
-            pictureBox1.Image = img;
+            rotateD();
+            timerSecondHalf();
             ccws += 10;
             if (ccws == 90)
             {
@@ -636,25 +809,13 @@ namespace LicentaV._1
 
         private void DpMoveTimer_Tick(object sender, EventArgs e)
         {
-            img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            grp = Graphics.FromImage(img);
-            grp.Clear(Color.DimGray);
-            foreach (Cube cube in cubes)
-            {
-                cube.RotateCubeX(20);
-                cube.RotateCubeY(20);
-            }
+            timerFirstHalf();
             foreach (Cube cube in bottomCubes)
             {
                 cube.RotateCubeY(-10);
             }
-            foreach (Cube cube in cubes)
-            {
-                cube.RotateCubeY(-20);
-                cube.RotateCubeX(-20);
-            }
-            colorCube();
-            pictureBox1.Image = img;
+            rotateDp();
+            timerSecondHalf();
             cws -= 10;
             if (cws == 0)
             {
@@ -662,30 +823,15 @@ namespace LicentaV._1
                 DpMoveTimer.Stop();
             }
         }
-
-
         private void RmoveTimer_Tick(object sender, EventArgs e)
         {
-            img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            grp = Graphics.FromImage(img);
-            grp.Clear(Color.DimGray);
-            foreach (Cube cube in cubes)
-            {
-                cube.RotateCubeX(20);
-                cube.RotateCubeY(20);
-            }
+            timerFirstHalf();
             foreach (Cube cube in rightCubes)
             {
                 cube.RotateCubeX(10);
             }
-            foreach (Cube cube in cubes)
-            {
-                cube.RotateCubeY(-20);
-                cube.RotateCubeX(-20);
-            }
+            timerSecondHalf();
             rotateR();
-            colorCube();
-            pictureBox1.Image = img;
             ccws += 10;
             if (ccws == 90)
             {
@@ -696,31 +842,103 @@ namespace LicentaV._1
 
         private void RpMoveTimer_Tick(object sender, EventArgs e)
         {
-            img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            grp = Graphics.FromImage(img);
-            grp.Clear(Color.DimGray);
-            foreach (Cube cube in cubes)
-            {
-                cube.RotateCubeX(20);
-                cube.RotateCubeY(20);
-            }
+            timerFirstHalf();
             foreach (Cube cube in rightCubes)
             {
                 cube.RotateCubeX(-10);
             }
-            foreach (Cube cube in cubes)
-            {
-                cube.RotateCubeY(-20);
-                cube.RotateCubeX(-20);
-            }
             rotateRp();
-            colorCube();
-            pictureBox1.Image = img;
+            timerSecondHalf();
             cws -= 10;
             if (cws == 0)
             {
                 cws = 90;
                 RpMoveTimer.Stop();
+            }
+        }
+
+        private void FmoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in frontCubes)
+            {
+                cube.RotateCubeZ(10);
+            }
+            timerSecondHalf();
+            rotateF();
+            ccws += 10;
+            if (ccws == 90)
+            {
+                ccws = 0;
+                FmoveTimer.Stop();
+            }
+        }
+
+        private void FpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in frontCubes)
+            {
+                cube.RotateCubeZ(-10);
+            }
+            timerSecondHalf();
+            rotateFp();
+            cws -= 10;
+            if (cws == 0)
+            {
+                cws = 90;
+                FpMoveTimer.Stop();
+            }
+        }
+
+        private void XmoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in cubes)
+            {
+                cube.RotateCubeX(10);
+            }
+            timerSecondHalf();
+            rotateR();
+            ccws += 10;
+            if (ccws == 90)
+            {
+                ccws = 0;
+                XmoveTimer.Stop();
+            }
+        }
+
+        private void YmoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in cubes)
+            {
+                cube.RotateCubeY(-10);
+            }
+            rotateU();
+            timerSecondHalf();
+            cws -= 10;
+            if (cws == 0)
+            {
+                cws = 90;
+                YmoveTimer.Stop();
+            }
+        }
+
+        private void ZmoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in cubes)
+            {
+                cube.RotateCubeZ(10);
+            }
+            timerSecondHalf();
+            rotateF();
+            ccws += 10;
+            if (ccws == 90)
+            {
+                ccws = 0;
+                ZmoveTimer.Stop();
             }
         }
     }

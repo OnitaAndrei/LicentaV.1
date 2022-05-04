@@ -144,14 +144,14 @@ namespace LicentaV._1
         }
         public void RotateCubeZ(int angle)
         {
-            RotatePointY(a, angle);
-            RotatePointY(b, angle);
-            RotatePointY(c, angle);
-            RotatePointY(d, angle);
-            RotatePointY(e, angle);
-            RotatePointY(f, angle);
-            RotatePointY(g, angle);
-            RotatePointY(h, angle);
+            RotatePointZ(a, angle);
+            RotatePointZ(b, angle);
+            RotatePointZ(c, angle);
+            RotatePointZ(d, angle);
+            RotatePointZ(e, angle);
+            RotatePointZ(f, angle);
+            RotatePointZ(g, angle);
+            RotatePointZ(h, angle);
         }
         public PointF[] getTop()
         {

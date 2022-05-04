@@ -60,6 +60,11 @@
             this.DpMoveTimer = new System.Windows.Forms.Timer(this.components);
             this.RmoveTimer = new System.Windows.Forms.Timer(this.components);
             this.RpMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.FmoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.FpMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.XmoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.YmoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.ZmoveTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,6 +129,7 @@
             this.Fmove.TabIndex = 14;
             this.Fmove.Text = "F";
             this.Fmove.UseVisualStyleBackColor = true;
+            this.Fmove.Click += new System.EventHandler(this.Fmove_Click);
             // 
             // Lmove
             // 
@@ -235,6 +241,7 @@
             this.Zmove.TabIndex = 24;
             this.Zmove.Text = "z";
             this.Zmove.UseVisualStyleBackColor = true;
+            this.Zmove.Click += new System.EventHandler(this.Zmove_Click);
             // 
             // Ymove
             // 
@@ -245,6 +252,7 @@
             this.Ymove.TabIndex = 23;
             this.Ymove.Text = "y";
             this.Ymove.UseVisualStyleBackColor = true;
+            this.Ymove.Click += new System.EventHandler(this.Ymove_Click);
             // 
             // Xmove
             // 
@@ -255,6 +263,7 @@
             this.Xmove.TabIndex = 22;
             this.Xmove.Text = "x";
             this.Xmove.UseVisualStyleBackColor = true;
+            this.Xmove.Click += new System.EventHandler(this.Xmove_Click);
             // 
             // UmoveTimer
             // 
@@ -280,6 +289,7 @@
             this.FpMove.TabIndex = 32;
             this.FpMove.Text = "F\'";
             this.FpMove.UseVisualStyleBackColor = true;
+            this.FpMove.Click += new System.EventHandler(this.FpMove_Click);
             // 
             // LpMove
             // 
@@ -348,6 +358,31 @@
             // 
             this.RpMoveTimer.Interval = 10;
             this.RpMoveTimer.Tick += new System.EventHandler(this.RpMoveTimer_Tick);
+            // 
+            // FmoveTimer
+            // 
+            this.FmoveTimer.Interval = 10;
+            this.FmoveTimer.Tick += new System.EventHandler(this.FmoveTimer_Tick);
+            // 
+            // FpMoveTimer
+            // 
+            this.FpMoveTimer.Interval = 10;
+            this.FpMoveTimer.Tick += new System.EventHandler(this.FpMoveTimer_Tick);
+            // 
+            // XmoveTimer
+            // 
+            this.XmoveTimer.Interval = 10;
+            this.XmoveTimer.Tick += new System.EventHandler(this.XmoveTimer_Tick);
+            // 
+            // YmoveTimer
+            // 
+            this.YmoveTimer.Interval = 10;
+            this.YmoveTimer.Tick += new System.EventHandler(this.YmoveTimer_Tick);
+            // 
+            // ZmoveTimer
+            // 
+            this.ZmoveTimer.Interval = 10;
+            this.ZmoveTimer.Tick += new System.EventHandler(this.ZmoveTimer_Tick);
             // 
             // Form1
             // 
@@ -422,6 +457,11 @@
         private System.Windows.Forms.Timer DpMoveTimer;
         private System.Windows.Forms.Timer RmoveTimer;
         private System.Windows.Forms.Timer RpMoveTimer;
+        private System.Windows.Forms.Timer FmoveTimer;
+        private System.Windows.Forms.Timer FpMoveTimer;
+        private System.Windows.Forms.Timer XmoveTimer;
+        private System.Windows.Forms.Timer YmoveTimer;
+        private System.Windows.Forms.Timer ZmoveTimer;
     }
 }
 
