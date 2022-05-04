@@ -58,6 +58,8 @@
             this.UpMoveTimer = new System.Windows.Forms.Timer(this.components);
             this.DmoveTimer = new System.Windows.Forms.Timer(this.components);
             this.DpMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.RmoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.RpMoveTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,6 +103,7 @@
             this.Rmove.TabIndex = 12;
             this.Rmove.Text = "R";
             this.Rmove.UseVisualStyleBackColor = true;
+            this.Rmove.Click += new System.EventHandler(this.Rmove_Click);
             // 
             // Bmove
             // 
@@ -297,6 +300,7 @@
             this.RpMove.TabIndex = 30;
             this.RpMove.Text = "R\'";
             this.RpMove.UseVisualStyleBackColor = true;
+            this.RpMove.Click += new System.EventHandler(this.RpMove_Click);
             // 
             // DpMove
             // 
@@ -334,6 +338,16 @@
             // 
             this.DpMoveTimer.Interval = 10;
             this.DpMoveTimer.Tick += new System.EventHandler(this.DpMoveTimer_Tick);
+            // 
+            // RmoveTimer
+            // 
+            this.RmoveTimer.Interval = 10;
+            this.RmoveTimer.Tick += new System.EventHandler(this.RmoveTimer_Tick);
+            // 
+            // RpMoveTimer
+            // 
+            this.RpMoveTimer.Interval = 10;
+            this.RpMoveTimer.Tick += new System.EventHandler(this.RpMoveTimer_Tick);
             // 
             // Form1
             // 
@@ -406,6 +420,8 @@
         private System.Windows.Forms.Timer UpMoveTimer;
         private System.Windows.Forms.Timer DmoveTimer;
         private System.Windows.Forms.Timer DpMoveTimer;
+        private System.Windows.Forms.Timer RmoveTimer;
+        private System.Windows.Forms.Timer RpMoveTimer;
     }
 }
 
