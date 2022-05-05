@@ -525,6 +525,66 @@ namespace LicentaV._1
             bottomCubes[5] = rightCubes[7];
             bottomCubes[8] = rightCubes[8];
         }
+        private void rotateL()
+        {
+            Cube aux = leftCubes[0];
+
+            leftCubes[0] = leftCubes[6];
+            leftCubes[6] = leftCubes[8];
+            leftCubes[8] = leftCubes[2];
+            leftCubes[2] = aux;
+            aux = leftCubes[1];
+            leftCubes[1] = leftCubes[3];
+            leftCubes[3] = leftCubes[7];
+            leftCubes[7] = leftCubes[5];
+            leftCubes[5] = aux;
+
+            backCubes[0] = leftCubes[0];
+            backCubes[3] = leftCubes[3];
+            backCubes[6] = leftCubes[6];
+
+            topCubes[0] = leftCubes[0];
+            topCubes[3] = leftCubes[1];
+            topCubes[6] = leftCubes[2];
+
+            frontCubes[0] = leftCubes[2];
+            frontCubes[3] = leftCubes[5];
+            frontCubes[6] = leftCubes[8];
+
+            bottomCubes[0] = leftCubes[6];
+            bottomCubes[3] = leftCubes[7];
+            bottomCubes[6] = leftCubes[8];
+        }
+        private void rotateLp()
+        {
+            Cube aux = leftCubes[0];
+
+            leftCubes[0] = leftCubes[2];
+            leftCubes[2] = leftCubes[8];
+            leftCubes[8] = leftCubes[6];
+            leftCubes[6] = aux;
+            aux = leftCubes[1];
+            leftCubes[1] = leftCubes[5];
+            leftCubes[5] = leftCubes[7];
+            leftCubes[7] = leftCubes[3];
+            leftCubes[3] = aux;
+
+            backCubes[0] = leftCubes[0];
+            backCubes[3] = leftCubes[3];
+            backCubes[6] = leftCubes[6];
+
+            topCubes[0] = leftCubes[0];
+            topCubes[3] = leftCubes[1];
+            topCubes[6] = leftCubes[2];
+
+            frontCubes[0] = leftCubes[2];
+            frontCubes[3] = leftCubes[5];
+            frontCubes[6] = leftCubes[8];
+
+            bottomCubes[0] = leftCubes[6];
+            bottomCubes[3] = leftCubes[7];
+            bottomCubes[6] = leftCubes[8];
+        }
         private void rotateR()
         {
             Cube aux = rightCubes[0];            
@@ -674,6 +734,66 @@ namespace LicentaV._1
             leftCubes[5] = frontCubes[3];
             leftCubes[8] = frontCubes[6];
         }
+        private void rotateB()
+        {
+            Cube aux = backCubes[0];
+            
+            backCubes[0] = backCubes[2];
+            backCubes[2] = backCubes[8];
+            backCubes[8] = backCubes[6];
+            backCubes[6] = aux;
+            aux = backCubes[1];
+            backCubes[1] = backCubes[5];
+            backCubes[5] = backCubes[7];
+            backCubes[7] = backCubes[3];
+            backCubes[3] = aux;
+
+            topCubes[0] = backCubes[0];
+            topCubes[1] = backCubes[1];
+            topCubes[2] = backCubes[2];
+
+            rightCubes[0] = backCubes[2];
+            rightCubes[3] = backCubes[5];
+            rightCubes[6] = backCubes[8];
+
+            bottomCubes[0] = backCubes[6];
+            bottomCubes[1] = backCubes[7];
+            bottomCubes[2] = backCubes[8];
+
+            leftCubes[0] = backCubes[0];
+            leftCubes[3] = backCubes[3];
+            leftCubes[6] = backCubes[6];
+        }
+        private void rotateBp()
+        {
+            Cube aux = backCubes[0];
+
+            backCubes[0] = backCubes[6];
+            backCubes[6] = backCubes[8];
+            backCubes[8] = backCubes[2];
+            backCubes[2] = aux;
+            aux = backCubes[1];
+            backCubes[1] = backCubes[3];
+            backCubes[3] = backCubes[7];
+            backCubes[7] = backCubes[5];
+            backCubes[5] = aux;
+
+            topCubes[0] = backCubes[0];
+            topCubes[1] = backCubes[1];
+            topCubes[2] = backCubes[2];
+
+            rightCubes[0] = backCubes[2];
+            rightCubes[3] = backCubes[5];
+            rightCubes[6] = backCubes[8];
+
+            bottomCubes[0] = backCubes[6];
+            bottomCubes[1] = backCubes[7];
+            bottomCubes[2] = backCubes[8];
+
+            leftCubes[0] = backCubes[0];
+            leftCubes[3] = backCubes[3];
+            leftCubes[6] = backCubes[6];
+        }
         private void rotateX()
         {           
         }
@@ -710,7 +830,23 @@ namespace LicentaV._1
             wait(200);
             FpMoveTimer.Start();
             wait(200);
-        }       
+        }        
+        private void BpMove_Click(object sender, EventArgs e)
+        {
+            BpMoveTimer.Start();
+        }
+        private void Bmove_Click(object sender, EventArgs e)
+        {
+            BmoveTimer.Start();
+        }
+        private void LpMove_Click(object sender, EventArgs e)
+        {
+            LpMoveTimer.Start();
+        }
+        private void Lmove_Click(object sender, EventArgs e)
+        {
+            LmoveTimer.Start();
+        }
         private void Umove_Click(object sender, EventArgs e)
         {           
             UmoveTimer.Start();
@@ -755,8 +891,66 @@ namespace LicentaV._1
         {
             YmoveTimer.Start();
         }
+        private void L2_Click(object sender, EventArgs e)
+        {
+            LmoveTimer.Start();
+            wait(200);
+            LmoveTimer.Start();
+        }
+
+        private void U2_Click(object sender, EventArgs e)
+        {
+            UmoveTimer.Start();
+            wait(200);
+            UmoveTimer.Start();
+        }
+
+        private void F2_Click(object sender, EventArgs e)
+        {
+            FmoveTimer.Start();
+            wait(200);
+            FmoveTimer.Start();
+        }
+
+        private void B2_Click(object sender, EventArgs e)
+        {
+            BmoveTimer.Start();
+            wait(200);
+            BmoveTimer.Start();
+        }
+
+        private void D2_Click(object sender, EventArgs e)
+        {
+            DmoveTimer.Start();
+            wait(200);
+            DmoveTimer.Start();
+        }
+
+        private void R2_Click(object sender, EventArgs e)
+        {
+            RmoveTimer.Start();
+            wait(200);
+            RmoveTimer.Start();
+        }
         int cws = 90;
-        int ccws = 0;        
+        int ccws = 0;
+        private void UpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in topCubes)
+            {
+                cube.RotateCubeY(10);
+            }
+            timerSecondHalf();
+            ccws += 10;
+            if (ccws == 90)
+            {
+                rotateUp();
+                ccws = 0;
+                UpMoveTimer.Stop();
+            }
+        }
+
         private void UmoveTimer_Tick(object sender, EventArgs e)
         {
             timerFirstHalf();
@@ -764,32 +958,15 @@ namespace LicentaV._1
             {
                 cube.RotateCubeY(-10);
             }
-            rotateU();
             timerSecondHalf();
             cws -= 10;
             if (cws == 0)
             {
+                rotateU();
                 cws = 90;
                 UmoveTimer.Stop();
             }
         }        
-        private void UpMoveTimer_Tick(object sender, EventArgs e)
-        {
-            timerFirstHalf();
-            foreach(Cube cube in topCubes)
-            {
-                cube.RotateCubeY(10);
-            }
-            rotateUp();
-            timerSecondHalf();
-            ccws += 10;
-            if (ccws == 90)
-            {
-                ccws = 0;
-                UpMoveTimer.Stop();
-            }
-        }
-
         private void DmoveTimer_Tick(object sender, EventArgs e)
         {
             timerFirstHalf();
@@ -797,11 +974,11 @@ namespace LicentaV._1
             {
                 cube.RotateCubeY(10);
             }
-            rotateD();
             timerSecondHalf();
             ccws += 10;
             if (ccws == 90)
             {
+                rotateD();
                 ccws = 0;
                 DmoveTimer.Stop();
             }
@@ -814,11 +991,11 @@ namespace LicentaV._1
             {
                 cube.RotateCubeY(-10);
             }
-            rotateDp();
             timerSecondHalf();
             cws -= 10;
             if (cws == 0)
             {
+                rotateDp();
                 cws = 90;
                 DpMoveTimer.Stop();
             }
@@ -831,10 +1008,10 @@ namespace LicentaV._1
                 cube.RotateCubeX(10);
             }
             timerSecondHalf();
-            rotateR();
             ccws += 10;
             if (ccws == 90)
             {
+                rotateR();
                 ccws = 0;
                 RmoveTimer.Stop();
             }
@@ -847,11 +1024,11 @@ namespace LicentaV._1
             {
                 cube.RotateCubeX(-10);
             }
-            rotateRp();
             timerSecondHalf();
             cws -= 10;
             if (cws == 0)
             {
+                rotateRp();
                 cws = 90;
                 RpMoveTimer.Stop();
             }
@@ -865,10 +1042,10 @@ namespace LicentaV._1
                 cube.RotateCubeZ(10);
             }
             timerSecondHalf();
-            rotateF();
             ccws += 10;
             if (ccws == 90)
             {
+                rotateF();
                 ccws = 0;
                 FmoveTimer.Stop();
             }
@@ -882,10 +1059,10 @@ namespace LicentaV._1
                 cube.RotateCubeZ(-10);
             }
             timerSecondHalf();
-            rotateFp();
             cws -= 10;
             if (cws == 0)
             {
+                rotateFp();
                 cws = 90;
                 FpMoveTimer.Stop();
             }
@@ -899,7 +1076,6 @@ namespace LicentaV._1
                 cube.RotateCubeX(10);
             }
             timerSecondHalf();
-            rotateR();
             ccws += 10;
             if (ccws == 90)
             {
@@ -915,7 +1091,6 @@ namespace LicentaV._1
             {
                 cube.RotateCubeY(-10);
             }
-            rotateU();
             timerSecondHalf();
             cws -= 10;
             if (cws == 0)
@@ -933,12 +1108,281 @@ namespace LicentaV._1
                 cube.RotateCubeZ(10);
             }
             timerSecondHalf();
-            rotateF();
             ccws += 10;
             if (ccws == 90)
             {
                 ccws = 0;
                 ZmoveTimer.Stop();
+            }
+        }
+
+        private void LmoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in leftCubes)
+            {
+                cube.RotateCubeX(-10);
+            }
+            timerSecondHalf();
+            cws -= 10;
+            if (cws == 0)
+            {
+                rotateL();
+                cws = 90;
+                LmoveTimer.Stop();
+            }
+        }
+
+        private void LpMovetimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in leftCubes)
+            {
+                cube.RotateCubeX(10);
+            }
+            timerSecondHalf();
+            ccws += 10;
+            if (ccws == 90)
+            {
+                rotateLp();
+                ccws = 0;
+                LpMoveTimer.Stop();
+            }
+        }
+
+        private void BmoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in backCubes)
+            {
+                cube.RotateCubeZ(-10);
+            }
+            timerSecondHalf();
+            cws -= 10;
+            if (cws == 0)
+            {
+                rotateB();
+                cws = 90;
+                BmoveTimer.Stop();
+            }
+        }
+
+        private void BpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in backCubes)
+            {
+                cube.RotateCubeZ(10);
+            }
+            timerSecondHalf();
+            ccws += 10;
+            if (ccws == 90)
+            {
+                rotateBp();
+                ccws = 0;
+                BpMoveTimer.Stop();
+            }
+        }
+        string scrambleOutput;
+        private void Scramble_Click(object sender, EventArgs e)
+        {
+            Random randomGenerator = new Random();
+            int randomNumber = randomGenerator.Next(6); ;
+            switch (randomNumber)
+            {
+                case 0:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        randomNumber = randomGenerator.Next(6);
+                        randomUDMove(randomNumber);
+                        randomNumber = randomGenerator.Next(6);
+                        randomRLMove(randomNumber);
+                        randomNumber = randomGenerator.Next(6);
+                        randomFBMove(randomNumber);
+                    }
+                    break;
+                case 1:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        randomNumber = randomGenerator.Next(6);
+                        randomUDMove(randomNumber);                       
+                        randomNumber = randomGenerator.Next(6);
+                        randomFBMove(randomNumber);
+                        randomNumber = randomGenerator.Next(6);
+                        randomRLMove(randomNumber);
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        randomNumber = randomGenerator.Next(6);
+                        randomRLMove(randomNumber);
+                        randomNumber = randomGenerator.Next(6);
+                        randomUDMove(randomNumber);
+                        randomNumber = randomGenerator.Next(6);
+                        randomFBMove(randomNumber);
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        randomNumber = randomGenerator.Next(6);
+                        randomRLMove(randomNumber);
+                        randomNumber = randomGenerator.Next(6);
+                        randomFBMove(randomNumber);
+                        randomNumber = randomGenerator.Next(6);
+                        randomUDMove(randomNumber);
+                    }
+                    break;
+                case 4:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        randomNumber = randomGenerator.Next(6);
+                        randomFBMove(randomNumber);
+                        randomNumber = randomGenerator.Next(6);
+                        randomUDMove(randomNumber);
+                        randomNumber = randomGenerator.Next(6);
+                        randomRLMove(randomNumber);
+                    }
+                    break;
+                case 5:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        randomNumber = randomGenerator.Next(6);
+                        randomFBMove(randomNumber);
+                        randomNumber = randomGenerator.Next(6);
+                        randomRLMove(randomNumber);
+                        randomNumber = randomGenerator.Next(6);
+                        randomUDMove(randomNumber);                        
+                    }
+                    break;                
+            }
+            label1.Visible = true;
+            label1.Text = scrambleOutput;
+            scrambleOutput = "";
+        }
+        private void randomRLMove(int randomNumber)
+        {
+
+            switch (randomNumber)
+            {                
+                case 0:
+                    LmoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " L";
+                    break;
+                case 1:
+                    LpMoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " L'";
+                    break;
+                case 2:
+                    RmoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " R";
+                    break;
+                case 3:
+                    RpMoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " R'";
+                    break;
+                case 4:
+                    RmoveTimer.Start();
+                    wait(200); 
+                    RmoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " R2";
+                    break;
+                case 5:
+                    LmoveTimer.Start();
+                    wait(200); 
+                    LmoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " L2";
+                    break;
+            }
+        }
+        private void randomUDMove(int randomNumber)
+        {
+
+            switch (randomNumber)
+            {
+
+                case 0:
+                    UmoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " U";
+                    break;
+                case 1:
+                    UpMoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " U'";
+                    break;
+                case 2:
+                    DmoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " D";
+                    break;
+                case 3:
+                    DpMoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " D'";
+                    break;
+                case 4:
+                    UmoveTimer.Start();
+                    wait(200);
+                    UmoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " U2";
+                    break;
+                case 5:
+                    DmoveTimer.Start();
+                    wait(200);
+                    DmoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " D2";
+                    break;
+            }
+        }
+        private void randomFBMove(int randomNumber)
+        {
+
+            switch (randomNumber)
+            {                             
+                case 0:
+                    BmoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " B";
+                    break;
+                case 1:
+                    BpMoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " B'";
+                    break;
+                case 2:
+                    FmoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " F";
+                    break;
+                case 3:
+                    FpMoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " F'";
+                    break;
+                case 4:
+                    BmoveTimer.Start();
+                    wait(200);
+                    BmoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " B2";
+                    break;
+                case 5:
+                    FmoveTimer.Start();
+                    wait(200);
+                    FmoveTimer.Start();
+                    wait(200);
+                    scrambleOutput += " F2";
+                    break;
             }
         }
     }
