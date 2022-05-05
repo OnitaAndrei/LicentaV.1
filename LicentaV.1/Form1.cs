@@ -379,6 +379,9 @@ namespace LicentaV._1
         Cube[] backCubes;
         Cube[] leftCubes;
         Cube[] rightCubes;
+        Cube[] SCubes;
+        Cube[] MCubes;
+        Cube[] ECubes;
 
         private void Form1_Load(object sender, EventArgs ea)
         {
@@ -416,13 +419,18 @@ namespace LicentaV._1
             Cube[] backCubes1 = { cube1, cube2, cube3, cube10, cube11, cube12, cube18, cube19, cube20 };
             Cube[] leftCubes1 = { cube1, cube4, cube7, cube10, cube13, cube15, cube18, cube21, cube24 };
             Cube[] rightCubes1 = { cube3, cube6, cube9, cube12, cube14, cube17, cube20, cube23, cube26 };
-
+            Cube[] SCubes1 = { cube4, cube5, cube6, cube13, cube14, cube21, cube22, cube23 };
+            Cube[] MCubes1 = { cube2, cube5, cube8, cube11, cube16, cube19, cube22, cube25 };
+            Cube[] ECubes1 = { cube10, cube11, cube12, cube13, cube14, cube15, cube16, cube17 };
             topCubes = topCubes1;
             bottomCubes = bottomCubes1;
             frontCubes = frontCubes1;
             backCubes = backCubes1;
             leftCubes = leftCubes1;
             rightCubes = rightCubes1;
+            SCubes = SCubes1;
+            ECubes = ECubes1;
+            MCubes = MCubes1;
 
             img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             grp = Graphics.FromImage(img);
@@ -434,6 +442,96 @@ namespace LicentaV._1
             }
             colorCube();
             pictureBox1.Image = img;
+        }
+        private void rotateS()
+        {
+            Cube aux = SCubes[0];
+
+            SCubes[0] = SCubes[5];
+            SCubes[5] = SCubes[7];
+            SCubes[7] = SCubes[2];
+            SCubes[2] = aux;
+            aux = SCubes[1];
+            SCubes[1] = SCubes[3];
+            SCubes[3] = SCubes[6];
+            SCubes[6] = SCubes[4];
+            SCubes[4] = aux;
+
+            topCubes[3] = SCubes[0];
+            topCubes[4] = SCubes[1];
+            topCubes[5] = SCubes[2];
+
+            rightCubes[1] = SCubes[2];
+            rightCubes[4] = SCubes[4];
+            rightCubes[7] = SCubes[7];
+
+            bottomCubes[3] = SCubes[5];
+            bottomCubes[4] = SCubes[6];
+            bottomCubes[5] = SCubes[7];
+
+            leftCubes[1] = SCubes[0];
+            leftCubes[4] = SCubes[3];
+            leftCubes[7] = SCubes[7];
+        }
+        private void rotateM()
+        {
+            Cube aux = MCubes[0];
+
+            MCubes[0] = MCubes[5];
+            MCubes[5] = MCubes[7];
+            MCubes[7] = MCubes[2];
+            MCubes[2] = aux;
+            aux = MCubes[1];
+            MCubes[1] = MCubes[3];
+            MCubes[3] = MCubes[6];
+            MCubes[6] = MCubes[4];
+            MCubes[4] = aux;
+
+            topCubes[1] = MCubes[0];
+            topCubes[4] = MCubes[1];
+            topCubes[7] = MCubes[2];
+
+            backCubes[1] = MCubes[0];
+            backCubes[4] = MCubes[3];
+            backCubes[7] = MCubes[5];
+
+            bottomCubes[1] = MCubes[5];
+            bottomCubes[4] = MCubes[6];
+            bottomCubes[7] = MCubes[7];
+
+            frontCubes[1] = MCubes[2];
+            frontCubes[4] = MCubes[4];
+            frontCubes[7] = MCubes[7];
+        }
+        private void rotateE()
+        {
+            Cube aux = ECubes[0];
+
+            ECubes[0] = ECubes[5];
+            ECubes[5] = ECubes[7];
+            ECubes[7] = ECubes[2];
+            ECubes[2] = aux;
+            aux = ECubes[1];
+            ECubes[1] = ECubes[3];
+            ECubes[3] = ECubes[6];
+            ECubes[6] = ECubes[4];
+            ECubes[4] = aux;
+
+            leftCubes[3] = ECubes[0];
+            leftCubes[4] = ECubes[3];
+            leftCubes[5] = ECubes[5];
+
+            backCubes[1] = ECubes[0];
+            backCubes[4] = ECubes[1];
+            backCubes[7] = ECubes[2];
+
+            bottomCubes[1] = ECubes[5];
+            bottomCubes[4] = ECubes[6];
+            bottomCubes[7] = ECubes[7];
+
+            rightCubes[1] = ECubes[2];
+            rightCubes[4] = ECubes[4];
+            rightCubes[7] = ECubes[7];
         }
         private void rotateDp()
         {
@@ -464,6 +562,18 @@ namespace LicentaV._1
             leftCubes[6] = bottomCubes[0];
             leftCubes[7] = bottomCubes[3];
             leftCubes[8] = bottomCubes[6];
+
+            SCubes[5] = bottomCubes[3];
+            SCubes[6] = bottomCubes[4];
+            SCubes[7] = bottomCubes[5];
+
+            MCubes[5] = bottomCubes[1];
+            MCubes[6] = bottomCubes[4];
+            MCubes[7] = bottomCubes[7];
+
+            ECubes[5] = bottomCubes[1];
+            ECubes[6] = bottomCubes[4];
+            ECubes[7] = bottomCubes[7];
         }
         private void rotateD()
         {
@@ -494,6 +604,18 @@ namespace LicentaV._1
             leftCubes[6] = bottomCubes[0];
             leftCubes[7] = bottomCubes[3];
             leftCubes[8] = bottomCubes[6];
+
+            SCubes[5] = bottomCubes[3];
+            SCubes[6] = bottomCubes[4];
+            SCubes[7] = bottomCubes[5];
+
+            MCubes[5] = bottomCubes[1];
+            MCubes[6] = bottomCubes[4];
+            MCubes[7] = bottomCubes[7];
+
+            ECubes[5] = bottomCubes[1];
+            ECubes[6] = bottomCubes[4];
+            ECubes[7] = bottomCubes[7];
         }
         private void rotateRp()
         {
@@ -524,6 +646,14 @@ namespace LicentaV._1
             bottomCubes[2] = rightCubes[6];
             bottomCubes[5] = rightCubes[7];
             bottomCubes[8] = rightCubes[8];
+
+            SCubes[2] = rightCubes[1];
+            SCubes[4] = rightCubes[4];
+            SCubes[7] = rightCubes[7];
+
+            ECubes[2] = rightCubes[1];
+            ECubes[4] = rightCubes[4];
+            ECubes[7] = rightCubes[7];
         }
         private void rotateL()
         {
@@ -554,6 +684,10 @@ namespace LicentaV._1
             bottomCubes[0] = leftCubes[6];
             bottomCubes[3] = leftCubes[7];
             bottomCubes[6] = leftCubes[8];
+
+            SCubes[0] = leftCubes[1];
+            SCubes[3] = leftCubes[4];
+            SCubes[5] = leftCubes[7];
         }
         private void rotateLp()
         {
@@ -584,6 +718,10 @@ namespace LicentaV._1
             bottomCubes[0] = leftCubes[6];
             bottomCubes[3] = leftCubes[7];
             bottomCubes[6] = leftCubes[8];
+
+            SCubes[0] = leftCubes[1];
+            SCubes[3] = leftCubes[4];
+            SCubes[5] = leftCubes[7];
         }
         private void rotateR()
         {
@@ -614,6 +752,14 @@ namespace LicentaV._1
             bottomCubes[2] = rightCubes[6];
             bottomCubes[5] = rightCubes[7];
             bottomCubes[8] = rightCubes[8];
+
+            SCubes[2] = rightCubes[1];
+            SCubes[4] = rightCubes[4];
+            SCubes[7] = rightCubes[7];
+
+            ECubes[2] = rightCubes[1];
+            ECubes[4] = rightCubes[4];
+            ECubes[7] = rightCubes[7];
         }
         private void rotateU()
         {
@@ -643,6 +789,14 @@ namespace LicentaV._1
             leftCubes[0] = topCubes[0];
             leftCubes[1] = topCubes[3];
             leftCubes[2] = topCubes[6];
+
+            SCubes[0] = topCubes[3];
+            SCubes[1] = topCubes[4];
+            SCubes[2] = topCubes[5];
+
+            MCubes[0] = topCubes[1];
+            MCubes[1] = topCubes[4];
+            MCubes[2] = topCubes[7];
         }
         private void rotateUp()
         {
@@ -673,6 +827,14 @@ namespace LicentaV._1
             leftCubes[0] = topCubes[0];
             leftCubes[1] = topCubes[3];
             leftCubes[2] = topCubes[6];
+
+            SCubes[0] = topCubes[3];
+            SCubes[1] = topCubes[4];
+            SCubes[2] = topCubes[5];
+
+            MCubes[0] = topCubes[1];
+            MCubes[1] = topCubes[4];
+            MCubes[2] = topCubes[7];
         }
         private void rotateF()
         {
@@ -703,6 +865,14 @@ namespace LicentaV._1
             leftCubes[2] = frontCubes[0];
             leftCubes[5] = frontCubes[3];
             leftCubes[8] = frontCubes[6];
+
+            MCubes[2] = frontCubes[1];
+            MCubes[4] = frontCubes[4];
+            MCubes[6] = frontCubes[7];
+
+            ECubes[0] = leftCubes[3];
+            ECubes[3] = leftCubes[4];
+            ECubes[5] = leftCubes[5];
         }
         private void rotateFp()
         {
@@ -733,6 +903,14 @@ namespace LicentaV._1
             leftCubes[2] = frontCubes[0];
             leftCubes[5] = frontCubes[3];
             leftCubes[8] = frontCubes[6];
+
+            MCubes[2] = frontCubes[1];
+            MCubes[4] = frontCubes[4];
+            MCubes[6] = frontCubes[7];
+
+            ECubes[0] = leftCubes[3];
+            ECubes[3] = leftCubes[4];
+            ECubes[5] = leftCubes[5];
         }
         private void rotateB()
         {
@@ -763,6 +941,14 @@ namespace LicentaV._1
             leftCubes[0] = backCubes[0];
             leftCubes[3] = backCubes[3];
             leftCubes[6] = backCubes[6];
+
+            MCubes[0] = backCubes[1];
+            MCubes[3] = backCubes[4];
+            MCubes[5] = backCubes[7];
+
+            ECubes[0] = backCubes[1];
+            ECubes[1] = backCubes[4];
+            ECubes[2] = backCubes[7];
         }
         private void rotateBp()
         {
@@ -793,44 +979,41 @@ namespace LicentaV._1
             leftCubes[0] = backCubes[0];
             leftCubes[3] = backCubes[3];
             leftCubes[6] = backCubes[6];
+
+            MCubes[0] = backCubes[1];
+            MCubes[3] = backCubes[4];
+            MCubes[5] = backCubes[7];
+
+            ECubes[0] = backCubes[1];
+            ECubes[1] = backCubes[4];
+            ECubes[2] = backCubes[7];
         }
         private void rotateX()
-        {           
+        {
+            rotateM();
+            rotateM();
+            rotateM();
+            rotateR();
+            rotateLp();
         }
-            private void Smove_Click(object sender, EventArgs em)
-        { 
-            /* R U R' U' R' F R2 U' R' U' R U R' F*/
-            RmoveTimer.Start();
-            wait(200);
-            UmoveTimer.Start();
-            wait(200);
-            RpMoveTimer.Start();
-            wait(200);
-            UpMoveTimer.Start();
-            wait(200);
-            RpMoveTimer.Start();
-            wait(200);
-            FmoveTimer.Start();
-            wait(200);
-            RmoveTimer.Start();
-            wait(200);
-            RmoveTimer.Start();
-            wait(200);
-            UpMoveTimer.Start();
-            wait(200);
-            RpMoveTimer.Start();
-            wait(200);
-            UpMoveTimer.Start();
-            wait(200);
-            RmoveTimer.Start();
-            wait(200);
-            UmoveTimer.Start();
-            wait(200);
-            RpMoveTimer.Start();
-            wait(200);
-            FpMoveTimer.Start();
-            wait(200);
-        }        
+        private void rotateY()
+        {
+            rotateE();
+            rotateE();
+            rotateE();
+            rotateU();
+            rotateBp();
+        }
+        private void rotateZ()
+        {
+            rotateBp();
+            rotateS();
+            rotateF();
+        }
+        private void Smove_Click(object sender, EventArgs em)
+        {
+            SmoveTimer.Start();            
+        }
         private void BpMove_Click(object sender, EventArgs e)
         {
             BpMoveTimer.Start();
@@ -904,6 +1087,10 @@ namespace LicentaV._1
             wait(200);
             UmoveTimer.Start();
         }
+        private void Emove_Click(object sender, EventArgs e)
+        {
+            EmoveTimer.Start();
+        }
 
         private void F2_Click(object sender, EventArgs e)
         {
@@ -931,6 +1118,10 @@ namespace LicentaV._1
             RmoveTimer.Start();
             wait(200);
             RmoveTimer.Start();
+        }
+        private void Mmove_Click(object sender, EventArgs e)
+        {
+            MmoveTimer.Start();
         }
         int cws = 90;
         int ccws = 0;
@@ -1079,6 +1270,7 @@ namespace LicentaV._1
             ccws += 10;
             if (ccws == 90)
             {
+                rotateX();
                 ccws = 0;
                 XmoveTimer.Stop();
             }
@@ -1095,6 +1287,7 @@ namespace LicentaV._1
             cws -= 10;
             if (cws == 0)
             {
+                rotateY();
                 cws = 90;
                 YmoveTimer.Stop();
             }
@@ -1111,6 +1304,7 @@ namespace LicentaV._1
             ccws += 10;
             if (ccws == 90)
             {
+                rotateZ();
                 ccws = 0;
                 ZmoveTimer.Stop();
             }
@@ -1383,6 +1577,94 @@ namespace LicentaV._1
                     wait(200);
                     scrambleOutput += " F2";
                     break;
+            }
+        }
+
+        private void SmoveTimer_Tick(object sender, EventArgs e)
+        {
+
+            timerFirstHalf();
+            foreach (Cube cube in SCubes)
+            {
+                cube.RotateCubeZ(10);
+            }
+            timerSecondHalf();
+            ccws += 10;
+            if (ccws == 90)
+            {
+                rotateS();
+                ccws = 0;
+                SmoveTimer.Stop();
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /* R U R' U' R' F R2 U' R' U' R U R' F*/
+            RmoveTimer.Start();
+            wait(200);
+            UmoveTimer.Start();
+            wait(200);
+            RpMoveTimer.Start();
+            wait(200);
+            UpMoveTimer.Start();
+            wait(200);
+            RpMoveTimer.Start();
+            wait(200);
+            FmoveTimer.Start();
+            wait(200);
+            RmoveTimer.Start();
+            wait(200);
+            RmoveTimer.Start();
+            wait(200);
+            UpMoveTimer.Start();
+            wait(200);
+            RpMoveTimer.Start();
+            wait(200);
+            UpMoveTimer.Start();
+            wait(200);
+            RmoveTimer.Start();
+            wait(200);
+            UmoveTimer.Start();
+            wait(200);
+            RpMoveTimer.Start();
+            wait(200);
+            FpMoveTimer.Start();
+            wait(200);
+        }
+
+        private void MmoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in MCubes)
+            {
+                cube.RotateCubeX(-10);
+            }
+            timerSecondHalf();
+            cws -= 10;
+            if (cws == 0)
+            {
+                rotateM();
+                cws = 90;
+                MmoveTimer.Stop();
+            }
+        }
+
+        private void EmoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in ECubes)
+            {
+                cube.RotateCubeY(-10);
+            }
+            timerSecondHalf();
+            cws -= 10;
+            if (cws == 0)
+            {
+                rotateE();
+                cws = 90;
+                EmoveTimer.Stop();
             }
         }
     }
