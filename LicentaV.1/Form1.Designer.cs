@@ -78,19 +78,8 @@
             this.B2moveButton = new System.Windows.Forms.Button();
             this.D2moveButton = new System.Windows.Forms.Button();
             this.SmoveTimer = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.MmoveTimer = new System.Windows.Forms.Timer(this.components);
             this.EmoveTimer = new System.Windows.Forms.Timer(this.components);
-            this.l1 = new System.Windows.Forms.Label();
-            this.left2 = new System.Windows.Forms.Label();
-            this.l3 = new System.Windows.Forms.Label();
-            this.l4 = new System.Windows.Forms.Label();
-            this.l5 = new System.Windows.Forms.Label();
-            this.l6 = new System.Windows.Forms.Label();
-            this.l7 = new System.Windows.Forms.Label();
-            this.l8 = new System.Windows.Forms.Label();
-            this.l9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.solveButton = new System.Windows.Forms.Button();
             this.SpMove = new System.Windows.Forms.Button();
             this.EpMove = new System.Windows.Forms.Button();
@@ -98,53 +87,15 @@
             this.SpMoveTimer = new System.Windows.Forms.Timer(this.components);
             this.MpMoveTimer = new System.Windows.Forms.Timer(this.components);
             this.EpMoveTimer = new System.Windows.Forms.Timer(this.components);
-            this.f7 = new System.Windows.Forms.Label();
-            this.f8 = new System.Windows.Forms.Label();
-            this.f9 = new System.Windows.Forms.Label();
-            this.f4 = new System.Windows.Forms.Label();
-            this.f5 = new System.Windows.Forms.Label();
-            this.f6 = new System.Windows.Forms.Label();
-            this.f3 = new System.Windows.Forms.Label();
-            this.front2 = new System.Windows.Forms.Label();
-            this.f1 = new System.Windows.Forms.Label();
-            this.t7 = new System.Windows.Forms.Label();
-            this.t8 = new System.Windows.Forms.Label();
-            this.t9 = new System.Windows.Forms.Label();
-            this.t4 = new System.Windows.Forms.Label();
-            this.t5 = new System.Windows.Forms.Label();
-            this.t6 = new System.Windows.Forms.Label();
-            this.t3 = new System.Windows.Forms.Label();
-            this.t2 = new System.Windows.Forms.Label();
-            this.t1 = new System.Windows.Forms.Label();
-            this.d7 = new System.Windows.Forms.Label();
-            this.d8 = new System.Windows.Forms.Label();
-            this.d9 = new System.Windows.Forms.Label();
-            this.d4 = new System.Windows.Forms.Label();
-            this.d5 = new System.Windows.Forms.Label();
-            this.d6 = new System.Windows.Forms.Label();
-            this.d3 = new System.Windows.Forms.Label();
-            this.down2 = new System.Windows.Forms.Label();
-            this.d1 = new System.Windows.Forms.Label();
-            this.r7 = new System.Windows.Forms.Label();
-            this.r8 = new System.Windows.Forms.Label();
-            this.r9 = new System.Windows.Forms.Label();
-            this.r4 = new System.Windows.Forms.Label();
-            this.r5 = new System.Windows.Forms.Label();
-            this.r6 = new System.Windows.Forms.Label();
-            this.r3 = new System.Windows.Forms.Label();
-            this.right2 = new System.Windows.Forms.Label();
-            this.r1 = new System.Windows.Forms.Label();
-            this.b7 = new System.Windows.Forms.Label();
-            this.b8 = new System.Windows.Forms.Label();
-            this.b9 = new System.Windows.Forms.Label();
-            this.b4 = new System.Windows.Forms.Label();
-            this.b5 = new System.Windows.Forms.Label();
-            this.b6 = new System.Windows.Forms.Label();
-            this.b3 = new System.Windows.Forms.Label();
-            this.back2 = new System.Windows.Forms.Label();
-            this.b1 = new System.Windows.Forms.Label();
             this.solveLabel = new System.Windows.Forms.Label();
             this.solveLabel2 = new System.Windows.Forms.Label();
+            this.ZpMove = new System.Windows.Forms.Button();
+            this.YpMove = new System.Windows.Forms.Button();
+            this.XpMove = new System.Windows.Forms.Button();
+            this.XpMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.YpMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.ZpMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.fastSolveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -505,11 +456,11 @@
             // 
             this.scrambleLabel.AutoSize = true;
             this.scrambleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scrambleLabel.Location = new System.Drawing.Point(521, 18);
+            this.scrambleLabel.Location = new System.Drawing.Point(1302, 67);
             this.scrambleLabel.Name = "scrambleLabel";
-            this.scrambleLabel.Size = new System.Drawing.Size(197, 46);
+            this.scrambleLabel.Size = new System.Drawing.Size(209, 46);
             this.scrambleLabel.TabIndex = 35;
-            this.scrambleLabel.Text = "Scramble";
+            this.scrambleLabel.Text = " Scramble";
             this.scrambleLabel.Visible = false;
             // 
             // U2moveButton
@@ -583,17 +534,6 @@
             this.SmoveTimer.Interval = 10;
             this.SmoveTimer.Tick += new System.EventHandler(this.SmoveTimer_Tick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1322, 176);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 48);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "T-Perm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MmoveTimer
             // 
             this.MmoveTimer.Interval = 10;
@@ -604,101 +544,9 @@
             this.EmoveTimer.Interval = 10;
             this.EmoveTimer.Tick += new System.EventHandler(this.EmoveTimer_Tick);
             // 
-            // l1
-            // 
-            this.l1.AutoSize = true;
-            this.l1.Location = new System.Drawing.Point(1321, 229);
-            this.l1.Name = "l1";
-            this.l1.Size = new System.Drawing.Size(51, 20);
-            this.l1.TabIndex = 43;
-            this.l1.Text = "label2";
-            // 
-            // left2
-            // 
-            this.left2.AutoSize = true;
-            this.left2.Location = new System.Drawing.Point(1378, 229);
-            this.left2.Name = "left2";
-            this.left2.Size = new System.Drawing.Size(51, 20);
-            this.left2.TabIndex = 44;
-            this.left2.Text = "label2";
-            // 
-            // l3
-            // 
-            this.l3.AutoSize = true;
-            this.l3.Location = new System.Drawing.Point(1435, 229);
-            this.l3.Name = "l3";
-            this.l3.Size = new System.Drawing.Size(51, 20);
-            this.l3.TabIndex = 45;
-            this.l3.Text = "label2";
-            // 
-            // l4
-            // 
-            this.l4.AutoSize = true;
-            this.l4.Location = new System.Drawing.Point(1321, 258);
-            this.l4.Name = "l4";
-            this.l4.Size = new System.Drawing.Size(51, 20);
-            this.l4.TabIndex = 48;
-            this.l4.Text = "label2";
-            // 
-            // l5
-            // 
-            this.l5.AutoSize = true;
-            this.l5.Location = new System.Drawing.Point(1378, 258);
-            this.l5.Name = "l5";
-            this.l5.Size = new System.Drawing.Size(51, 20);
-            this.l5.TabIndex = 47;
-            this.l5.Text = "label5";
-            // 
-            // l6
-            // 
-            this.l6.AutoSize = true;
-            this.l6.Location = new System.Drawing.Point(1435, 258);
-            this.l6.Name = "l6";
-            this.l6.Size = new System.Drawing.Size(51, 20);
-            this.l6.TabIndex = 46;
-            this.l6.Text = "label2";
-            // 
-            // l7
-            // 
-            this.l7.AutoSize = true;
-            this.l7.Location = new System.Drawing.Point(1321, 286);
-            this.l7.Name = "l7";
-            this.l7.Size = new System.Drawing.Size(51, 20);
-            this.l7.TabIndex = 51;
-            this.l7.Text = "label2";
-            // 
-            // l8
-            // 
-            this.l8.AutoSize = true;
-            this.l8.Location = new System.Drawing.Point(1378, 286);
-            this.l8.Name = "l8";
-            this.l8.Size = new System.Drawing.Size(51, 20);
-            this.l8.TabIndex = 50;
-            this.l8.Text = "label8";
-            // 
-            // l9
-            // 
-            this.l9.AutoSize = true;
-            this.l9.Location = new System.Drawing.Point(1435, 286);
-            this.l9.Name = "l9";
-            this.l9.Size = new System.Drawing.Size(51, 20);
-            this.l9.TabIndex = 49;
-            this.l9.Text = "label2";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1322, 311);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 48);
-            this.button2.TabIndex = 52;
-            this.button2.Text = "Show face";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // solveButton
             // 
-            this.solveButton.Location = new System.Drawing.Point(1322, 369);
+            this.solveButton.Location = new System.Drawing.Point(1422, 118);
             this.solveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.solveButton.Name = "solveButton";
             this.solveButton.Size = new System.Drawing.Size(92, 48);
@@ -755,420 +603,15 @@
             this.EpMoveTimer.Interval = 10;
             this.EpMoveTimer.Tick += new System.EventHandler(this.EpMoveTimer_Tick);
             // 
-            // f7
-            // 
-            this.f7.AutoSize = true;
-            this.f7.Location = new System.Drawing.Point(1501, 286);
-            this.f7.Name = "f7";
-            this.f7.Size = new System.Drawing.Size(51, 20);
-            this.f7.TabIndex = 65;
-            this.f7.Text = "label2";
-            // 
-            // f8
-            // 
-            this.f8.AutoSize = true;
-            this.f8.Location = new System.Drawing.Point(1558, 286);
-            this.f8.Name = "f8";
-            this.f8.Size = new System.Drawing.Size(60, 20);
-            this.f8.TabIndex = 64;
-            this.f8.Text = "label11";
-            // 
-            // f9
-            // 
-            this.f9.AutoSize = true;
-            this.f9.Location = new System.Drawing.Point(1615, 286);
-            this.f9.Name = "f9";
-            this.f9.Size = new System.Drawing.Size(51, 20);
-            this.f9.TabIndex = 63;
-            this.f9.Text = "label2";
-            // 
-            // f4
-            // 
-            this.f4.AutoSize = true;
-            this.f4.Location = new System.Drawing.Point(1501, 258);
-            this.f4.Name = "f4";
-            this.f4.Size = new System.Drawing.Size(51, 20);
-            this.f4.TabIndex = 62;
-            this.f4.Text = "label2";
-            // 
-            // f5
-            // 
-            this.f5.AutoSize = true;
-            this.f5.Location = new System.Drawing.Point(1558, 258);
-            this.f5.Name = "f5";
-            this.f5.Size = new System.Drawing.Size(60, 20);
-            this.f5.TabIndex = 61;
-            this.f5.Text = "label14";
-            // 
-            // f6
-            // 
-            this.f6.AutoSize = true;
-            this.f6.Location = new System.Drawing.Point(1615, 258);
-            this.f6.Name = "f6";
-            this.f6.Size = new System.Drawing.Size(51, 20);
-            this.f6.TabIndex = 60;
-            this.f6.Text = "label2";
-            // 
-            // f3
-            // 
-            this.f3.AutoSize = true;
-            this.f3.Location = new System.Drawing.Point(1615, 229);
-            this.f3.Name = "f3";
-            this.f3.Size = new System.Drawing.Size(51, 20);
-            this.f3.TabIndex = 59;
-            this.f3.Text = "label2";
-            // 
-            // front2
-            // 
-            this.front2.AutoSize = true;
-            this.front2.Location = new System.Drawing.Point(1558, 229);
-            this.front2.Name = "front2";
-            this.front2.Size = new System.Drawing.Size(60, 20);
-            this.front2.TabIndex = 58;
-            this.front2.Text = "label17";
-            // 
-            // f1
-            // 
-            this.f1.AutoSize = true;
-            this.f1.Location = new System.Drawing.Point(1501, 229);
-            this.f1.Name = "f1";
-            this.f1.Size = new System.Drawing.Size(51, 20);
-            this.f1.TabIndex = 57;
-            this.f1.Text = "label2";
-            // 
-            // t7
-            // 
-            this.t7.AutoSize = true;
-            this.t7.Location = new System.Drawing.Point(1501, 176);
-            this.t7.Name = "t7";
-            this.t7.Size = new System.Drawing.Size(51, 20);
-            this.t7.TabIndex = 74;
-            this.t7.Text = "label2";
-            // 
-            // t8
-            // 
-            this.t8.AutoSize = true;
-            this.t8.Location = new System.Drawing.Point(1558, 176);
-            this.t8.Name = "t8";
-            this.t8.Size = new System.Drawing.Size(60, 20);
-            this.t8.TabIndex = 73;
-            this.t8.Text = "label20";
-            // 
-            // t9
-            // 
-            this.t9.AutoSize = true;
-            this.t9.Location = new System.Drawing.Point(1615, 176);
-            this.t9.Name = "t9";
-            this.t9.Size = new System.Drawing.Size(51, 20);
-            this.t9.TabIndex = 72;
-            this.t9.Text = "label2";
-            // 
-            // t4
-            // 
-            this.t4.AutoSize = true;
-            this.t4.Location = new System.Drawing.Point(1501, 148);
-            this.t4.Name = "t4";
-            this.t4.Size = new System.Drawing.Size(51, 20);
-            this.t4.TabIndex = 71;
-            this.t4.Text = "label2";
-            // 
-            // t5
-            // 
-            this.t5.AutoSize = true;
-            this.t5.Location = new System.Drawing.Point(1558, 148);
-            this.t5.Name = "t5";
-            this.t5.Size = new System.Drawing.Size(60, 20);
-            this.t5.TabIndex = 70;
-            this.t5.Text = "label23";
-            // 
-            // t6
-            // 
-            this.t6.AutoSize = true;
-            this.t6.Location = new System.Drawing.Point(1615, 148);
-            this.t6.Name = "t6";
-            this.t6.Size = new System.Drawing.Size(51, 20);
-            this.t6.TabIndex = 69;
-            this.t6.Text = "label2";
-            // 
-            // t3
-            // 
-            this.t3.AutoSize = true;
-            this.t3.Location = new System.Drawing.Point(1615, 119);
-            this.t3.Name = "t3";
-            this.t3.Size = new System.Drawing.Size(51, 20);
-            this.t3.TabIndex = 68;
-            this.t3.Text = "label2";
-            // 
-            // t2
-            // 
-            this.t2.AutoSize = true;
-            this.t2.Location = new System.Drawing.Point(1558, 119);
-            this.t2.Name = "t2";
-            this.t2.Size = new System.Drawing.Size(60, 20);
-            this.t2.TabIndex = 67;
-            this.t2.Text = "label26";
-            // 
-            // t1
-            // 
-            this.t1.AutoSize = true;
-            this.t1.Location = new System.Drawing.Point(1501, 119);
-            this.t1.Name = "t1";
-            this.t1.Size = new System.Drawing.Size(51, 20);
-            this.t1.TabIndex = 66;
-            this.t1.Text = "label2";
-            // 
-            // d7
-            // 
-            this.d7.AutoSize = true;
-            this.d7.Location = new System.Drawing.Point(1501, 383);
-            this.d7.Name = "d7";
-            this.d7.Size = new System.Drawing.Size(51, 20);
-            this.d7.TabIndex = 83;
-            this.d7.Text = "label2";
-            // 
-            // d8
-            // 
-            this.d8.AutoSize = true;
-            this.d8.Location = new System.Drawing.Point(1558, 383);
-            this.d8.Name = "d8";
-            this.d8.Size = new System.Drawing.Size(60, 20);
-            this.d8.TabIndex = 82;
-            this.d8.Text = "label29";
-            // 
-            // d9
-            // 
-            this.d9.AutoSize = true;
-            this.d9.Location = new System.Drawing.Point(1615, 383);
-            this.d9.Name = "d9";
-            this.d9.Size = new System.Drawing.Size(51, 20);
-            this.d9.TabIndex = 81;
-            this.d9.Text = "label2";
-            // 
-            // d4
-            // 
-            this.d4.AutoSize = true;
-            this.d4.Location = new System.Drawing.Point(1501, 355);
-            this.d4.Name = "d4";
-            this.d4.Size = new System.Drawing.Size(51, 20);
-            this.d4.TabIndex = 80;
-            this.d4.Text = "label2";
-            // 
-            // d5
-            // 
-            this.d5.AutoSize = true;
-            this.d5.Location = new System.Drawing.Point(1558, 355);
-            this.d5.Name = "d5";
-            this.d5.Size = new System.Drawing.Size(60, 20);
-            this.d5.TabIndex = 79;
-            this.d5.Text = "label32";
-            // 
-            // d6
-            // 
-            this.d6.AutoSize = true;
-            this.d6.Location = new System.Drawing.Point(1615, 355);
-            this.d6.Name = "d6";
-            this.d6.Size = new System.Drawing.Size(51, 20);
-            this.d6.TabIndex = 78;
-            this.d6.Text = "label2";
-            // 
-            // d3
-            // 
-            this.d3.AutoSize = true;
-            this.d3.Location = new System.Drawing.Point(1615, 326);
-            this.d3.Name = "d3";
-            this.d3.Size = new System.Drawing.Size(51, 20);
-            this.d3.TabIndex = 77;
-            this.d3.Text = "label2";
-            // 
-            // down2
-            // 
-            this.down2.AutoSize = true;
-            this.down2.Location = new System.Drawing.Point(1558, 326);
-            this.down2.Name = "down2";
-            this.down2.Size = new System.Drawing.Size(60, 20);
-            this.down2.TabIndex = 76;
-            this.down2.Text = "label35";
-            // 
-            // d1
-            // 
-            this.d1.AutoSize = true;
-            this.d1.Location = new System.Drawing.Point(1501, 326);
-            this.d1.Name = "d1";
-            this.d1.Size = new System.Drawing.Size(51, 20);
-            this.d1.TabIndex = 75;
-            this.d1.Text = "label2";
-            // 
-            // r7
-            // 
-            this.r7.AutoSize = true;
-            this.r7.Location = new System.Drawing.Point(1688, 286);
-            this.r7.Name = "r7";
-            this.r7.Size = new System.Drawing.Size(51, 20);
-            this.r7.TabIndex = 92;
-            this.r7.Text = "label2";
-            // 
-            // r8
-            // 
-            this.r8.AutoSize = true;
-            this.r8.Location = new System.Drawing.Point(1745, 286);
-            this.r8.Name = "r8";
-            this.r8.Size = new System.Drawing.Size(60, 20);
-            this.r8.TabIndex = 91;
-            this.r8.Text = "label38";
-            // 
-            // r9
-            // 
-            this.r9.AutoSize = true;
-            this.r9.Location = new System.Drawing.Point(1802, 286);
-            this.r9.Name = "r9";
-            this.r9.Size = new System.Drawing.Size(51, 20);
-            this.r9.TabIndex = 90;
-            this.r9.Text = "label2";
-            // 
-            // r4
-            // 
-            this.r4.AutoSize = true;
-            this.r4.Location = new System.Drawing.Point(1688, 258);
-            this.r4.Name = "r4";
-            this.r4.Size = new System.Drawing.Size(51, 20);
-            this.r4.TabIndex = 89;
-            this.r4.Text = "label2";
-            // 
-            // r5
-            // 
-            this.r5.AutoSize = true;
-            this.r5.Location = new System.Drawing.Point(1745, 258);
-            this.r5.Name = "r5";
-            this.r5.Size = new System.Drawing.Size(60, 20);
-            this.r5.TabIndex = 88;
-            this.r5.Text = "label41";
-            // 
-            // r6
-            // 
-            this.r6.AutoSize = true;
-            this.r6.Location = new System.Drawing.Point(1802, 258);
-            this.r6.Name = "r6";
-            this.r6.Size = new System.Drawing.Size(51, 20);
-            this.r6.TabIndex = 87;
-            this.r6.Text = "label2";
-            // 
-            // r3
-            // 
-            this.r3.AutoSize = true;
-            this.r3.Location = new System.Drawing.Point(1802, 229);
-            this.r3.Name = "r3";
-            this.r3.Size = new System.Drawing.Size(51, 20);
-            this.r3.TabIndex = 86;
-            this.r3.Text = "label2";
-            // 
-            // right2
-            // 
-            this.right2.AutoSize = true;
-            this.right2.Location = new System.Drawing.Point(1745, 229);
-            this.right2.Name = "right2";
-            this.right2.Size = new System.Drawing.Size(60, 20);
-            this.right2.TabIndex = 85;
-            this.right2.Text = "label44";
-            // 
-            // r1
-            // 
-            this.r1.AutoSize = true;
-            this.r1.Location = new System.Drawing.Point(1688, 229);
-            this.r1.Name = "r1";
-            this.r1.Size = new System.Drawing.Size(51, 20);
-            this.r1.TabIndex = 84;
-            this.r1.Text = "label2";
-            // 
-            // b7
-            // 
-            this.b7.AutoSize = true;
-            this.b7.Location = new System.Drawing.Point(1874, 286);
-            this.b7.Name = "b7";
-            this.b7.Size = new System.Drawing.Size(51, 20);
-            this.b7.TabIndex = 101;
-            this.b7.Text = "label2";
-            // 
-            // b8
-            // 
-            this.b8.AutoSize = true;
-            this.b8.Location = new System.Drawing.Point(1931, 286);
-            this.b8.Name = "b8";
-            this.b8.Size = new System.Drawing.Size(60, 20);
-            this.b8.TabIndex = 100;
-            this.b8.Text = "label47";
-            // 
-            // b9
-            // 
-            this.b9.AutoSize = true;
-            this.b9.Location = new System.Drawing.Point(1988, 286);
-            this.b9.Name = "b9";
-            this.b9.Size = new System.Drawing.Size(51, 20);
-            this.b9.TabIndex = 99;
-            this.b9.Text = "label2";
-            // 
-            // b4
-            // 
-            this.b4.AutoSize = true;
-            this.b4.Location = new System.Drawing.Point(1874, 258);
-            this.b4.Name = "b4";
-            this.b4.Size = new System.Drawing.Size(51, 20);
-            this.b4.TabIndex = 98;
-            this.b4.Text = "label2";
-            // 
-            // b5
-            // 
-            this.b5.AutoSize = true;
-            this.b5.Location = new System.Drawing.Point(1931, 258);
-            this.b5.Name = "b5";
-            this.b5.Size = new System.Drawing.Size(60, 20);
-            this.b5.TabIndex = 97;
-            this.b5.Text = "label50";
-            // 
-            // b6
-            // 
-            this.b6.AutoSize = true;
-            this.b6.Location = new System.Drawing.Point(1988, 258);
-            this.b6.Name = "b6";
-            this.b6.Size = new System.Drawing.Size(51, 20);
-            this.b6.TabIndex = 96;
-            this.b6.Text = "label2";
-            // 
-            // b3
-            // 
-            this.b3.AutoSize = true;
-            this.b3.Location = new System.Drawing.Point(1988, 229);
-            this.b3.Name = "b3";
-            this.b3.Size = new System.Drawing.Size(51, 20);
-            this.b3.TabIndex = 95;
-            this.b3.Text = "label2";
-            // 
-            // back2
-            // 
-            this.back2.AutoSize = true;
-            this.back2.Location = new System.Drawing.Point(1931, 229);
-            this.back2.Name = "back2";
-            this.back2.Size = new System.Drawing.Size(60, 20);
-            this.back2.TabIndex = 94;
-            this.back2.Text = "label53";
-            // 
-            // b1
-            // 
-            this.b1.AutoSize = true;
-            this.b1.Location = new System.Drawing.Point(1874, 229);
-            this.b1.Name = "b1";
-            this.b1.Size = new System.Drawing.Size(51, 20);
-            this.b1.TabIndex = 93;
-            this.b1.Text = "label2";
-            // 
             // solveLabel
             // 
             this.solveLabel.AutoSize = true;
             this.solveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.solveLabel.Location = new System.Drawing.Point(1321, 449);
             this.solveLabel.Name = "solveLabel";
-            this.solveLabel.Size = new System.Drawing.Size(125, 46);
+            this.solveLabel.Size = new System.Drawing.Size(304, 46);
             this.solveLabel.TabIndex = 102;
-            this.solveLabel.Text = "Solve";
+            this.solveLabel.Text = "Edges Solution";
             // 
             // solveLabel2
             // 
@@ -1176,78 +619,85 @@
             this.solveLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.solveLabel2.Location = new System.Drawing.Point(1321, 495);
             this.solveLabel2.Name = "solveLabel2";
-            this.solveLabel2.Size = new System.Drawing.Size(148, 46);
+            this.solveLabel2.Size = new System.Drawing.Size(335, 46);
             this.solveLabel2.TabIndex = 103;
-            this.solveLabel2.Text = "Solve2";
+            this.solveLabel2.Text = "Corners Solution";
+            // 
+            // ZpMove
+            // 
+            this.ZpMove.Location = new System.Drawing.Point(187, 192);
+            this.ZpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ZpMove.Name = "ZpMove";
+            this.ZpMove.Size = new System.Drawing.Size(75, 77);
+            this.ZpMove.TabIndex = 106;
+            this.ZpMove.Text = "z\'";
+            this.ZpMove.UseVisualStyleBackColor = true;
+            this.ZpMove.Click += new System.EventHandler(this.ZpMove_Click);
+            // 
+            // YpMove
+            // 
+            this.YpMove.Location = new System.Drawing.Point(103, 192);
+            this.YpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.YpMove.Name = "YpMove";
+            this.YpMove.Size = new System.Drawing.Size(75, 77);
+            this.YpMove.TabIndex = 105;
+            this.YpMove.Text = "y\'";
+            this.YpMove.UseVisualStyleBackColor = true;
+            this.YpMove.Click += new System.EventHandler(this.YpMove_Click);
+            // 
+            // XpMove
+            // 
+            this.XpMove.Location = new System.Drawing.Point(19, 192);
+            this.XpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.XpMove.Name = "XpMove";
+            this.XpMove.Size = new System.Drawing.Size(75, 77);
+            this.XpMove.TabIndex = 104;
+            this.XpMove.Text = "x\'";
+            this.XpMove.UseVisualStyleBackColor = true;
+            this.XpMove.Click += new System.EventHandler(this.XpMove_Click);
+            // 
+            // XpMoveTimer
+            // 
+            this.XpMoveTimer.Interval = 10;
+            this.XpMoveTimer.Tick += new System.EventHandler(this.XpMoveTimer_Tick);
+            // 
+            // YpMoveTimer
+            // 
+            this.YpMoveTimer.Interval = 10;
+            this.YpMoveTimer.Tick += new System.EventHandler(this.YpMoveTimer_Tick);
+            // 
+            // ZpMoveTimer
+            // 
+            this.ZpMoveTimer.Interval = 10;
+            this.ZpMoveTimer.Tick += new System.EventHandler(this.ZpMoveTimer_Tick);
+            // 
+            // fastSolveButton
+            // 
+            this.fastSolveButton.Location = new System.Drawing.Point(1322, 176);
+            this.fastSolveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.fastSolveButton.Name = "fastSolveButton";
+            this.fastSolveButton.Size = new System.Drawing.Size(192, 48);
+            this.fastSolveButton.TabIndex = 108;
+            this.fastSolveButton.Text = "Fast Solve";
+            this.fastSolveButton.UseVisualStyleBackColor = true;
+            this.fastSolveButton.Click += new System.EventHandler(this.fastSolveButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(2135, 840);
+            this.Controls.Add(this.fastSolveButton);
+            this.Controls.Add(this.ZpMove);
+            this.Controls.Add(this.YpMove);
+            this.Controls.Add(this.XpMove);
             this.Controls.Add(this.solveLabel2);
             this.Controls.Add(this.solveLabel);
-            this.Controls.Add(this.b7);
-            this.Controls.Add(this.b8);
-            this.Controls.Add(this.b9);
-            this.Controls.Add(this.b4);
-            this.Controls.Add(this.b5);
-            this.Controls.Add(this.b6);
-            this.Controls.Add(this.b3);
-            this.Controls.Add(this.back2);
-            this.Controls.Add(this.b1);
-            this.Controls.Add(this.r7);
-            this.Controls.Add(this.r8);
-            this.Controls.Add(this.r9);
-            this.Controls.Add(this.r4);
-            this.Controls.Add(this.r5);
-            this.Controls.Add(this.r6);
-            this.Controls.Add(this.r3);
-            this.Controls.Add(this.right2);
-            this.Controls.Add(this.r1);
-            this.Controls.Add(this.d7);
-            this.Controls.Add(this.d8);
-            this.Controls.Add(this.d9);
-            this.Controls.Add(this.d4);
-            this.Controls.Add(this.d5);
-            this.Controls.Add(this.d6);
-            this.Controls.Add(this.d3);
-            this.Controls.Add(this.down2);
-            this.Controls.Add(this.d1);
-            this.Controls.Add(this.t7);
-            this.Controls.Add(this.t8);
-            this.Controls.Add(this.t9);
-            this.Controls.Add(this.t4);
-            this.Controls.Add(this.t5);
-            this.Controls.Add(this.t6);
-            this.Controls.Add(this.t3);
-            this.Controls.Add(this.t2);
-            this.Controls.Add(this.t1);
-            this.Controls.Add(this.f7);
-            this.Controls.Add(this.f8);
-            this.Controls.Add(this.f9);
-            this.Controls.Add(this.f4);
-            this.Controls.Add(this.f5);
-            this.Controls.Add(this.f6);
-            this.Controls.Add(this.f3);
-            this.Controls.Add(this.front2);
-            this.Controls.Add(this.f1);
             this.Controls.Add(this.SpMove);
             this.Controls.Add(this.EpMove);
             this.Controls.Add(this.MpMove);
             this.Controls.Add(this.solveButton);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.l7);
-            this.Controls.Add(this.l8);
-            this.Controls.Add(this.l9);
-            this.Controls.Add(this.l4);
-            this.Controls.Add(this.l5);
-            this.Controls.Add(this.l6);
-            this.Controls.Add(this.l3);
-            this.Controls.Add(this.left2);
-            this.Controls.Add(this.l1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.D2moveButton);
             this.Controls.Add(this.B2moveButton);
             this.Controls.Add(this.F2moveButton);
@@ -1284,6 +734,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -1342,19 +793,8 @@
         private System.Windows.Forms.Button B2moveButton;
         private System.Windows.Forms.Button D2moveButton;
         private System.Windows.Forms.Timer SmoveTimer;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer MmoveTimer;
         private System.Windows.Forms.Timer EmoveTimer;
-        private System.Windows.Forms.Label l1;
-        private System.Windows.Forms.Label left2;
-        private System.Windows.Forms.Label l3;
-        private System.Windows.Forms.Label l4;
-        private System.Windows.Forms.Label l5;
-        private System.Windows.Forms.Label l6;
-        private System.Windows.Forms.Label l7;
-        private System.Windows.Forms.Label l8;
-        private System.Windows.Forms.Label l9;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button solveButton;
         private System.Windows.Forms.Button SpMove;
         private System.Windows.Forms.Button EpMove;
@@ -1362,53 +802,15 @@
         private System.Windows.Forms.Timer SpMoveTimer;
         private System.Windows.Forms.Timer MpMoveTimer;
         private System.Windows.Forms.Timer EpMoveTimer;
-        private System.Windows.Forms.Label f7;
-        private System.Windows.Forms.Label f8;
-        private System.Windows.Forms.Label f9;
-        private System.Windows.Forms.Label f4;
-        private System.Windows.Forms.Label f5;
-        private System.Windows.Forms.Label f6;
-        private System.Windows.Forms.Label f3;
-        private System.Windows.Forms.Label front2;
-        private System.Windows.Forms.Label f1;
-        private System.Windows.Forms.Label t7;
-        private System.Windows.Forms.Label t8;
-        private System.Windows.Forms.Label t9;
-        private System.Windows.Forms.Label t4;
-        private System.Windows.Forms.Label t5;
-        private System.Windows.Forms.Label t6;
-        private System.Windows.Forms.Label t3;
-        private System.Windows.Forms.Label t2;
-        private System.Windows.Forms.Label t1;
-        private System.Windows.Forms.Label d7;
-        private System.Windows.Forms.Label d8;
-        private System.Windows.Forms.Label d9;
-        private System.Windows.Forms.Label d4;
-        private System.Windows.Forms.Label d5;
-        private System.Windows.Forms.Label d6;
-        private System.Windows.Forms.Label d3;
-        private System.Windows.Forms.Label down2;
-        private System.Windows.Forms.Label d1;
-        private System.Windows.Forms.Label r7;
-        private System.Windows.Forms.Label r8;
-        private System.Windows.Forms.Label r9;
-        private System.Windows.Forms.Label r4;
-        private System.Windows.Forms.Label r5;
-        private System.Windows.Forms.Label r6;
-        private System.Windows.Forms.Label r3;
-        private System.Windows.Forms.Label right2;
-        private System.Windows.Forms.Label r1;
-        private System.Windows.Forms.Label b7;
-        private System.Windows.Forms.Label b8;
-        private System.Windows.Forms.Label b9;
-        private System.Windows.Forms.Label b4;
-        private System.Windows.Forms.Label b5;
-        private System.Windows.Forms.Label b6;
-        private System.Windows.Forms.Label b3;
-        private System.Windows.Forms.Label back2;
-        private System.Windows.Forms.Label b1;
         private System.Windows.Forms.Label solveLabel;
         private System.Windows.Forms.Label solveLabel2;
+        private System.Windows.Forms.Button ZpMove;
+        private System.Windows.Forms.Button YpMove;
+        private System.Windows.Forms.Button XpMove;
+        private System.Windows.Forms.Timer XpMoveTimer;
+        private System.Windows.Forms.Timer YpMoveTimer;
+        private System.Windows.Forms.Timer ZpMoveTimer;
+        private System.Windows.Forms.Button fastSolveButton;
     }
 }
 

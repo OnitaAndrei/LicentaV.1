@@ -12,9 +12,12 @@ namespace LicentaV._1
 {
     public partial class Form1 : Form
     {
-        int frameAngle = 90; // Avaliable 1,2,3,5,6,9,10,15,18,30,45,90
-        int waitingTime = 1; // Recomanded 200 for every frameAngle (for 90 1 will be enough)
+        int frameAngle = 10; // Avaliable 1,2,3,5,6,9,10,15,18,30,45,90
+        int waitingTime = 200; // Recomanded 200 for every frameAngle (for 90 1 will be enough)
         int turningSpeed = 1;
+        Color yellow = Color.FromArgb(170,170,0);
+        Color orange = Color.FromArgb(160, 100, 20);
+        Color backgroundColor = Color.FromArgb(71,44,44);
         string[,] whiteFace =
         {
             { "Ac", "As", "Bc" },
@@ -87,17 +90,16 @@ namespace LicentaV._1
             { "Xs", "5", "Vs" },
             { "Xc", "Ws", "Wc" }
         };
-
-
+       
         public Form1()
-        {
+        {            
             InitializeComponent();
         }
         private void timerFirstHalf()
         {
             img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             grp = Graphics.FromImage(img);
-            grp.Clear(Color.DimGray);
+            grp.Clear(backgroundColor);
             foreach (Cube cube in cubes)
             {
                 cube.RotateCubeX(20);
@@ -254,120 +256,120 @@ namespace LicentaV._1
             {
                 if (bottomCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Yellow), cube.getBottom());
+                    grp.FillPolygon(new SolidBrush(yellow), cube.getBottom());
                 }
                 if (frontCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Green), cube.getFront());
+                    grp.FillPolygon(new SolidBrush(Color.DarkGreen), cube.getFront());
                 }
                 if (rightCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Red), cube.getRight());
+                    grp.FillPolygon(new SolidBrush(Color.DarkRed), cube.getRight());
                 }
             }
             if (cubePoints[7] == cube.b[2])
             {
                 if (topCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.White), cube.getTop());
+                    grp.FillPolygon(new SolidBrush(Color.Gray), cube.getTop());
                 }
                 if (frontCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Green), cube.getFront());
+                    grp.FillPolygon(new SolidBrush(Color.DarkGreen), cube.getFront());
                 }
                 if (rightCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Red), cube.getRight());
+                    grp.FillPolygon(new SolidBrush(Color.DarkRed), cube.getRight());
                 }
             }
             if (cubePoints[7] == cube.c[2])
             {
                 if (topCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.White), cube.getTop());
+                    grp.FillPolygon(new SolidBrush(Color.Gray), cube.getTop());
                 }
                 if (backCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Blue), cube.getBack());
+                    grp.FillPolygon(new SolidBrush(Color.DarkBlue), cube.getBack());
                 }
                 if (rightCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Red), cube.getRight());
+                    grp.FillPolygon(new SolidBrush(Color.DarkRed), cube.getRight());
                 }
             }
             if (cubePoints[7] == cube.d[2])
             {
                 if (bottomCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Yellow), cube.getBottom());
+                    grp.FillPolygon(new SolidBrush(yellow), cube.getBottom());
                 }
                 if (backCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Blue), cube.getBack());
+                    grp.FillPolygon(new SolidBrush(Color.DarkBlue), cube.getBack());
                 }
                 if (rightCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Red), cube.getRight());
+                    grp.FillPolygon(new SolidBrush(Color.DarkRed), cube.getRight());
                 }
             }
             if (cubePoints[7] == cube.e[2])
             {
                 if (bottomCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Yellow), cube.getBottom());
+                    grp.FillPolygon(new SolidBrush(yellow), cube.getBottom());
                 }
                 if (leftCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Orange), cube.getLeft());
+                    grp.FillPolygon(new SolidBrush(orange), cube.getLeft());
                 }
                 if (frontCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Green), cube.getFront());
+                    grp.FillPolygon(new SolidBrush(Color.DarkGreen), cube.getFront());
                 }
             }
             if (cubePoints[7] == cube.f[2])
             {
                 if (topCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.White), cube.getTop());
+                    grp.FillPolygon(new SolidBrush(Color.Gray), cube.getTop());
                 }
                 if (leftCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Orange), cube.getLeft());
+                    grp.FillPolygon(new SolidBrush(orange), cube.getLeft());
                 }
                 if (frontCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Green), cube.getFront());
+                    grp.FillPolygon(new SolidBrush(Color.DarkGreen), cube.getFront());
                 }
             }
             if (cubePoints[7] == cube.g[2])
             {
                 if (topCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.White), cube.getTop());
+                    grp.FillPolygon(new SolidBrush(Color.Gray), cube.getTop());
                 }
                 if (leftCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Orange), cube.getLeft());
+                    grp.FillPolygon(new SolidBrush(orange), cube.getLeft());
                 }
                 if (backCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Blue), cube.getBack());
+                    grp.FillPolygon(new SolidBrush(Color.DarkBlue), cube.getBack());
                 }
             }
             if (cubePoints[7] == cube.h[2])
             {
                 if (bottomCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Yellow), cube.getBottom());
+                    grp.FillPolygon(new SolidBrush(yellow), cube.getBottom());
                 }
                 if (leftCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Orange), cube.getLeft());
+                    grp.FillPolygon(new SolidBrush(orange), cube.getLeft());
                 }
                 if (backCubes.Contains(cube))
                 {
-                    grp.FillPolygon(new SolidBrush(Color.Blue), cube.getBack());
+                    grp.FillPolygon(new SolidBrush(Color.DarkBlue), cube.getBack());
                 }
             }           
         }
@@ -424,6 +426,7 @@ namespace LicentaV._1
 
         private void Form1_Load(object sender, EventArgs ea)
         {
+            this.BackColor = backgroundColor;
             UmoveTimer.Interval =turningSpeed;
             LmoveTimer.Interval = turningSpeed;
             FmoveTimer.Interval = turningSpeed;
@@ -494,7 +497,7 @@ namespace LicentaV._1
 
             img = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             grp = Graphics.FromImage(img);
-            grp.Clear(Color.DimGray);
+            grp.Clear(backgroundColor);
             foreach (Cube cube in cubes)
             {
                 cube.RotateCubeY(-20);
@@ -1195,6 +1198,25 @@ namespace LicentaV._1
             rotateS();
             rotateF();
         }
+
+        private void rotateXp()
+        {
+            rotateX();
+            rotateX();
+            rotateX();
+        }
+        private void rotateYp()
+        {
+            rotateY();
+            rotateY();
+            rotateY();
+        }
+        private void rotateZp()
+        {
+            rotateZ();
+            rotateZ();
+            rotateZ();
+        }
         private void Smove_Click(object sender, EventArgs em)
         {
             SmoveTimer.Start();            
@@ -1316,6 +1338,21 @@ namespace LicentaV._1
             RmoveTimer.Start();
             wait(waitingTime);
             RmoveTimer.Start();
+        }
+
+        private void YpMove_Click(object sender, EventArgs e)
+        {
+            YpMoveTimer.Start();
+        }
+
+        private void ZpMove_Click(object sender, EventArgs e)
+        {
+            ZpMoveTimer.Start();
+        }
+
+        private void XpMove_Click(object sender, EventArgs e)
+        {
+            XpMoveTimer.Start();
         }
         private void Mmove_Click(object sender, EventArgs e)
         {
@@ -1524,6 +1561,56 @@ namespace LicentaV._1
                 LmoveTimer.Stop();
             }
         }
+        private void XpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in cubes)
+            {
+                cube.RotateCubeX(-frameAngle);
+            }
+            timerSecondHalf();
+            cws -= frameAngle;
+            if (cws == 0)
+            {
+                rotateXp();
+                cws = 90;
+                XpMoveTimer.Stop();
+            }
+        }
+
+        private void YpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in cubes)
+            {
+                cube.RotateCubeY(frameAngle);
+            }
+            timerSecondHalf();
+            ccws += frameAngle;
+            if (ccws == 90)
+            {
+                rotateYp();
+                ccws = 0;
+                YpMoveTimer.Stop();
+            }
+        }
+
+        private void ZpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in cubes)
+            {
+                cube.RotateCubeZ(-frameAngle);
+            }
+            timerSecondHalf();
+            cws -= frameAngle;
+            if (cws == 0)
+            {
+                rotateZp();
+                cws = 90;
+                ZpMoveTimer.Stop();
+            }
+        }
 
         private void LpMovetimer_Tick(object sender, EventArgs e)
         {
@@ -1578,6 +1665,11 @@ namespace LicentaV._1
         string scrambleOutput;
         private void Scramble_Click(object sender, EventArgs e)
         {
+            fastSolve();
+            frameAngle = 10;
+            waitingTime = 200;
+            turningSpeed = 1;
+
             Random randomGenerator = new Random();
             int randomNumber = randomGenerator.Next(6); ;
             switch (randomNumber)
@@ -1869,6 +1961,23 @@ namespace LicentaV._1
             wait(waitingTime);
         }
 
+        private void X()
+        {
+            XmoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void Y()
+        {
+            YmoveTimer.Start();
+            wait(waitingTime);
+        }
+
+        private void Z()
+        {
+            ZmoveTimer.Start();
+            wait(waitingTime);
+        }
+
         private void B()
         {
             BmoveTimer.Start();
@@ -1937,6 +2046,8 @@ namespace LicentaV._1
             EmoveTimer.Start();
             wait(waitingTime);
         }
+
+
         private void Tperm()
         {
             /* R U R' U' R' F R2 U' R' U' R U R' F' */
@@ -1994,13 +2105,6 @@ namespace LicentaV._1
             F();
             R();           
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            button1.Enabled = false;
-            Tperm();
-            button1.Enabled = true;
-        }
-
         private void MmoveTimer_Tick(object sender, EventArgs e)
         {
             timerFirstHalf();
@@ -2083,71 +2187,7 @@ namespace LicentaV._1
                 cws = 90;
                 EpMoveTimer.Stop();
             }
-        }
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            l1.Text = leftFace[0, 0];
-            left2.Text = leftFace[0, 1];
-            l3.Text = leftFace[0, 2];
-            l4.Text = leftFace[1, 0];
-            l5.Text = leftFace[1, 1];
-            l6.Text = leftFace[1, 2];
-            l7.Text = leftFace[2, 0];
-            l8.Text = leftFace[2, 1];
-            l9.Text = leftFace[2, 2];
-
-            f1.Text = frontFace[0, 0];
-            front2.Text = frontFace[0, 1];
-            f3.Text = frontFace[0, 2];
-            f4.Text = frontFace[1, 0];
-            f5.Text = frontFace[1, 1];
-            f6.Text = frontFace[1, 2];
-            f7.Text = frontFace[2, 0];
-            f8.Text = frontFace[2, 1];
-            f9.Text = frontFace[2, 2];
-
-            r1.Text = rightFace[0, 0];
-            right2.Text = rightFace[0, 1];
-            r3.Text = rightFace[0, 2];
-            r4.Text = rightFace[1, 0];
-            r5.Text = rightFace[1, 1];
-            r6.Text = rightFace[1, 2];
-            r7.Text = rightFace[2, 0];
-            r8.Text = rightFace[2, 1];
-            r9.Text = rightFace[2, 2];
-
-            b1.Text = backFace[0, 0];
-            back2.Text = backFace[0, 1];
-            b3.Text = backFace[0, 2];
-            b4.Text = backFace[1, 0];
-            b5.Text = backFace[1, 1];
-            b6.Text = backFace[1, 2];
-            b7.Text = backFace[2, 0];
-            b8.Text = backFace[2, 1];
-            b9.Text = backFace[2, 2];
-
-            t1.Text = topFace[0, 0];
-            t2.Text = topFace[0, 1];
-            t3.Text = topFace[0, 2];
-            t4.Text = topFace[1, 0];
-            t5.Text = topFace[1, 1];
-            t6.Text = topFace[1, 2];
-            t7.Text = topFace[2, 0];
-            t8.Text = topFace[2, 1];
-            t9.Text = topFace[2, 2];
-
-            d1.Text = bottomFace[0, 0];
-            down2.Text = bottomFace[0, 1];
-            d3.Text = bottomFace[0, 2];
-            d4.Text = bottomFace[1, 0];
-            d5.Text = bottomFace[1, 1];
-            d6.Text = bottomFace[1, 2];
-            d7.Text = bottomFace[2, 0];
-            d8.Text = bottomFace[2, 1];
-            d9.Text = bottomFace[2, 2];
-        }
+        }       
         private void solve(string bumper)
         {           
             string exeption;
@@ -2764,12 +2804,63 @@ namespace LicentaV._1
         }
         private void solveButton_Click(object sender, EventArgs e)
         {
+            frameAngle = 10;
+            waitingTime = 200;
+            turningSpeed = 1;
             int moveCounter = 0;
             solveButton.Enabled = false;
-            solveLabel.Text = "";
-            solveLabel2.Text = "";
-            bool ok = false;
-            while(!ok)
+            while(frontFace[1,1] != "2")
+            {
+                X();
+                if(frontFace[1, 1] != "2")
+                Y();
+            }
+            while (topFace[1, 1] != "0")
+            {                             
+                    Z();
+            }
+            solveLabel.Text = "Edges solution:";
+            solveLabel2.Text = "Corners solution:";
+            bool ok = true;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if ((i + j) % 2 != 0)
+                    {
+                        if (topFace[i, j] != whiteFace[i, j])
+                        {
+                            ok = false;
+                        }
+
+                        if (leftFace[i, j] != orangeFace[i, j])
+                        {
+                            ok = false;
+                        }
+
+                        if (frontFace[i, j] != greenFace[i, j])
+                        {
+                            ok = false;
+                        }
+
+                        if (rightFace[i, j] != redFace[i, j])
+                        {
+                            ok = false;
+                        }
+
+                        if (backFace[i, j] != blueFace[i, j])
+                        {
+                            ok = false;
+                        }
+
+                        if (bottomFace[i, j] != yellowFace[i, j])
+                        {
+                            ok = false;
+                        }
+                    }
+                }
+            }
+            while (!ok)
             {
                 solve(topFace[1, 2]);
                 moveCounter++;
@@ -2863,6 +2954,163 @@ namespace LicentaV._1
                 }
             }
             solveButton.Enabled = true;
+        }
+        private void fastSolve()
+        {
+            frameAngle = 90;
+            waitingTime = 1;
+            turningSpeed = 1;
+            int moveCounter = 0;
+            solveButton.Enabled = false;
+            while (frontFace[1, 1] != "2")
+            {
+                X();
+                if (frontFace[1, 1] != "2")
+                    Y();
+            }
+            while (topFace[1, 1] != "0")
+            {
+                Z();
+            }
+            solveLabel.Text = "Edges solution:";
+            solveLabel2.Text = "Corners solution:";
+            bool ok = true;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if ((i + j) % 2 != 0)
+                    {
+                        if (topFace[i, j] != whiteFace[i, j])
+                        {
+                            ok = false;
+                        }
+
+                        if (leftFace[i, j] != orangeFace[i, j])
+                        {
+                            ok = false;
+                        }
+
+                        if (frontFace[i, j] != greenFace[i, j])
+                        {
+                            ok = false;
+                        }
+
+                        if (rightFace[i, j] != redFace[i, j])
+                        {
+                            ok = false;
+                        }
+
+                        if (backFace[i, j] != blueFace[i, j])
+                        {
+                            ok = false;
+                        }
+
+                        if (bottomFace[i, j] != yellowFace[i, j])
+                        {
+                            ok = false;
+                        }
+                    }
+                }
+            }
+            while (!ok)
+            {
+                solve(topFace[1, 2]);
+                moveCounter++;
+                ok = true;
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if ((i + j) % 2 != 0)
+                        {
+                            if (topFace[i, j] != whiteFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (leftFace[i, j] != orangeFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (frontFace[i, j] != greenFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (rightFace[i, j] != redFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (backFace[i, j] != blueFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (bottomFace[i, j] != yellowFace[i, j])
+                            {
+                                ok = false;
+                            }
+                        }
+                    }
+                }
+            }
+            if (moveCounter % 2 != 0)
+            {
+                Rperm();
+                solveLabel.Text += " Ra";
+            }
+            ok = false;
+            while (!ok)
+            {
+                solve(leftFace[0, 0]);
+                ok = true;
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if ((i + j) % 2 == 0 && (i != 1 && j != 1))
+                        {
+                            if (topFace[i, j] != whiteFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (leftFace[i, j] != orangeFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (frontFace[i, j] != greenFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (rightFace[i, j] != redFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (backFace[i, j] != blueFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (bottomFace[i, j] != yellowFace[i, j])
+                            {
+                                ok = false;
+                            }
+                        }
+                    }
+                }
+            }
+            solveButton.Enabled = true;
+        }
+        private void fastSolveButton_Click(object sender, EventArgs e)
+        {
+            fastSolve();
         }
     }
 }
