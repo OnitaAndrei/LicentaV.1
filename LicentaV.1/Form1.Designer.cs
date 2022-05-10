@@ -96,12 +96,18 @@
             this.YpMoveTimer = new System.Windows.Forms.Timer(this.components);
             this.ZpMoveTimer = new System.Windows.Forms.Timer(this.components);
             this.fastSolveButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(675, 104);
+            this.pictureBox1.Location = new System.Drawing.Point(989, 209);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(639, 722);
@@ -110,194 +116,302 @@
             // 
             // UmoveButton
             // 
-            this.UmoveButton.Location = new System.Drawing.Point(439, 297);
+            this.UmoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.UmoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.UmoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UmoveButton.FlatAppearance.BorderSize = 0;
+            this.UmoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UmoveButton.ForeColor = System.Drawing.Color.White;
+            this.UmoveButton.Location = new System.Drawing.Point(1324, 853);
             this.UmoveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UmoveButton.Name = "UmoveButton";
             this.UmoveButton.Size = new System.Drawing.Size(75, 77);
             this.UmoveButton.TabIndex = 10;
             this.UmoveButton.Text = "U";
-            this.UmoveButton.UseVisualStyleBackColor = true;
+            this.UmoveButton.UseVisualStyleBackColor = false;
             this.UmoveButton.Click += new System.EventHandler(this.Umove_Click);
             // 
             // DmoveButton
             // 
-            this.DmoveButton.Location = new System.Drawing.Point(273, 557);
+            this.DmoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DmoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.DmoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DmoveButton.FlatAppearance.BorderSize = 0;
+            this.DmoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DmoveButton.ForeColor = System.Drawing.Color.White;
+            this.DmoveButton.Location = new System.Drawing.Point(1159, 1114);
             this.DmoveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DmoveButton.Name = "DmoveButton";
             this.DmoveButton.Size = new System.Drawing.Size(75, 77);
             this.DmoveButton.TabIndex = 11;
             this.DmoveButton.Text = "D";
-            this.DmoveButton.UseVisualStyleBackColor = true;
+            this.DmoveButton.UseVisualStyleBackColor = false;
             this.DmoveButton.Click += new System.EventHandler(this.Dmove_Click);
             // 
             // RmoveButton
             // 
-            this.RmoveButton.Location = new System.Drawing.Point(522, 384);
+            this.RmoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RmoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.RmoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RmoveButton.FlatAppearance.BorderSize = 0;
+            this.RmoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RmoveButton.ForeColor = System.Drawing.Color.White;
+            this.RmoveButton.Location = new System.Drawing.Point(1407, 940);
             this.RmoveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RmoveButton.Name = "RmoveButton";
             this.RmoveButton.Size = new System.Drawing.Size(75, 77);
             this.RmoveButton.TabIndex = 12;
             this.RmoveButton.Text = "R";
-            this.RmoveButton.UseVisualStyleBackColor = true;
+            this.RmoveButton.UseVisualStyleBackColor = false;
             this.RmoveButton.Click += new System.EventHandler(this.Rmove_Click);
             // 
             // BmoveButton
             // 
-            this.BmoveButton.Location = new System.Drawing.Point(437, 470);
+            this.BmoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BmoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BmoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BmoveButton.FlatAppearance.BorderSize = 0;
+            this.BmoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BmoveButton.ForeColor = System.Drawing.Color.White;
+            this.BmoveButton.Location = new System.Drawing.Point(1322, 1026);
             this.BmoveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BmoveButton.Name = "BmoveButton";
             this.BmoveButton.Size = new System.Drawing.Size(75, 77);
             this.BmoveButton.TabIndex = 15;
             this.BmoveButton.Text = "B";
-            this.BmoveButton.UseVisualStyleBackColor = true;
+            this.BmoveButton.UseVisualStyleBackColor = false;
             this.BmoveButton.Click += new System.EventHandler(this.Bmove_Click);
             // 
             // FmoveButton
             // 
-            this.FmoveButton.Location = new System.Drawing.Point(439, 384);
+            this.FmoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FmoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.FmoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FmoveButton.FlatAppearance.BorderSize = 0;
+            this.FmoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FmoveButton.ForeColor = System.Drawing.Color.White;
+            this.FmoveButton.Location = new System.Drawing.Point(1324, 940);
             this.FmoveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FmoveButton.Name = "FmoveButton";
             this.FmoveButton.Size = new System.Drawing.Size(75, 77);
             this.FmoveButton.TabIndex = 14;
             this.FmoveButton.Text = "F";
-            this.FmoveButton.UseVisualStyleBackColor = true;
+            this.FmoveButton.UseVisualStyleBackColor = false;
             this.FmoveButton.Click += new System.EventHandler(this.Fmove_Click);
             // 
             // LmoveButton
             // 
-            this.LmoveButton.Location = new System.Drawing.Point(190, 471);
+            this.LmoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LmoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LmoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LmoveButton.FlatAppearance.BorderSize = 0;
+            this.LmoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LmoveButton.ForeColor = System.Drawing.Color.White;
+            this.LmoveButton.Location = new System.Drawing.Point(1076, 1027);
             this.LmoveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LmoveButton.Name = "LmoveButton";
             this.LmoveButton.Size = new System.Drawing.Size(75, 77);
             this.LmoveButton.TabIndex = 13;
             this.LmoveButton.Text = "L";
-            this.LmoveButton.UseVisualStyleBackColor = true;
+            this.LmoveButton.UseVisualStyleBackColor = false;
             this.LmoveButton.Click += new System.EventHandler(this.Lmove_Click);
             // 
             // BWmove
             // 
-            this.BWmove.Location = new System.Drawing.Point(439, 19);
+            this.BWmove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BWmove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BWmove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BWmove.FlatAppearance.BorderSize = 0;
+            this.BWmove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BWmove.ForeColor = System.Drawing.Color.White;
+            this.BWmove.Location = new System.Drawing.Point(744, 1026);
             this.BWmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BWmove.Name = "BWmove";
             this.BWmove.Size = new System.Drawing.Size(75, 77);
             this.BWmove.TabIndex = 21;
             this.BWmove.Text = "Bw";
-            this.BWmove.UseVisualStyleBackColor = true;
+            this.BWmove.UseVisualStyleBackColor = false;
             // 
             // FWmove
             // 
-            this.FWmove.Location = new System.Drawing.Point(355, 19);
+            this.FWmove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FWmove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.FWmove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FWmove.FlatAppearance.BorderSize = 0;
+            this.FWmove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FWmove.ForeColor = System.Drawing.Color.White;
+            this.FWmove.Location = new System.Drawing.Point(744, 940);
             this.FWmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FWmove.Name = "FWmove";
             this.FWmove.Size = new System.Drawing.Size(75, 77);
             this.FWmove.TabIndex = 20;
             this.FWmove.Text = "Fw";
-            this.FWmove.UseVisualStyleBackColor = true;
+            this.FWmove.UseVisualStyleBackColor = false;
             // 
             // LWmove
             // 
-            this.LWmove.Location = new System.Drawing.Point(271, 18);
+            this.LWmove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LWmove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LWmove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LWmove.FlatAppearance.BorderSize = 0;
+            this.LWmove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LWmove.ForeColor = System.Drawing.Color.White;
+            this.LWmove.Location = new System.Drawing.Point(661, 941);
             this.LWmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LWmove.Name = "LWmove";
             this.LWmove.Size = new System.Drawing.Size(75, 77);
             this.LWmove.TabIndex = 19;
             this.LWmove.Text = "Lw";
-            this.LWmove.UseVisualStyleBackColor = true;
+            this.LWmove.UseVisualStyleBackColor = false;
             // 
             // RWmove
             // 
-            this.RWmove.Location = new System.Drawing.Point(187, 18);
+            this.RWmove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RWmove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.RWmove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RWmove.FlatAppearance.BorderSize = 0;
+            this.RWmove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RWmove.ForeColor = System.Drawing.Color.White;
+            this.RWmove.Location = new System.Drawing.Point(826, 940);
             this.RWmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RWmove.Name = "RWmove";
             this.RWmove.Size = new System.Drawing.Size(75, 77);
             this.RWmove.TabIndex = 18;
             this.RWmove.Text = "Rw";
-            this.RWmove.UseVisualStyleBackColor = true;
+            this.RWmove.UseVisualStyleBackColor = false;
             // 
             // DWmove
             // 
-            this.DWmove.Location = new System.Drawing.Point(103, 18);
+            this.DWmove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DWmove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.DWmove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DWmove.FlatAppearance.BorderSize = 0;
+            this.DWmove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DWmove.ForeColor = System.Drawing.Color.White;
+            this.DWmove.Location = new System.Drawing.Point(744, 1113);
             this.DWmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DWmove.Name = "DWmove";
             this.DWmove.Size = new System.Drawing.Size(75, 77);
             this.DWmove.TabIndex = 17;
             this.DWmove.Text = "Dw";
-            this.DWmove.UseVisualStyleBackColor = true;
+            this.DWmove.UseVisualStyleBackColor = false;
             // 
             // UWmove
             // 
-            this.UWmove.Location = new System.Drawing.Point(19, 18);
+            this.UWmove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.UWmove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.UWmove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UWmove.FlatAppearance.BorderSize = 0;
+            this.UWmove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UWmove.ForeColor = System.Drawing.Color.White;
+            this.UWmove.Location = new System.Drawing.Point(744, 853);
             this.UWmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UWmove.Name = "UWmove";
             this.UWmove.Size = new System.Drawing.Size(75, 77);
             this.UWmove.TabIndex = 16;
             this.UWmove.Text = "Uw";
-            this.UWmove.UseVisualStyleBackColor = true;
+            this.UWmove.UseVisualStyleBackColor = false;
             // 
             // Smove
             // 
-            this.Smove.Location = new System.Drawing.Point(439, 105);
+            this.Smove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Smove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Smove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Smove.FlatAppearance.BorderSize = 0;
+            this.Smove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Smove.ForeColor = System.Drawing.Color.White;
+            this.Smove.Location = new System.Drawing.Point(993, 853);
             this.Smove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Smove.Name = "Smove";
             this.Smove.Size = new System.Drawing.Size(75, 77);
             this.Smove.TabIndex = 27;
             this.Smove.Text = "S";
-            this.Smove.UseVisualStyleBackColor = true;
+            this.Smove.UseVisualStyleBackColor = false;
             this.Smove.Click += new System.EventHandler(this.Smove_Click);
             // 
             // Emove
             // 
-            this.Emove.Location = new System.Drawing.Point(355, 105);
+            this.Emove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Emove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Emove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Emove.FlatAppearance.BorderSize = 0;
+            this.Emove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Emove.ForeColor = System.Drawing.Color.White;
+            this.Emove.Location = new System.Drawing.Point(910, 853);
             this.Emove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Emove.Name = "Emove";
             this.Emove.Size = new System.Drawing.Size(75, 77);
             this.Emove.TabIndex = 26;
             this.Emove.Text = "E";
-            this.Emove.UseVisualStyleBackColor = true;
+            this.Emove.UseVisualStyleBackColor = false;
             this.Emove.Click += new System.EventHandler(this.Emove_Click);
             // 
             // Mmove
             // 
-            this.Mmove.Location = new System.Drawing.Point(271, 104);
+            this.Mmove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Mmove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Mmove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Mmove.FlatAppearance.BorderSize = 0;
+            this.Mmove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Mmove.ForeColor = System.Drawing.Color.White;
+            this.Mmove.Location = new System.Drawing.Point(827, 853);
             this.Mmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Mmove.Name = "Mmove";
             this.Mmove.Size = new System.Drawing.Size(75, 77);
             this.Mmove.TabIndex = 25;
             this.Mmove.Text = "M";
-            this.Mmove.UseVisualStyleBackColor = true;
+            this.Mmove.UseVisualStyleBackColor = false;
             this.Mmove.Click += new System.EventHandler(this.Mmove_Click);
             // 
             // Zmove
             // 
-            this.Zmove.Location = new System.Drawing.Point(187, 104);
+            this.Zmove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Zmove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Zmove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Zmove.FlatAppearance.BorderSize = 0;
+            this.Zmove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Zmove.ForeColor = System.Drawing.Color.White;
+            this.Zmove.Location = new System.Drawing.Point(993, 1113);
             this.Zmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Zmove.Name = "Zmove";
             this.Zmove.Size = new System.Drawing.Size(75, 77);
             this.Zmove.TabIndex = 24;
             this.Zmove.Text = "z";
-            this.Zmove.UseVisualStyleBackColor = true;
+            this.Zmove.UseVisualStyleBackColor = false;
             this.Zmove.Click += new System.EventHandler(this.Zmove_Click);
             // 
             // Ymove
             // 
-            this.Ymove.Location = new System.Drawing.Point(103, 104);
+            this.Ymove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Ymove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Ymove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Ymove.FlatAppearance.BorderSize = 0;
+            this.Ymove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Ymove.ForeColor = System.Drawing.Color.White;
+            this.Ymove.Location = new System.Drawing.Point(910, 1113);
             this.Ymove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Ymove.Name = "Ymove";
             this.Ymove.Size = new System.Drawing.Size(75, 77);
             this.Ymove.TabIndex = 23;
             this.Ymove.Text = "y";
-            this.Ymove.UseVisualStyleBackColor = true;
+            this.Ymove.UseVisualStyleBackColor = false;
             this.Ymove.Click += new System.EventHandler(this.Ymove_Click);
             // 
             // Xmove
             // 
-            this.Xmove.Location = new System.Drawing.Point(19, 104);
+            this.Xmove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Xmove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Xmove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Xmove.FlatAppearance.BorderSize = 0;
+            this.Xmove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Xmove.ForeColor = System.Drawing.Color.White;
+            this.Xmove.Location = new System.Drawing.Point(827, 1113);
             this.Xmove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Xmove.Name = "Xmove";
             this.Xmove.Size = new System.Drawing.Size(75, 77);
             this.Xmove.TabIndex = 22;
             this.Xmove.Text = "x";
-            this.Xmove.UseVisualStyleBackColor = true;
+            this.Xmove.UseVisualStyleBackColor = false;
             this.Xmove.Click += new System.EventHandler(this.Xmove_Click);
             // 
             // UmoveTimer
@@ -307,68 +421,104 @@
             // 
             // BpMoveButton
             // 
-            this.BpMoveButton.Location = new System.Drawing.Point(273, 471);
+            this.BpMoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BpMoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BpMoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BpMoveButton.FlatAppearance.BorderSize = 0;
+            this.BpMoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BpMoveButton.ForeColor = System.Drawing.Color.White;
+            this.BpMoveButton.Location = new System.Drawing.Point(1159, 1027);
             this.BpMoveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BpMoveButton.Name = "BpMoveButton";
             this.BpMoveButton.Size = new System.Drawing.Size(75, 77);
             this.BpMoveButton.TabIndex = 33;
             this.BpMoveButton.Text = "B\'";
-            this.BpMoveButton.UseVisualStyleBackColor = true;
+            this.BpMoveButton.UseVisualStyleBackColor = false;
             this.BpMoveButton.Click += new System.EventHandler(this.BpMove_Click);
             // 
             // FpMoveButton
             // 
-            this.FpMoveButton.Location = new System.Drawing.Point(273, 384);
+            this.FpMoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FpMoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.FpMoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FpMoveButton.FlatAppearance.BorderSize = 0;
+            this.FpMoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FpMoveButton.ForeColor = System.Drawing.Color.White;
+            this.FpMoveButton.Location = new System.Drawing.Point(1159, 941);
             this.FpMoveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FpMoveButton.Name = "FpMoveButton";
             this.FpMoveButton.Size = new System.Drawing.Size(75, 77);
             this.FpMoveButton.TabIndex = 32;
             this.FpMoveButton.Text = "F\'";
-            this.FpMoveButton.UseVisualStyleBackColor = true;
+            this.FpMoveButton.UseVisualStyleBackColor = false;
             this.FpMoveButton.Click += new System.EventHandler(this.FpMove_Click);
             // 
             // LpMoveButton
             // 
-            this.LpMoveButton.Location = new System.Drawing.Point(190, 384);
+            this.LpMoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LpMoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LpMoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LpMoveButton.FlatAppearance.BorderSize = 0;
+            this.LpMoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LpMoveButton.ForeColor = System.Drawing.Color.White;
+            this.LpMoveButton.Location = new System.Drawing.Point(1076, 941);
             this.LpMoveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LpMoveButton.Name = "LpMoveButton";
             this.LpMoveButton.Size = new System.Drawing.Size(75, 77);
             this.LpMoveButton.TabIndex = 31;
             this.LpMoveButton.Text = "L\'";
-            this.LpMoveButton.UseVisualStyleBackColor = true;
+            this.LpMoveButton.UseVisualStyleBackColor = false;
             this.LpMoveButton.Click += new System.EventHandler(this.LpMove_Click);
             // 
             // RpMoveButton
             // 
-            this.RpMoveButton.Location = new System.Drawing.Point(522, 471);
+            this.RpMoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RpMoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.RpMoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RpMoveButton.FlatAppearance.BorderSize = 0;
+            this.RpMoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RpMoveButton.ForeColor = System.Drawing.Color.White;
+            this.RpMoveButton.Location = new System.Drawing.Point(1407, 1026);
             this.RpMoveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RpMoveButton.Name = "RpMoveButton";
             this.RpMoveButton.Size = new System.Drawing.Size(75, 77);
             this.RpMoveButton.TabIndex = 30;
             this.RpMoveButton.Text = "R\'";
-            this.RpMoveButton.UseVisualStyleBackColor = true;
+            this.RpMoveButton.UseVisualStyleBackColor = false;
             this.RpMoveButton.Click += new System.EventHandler(this.RpMove_Click);
             // 
             // DpMoveButton
             // 
-            this.DpMoveButton.Location = new System.Drawing.Point(437, 557);
+            this.DpMoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DpMoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.DpMoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DpMoveButton.FlatAppearance.BorderSize = 0;
+            this.DpMoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DpMoveButton.ForeColor = System.Drawing.Color.White;
+            this.DpMoveButton.Location = new System.Drawing.Point(1322, 1113);
             this.DpMoveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DpMoveButton.Name = "DpMoveButton";
             this.DpMoveButton.Size = new System.Drawing.Size(75, 77);
             this.DpMoveButton.TabIndex = 29;
             this.DpMoveButton.Text = "D\'";
-            this.DpMoveButton.UseVisualStyleBackColor = true;
+            this.DpMoveButton.UseVisualStyleBackColor = false;
             this.DpMoveButton.Click += new System.EventHandler(this.DpMove_Click);
             // 
             // UpMoveButton
             // 
-            this.UpMoveButton.Location = new System.Drawing.Point(272, 297);
+            this.UpMoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.UpMoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.UpMoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpMoveButton.FlatAppearance.BorderSize = 0;
+            this.UpMoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpMoveButton.ForeColor = System.Drawing.Color.White;
+            this.UpMoveButton.Location = new System.Drawing.Point(1159, 853);
             this.UpMoveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UpMoveButton.Name = "UpMoveButton";
             this.UpMoveButton.Size = new System.Drawing.Size(75, 77);
             this.UpMoveButton.TabIndex = 28;
             this.UpMoveButton.Text = "U\'";
-            this.UpMoveButton.UseVisualStyleBackColor = true;
+            this.UpMoveButton.UseVisualStyleBackColor = false;
             this.UpMoveButton.Click += new System.EventHandler(this.UpMove_Click);
             // 
             // UpMoveTimer
@@ -443,20 +593,26 @@
             // 
             // Scramble
             // 
-            this.Scramble.Location = new System.Drawing.Point(1322, 118);
+            this.Scramble.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Scramble.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Scramble.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Scramble.FlatAppearance.BorderSize = 0;
+            this.Scramble.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Scramble.ForeColor = System.Drawing.Color.White;
+            this.Scramble.Location = new System.Drawing.Point(1636, 223);
             this.Scramble.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Scramble.Name = "Scramble";
             this.Scramble.Size = new System.Drawing.Size(92, 48);
             this.Scramble.TabIndex = 34;
             this.Scramble.Text = "Scramble";
-            this.Scramble.UseVisualStyleBackColor = true;
+            this.Scramble.UseVisualStyleBackColor = false;
             this.Scramble.Click += new System.EventHandler(this.Scramble_Click);
             // 
             // scrambleLabel
             // 
             this.scrambleLabel.AutoSize = true;
             this.scrambleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scrambleLabel.Location = new System.Drawing.Point(1302, 67);
+            this.scrambleLabel.Location = new System.Drawing.Point(1616, 172);
             this.scrambleLabel.Name = "scrambleLabel";
             this.scrambleLabel.Size = new System.Drawing.Size(209, 46);
             this.scrambleLabel.TabIndex = 35;
@@ -465,68 +621,104 @@
             // 
             // U2moveButton
             // 
-            this.U2moveButton.Location = new System.Drawing.Point(356, 297);
+            this.U2moveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.U2moveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.U2moveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.U2moveButton.FlatAppearance.BorderSize = 0;
+            this.U2moveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.U2moveButton.ForeColor = System.Drawing.Color.White;
+            this.U2moveButton.Location = new System.Drawing.Point(1241, 853);
             this.U2moveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.U2moveButton.Name = "U2moveButton";
             this.U2moveButton.Size = new System.Drawing.Size(75, 77);
             this.U2moveButton.TabIndex = 36;
             this.U2moveButton.Text = "U2";
-            this.U2moveButton.UseVisualStyleBackColor = true;
+            this.U2moveButton.UseVisualStyleBackColor = false;
             this.U2moveButton.Click += new System.EventHandler(this.U2_Click);
             // 
             // R2moveButton
             // 
-            this.R2moveButton.Location = new System.Drawing.Point(605, 436);
+            this.R2moveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.R2moveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.R2moveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.R2moveButton.FlatAppearance.BorderSize = 0;
+            this.R2moveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.R2moveButton.ForeColor = System.Drawing.Color.White;
+            this.R2moveButton.Location = new System.Drawing.Point(1490, 983);
             this.R2moveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.R2moveButton.Name = "R2moveButton";
             this.R2moveButton.Size = new System.Drawing.Size(75, 77);
             this.R2moveButton.TabIndex = 37;
             this.R2moveButton.Text = "R2";
-            this.R2moveButton.UseVisualStyleBackColor = true;
+            this.R2moveButton.UseVisualStyleBackColor = false;
             this.R2moveButton.Click += new System.EventHandler(this.R2_Click);
             // 
             // L2moveButton
             // 
-            this.L2moveButton.Location = new System.Drawing.Point(107, 436);
+            this.L2moveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.L2moveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.L2moveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.L2moveButton.FlatAppearance.BorderSize = 0;
+            this.L2moveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.L2moveButton.ForeColor = System.Drawing.Color.White;
+            this.L2moveButton.Location = new System.Drawing.Point(993, 983);
             this.L2moveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.L2moveButton.Name = "L2moveButton";
             this.L2moveButton.Size = new System.Drawing.Size(75, 77);
             this.L2moveButton.TabIndex = 38;
             this.L2moveButton.Text = "L2";
-            this.L2moveButton.UseVisualStyleBackColor = true;
+            this.L2moveButton.UseVisualStyleBackColor = false;
             this.L2moveButton.Click += new System.EventHandler(this.L2_Click);
             // 
             // F2moveButton
             // 
-            this.F2moveButton.Location = new System.Drawing.Point(356, 384);
+            this.F2moveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.F2moveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.F2moveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.F2moveButton.FlatAppearance.BorderSize = 0;
+            this.F2moveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.F2moveButton.ForeColor = System.Drawing.Color.White;
+            this.F2moveButton.Location = new System.Drawing.Point(1241, 940);
             this.F2moveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.F2moveButton.Name = "F2moveButton";
             this.F2moveButton.Size = new System.Drawing.Size(75, 77);
             this.F2moveButton.TabIndex = 39;
             this.F2moveButton.Text = "F2";
-            this.F2moveButton.UseVisualStyleBackColor = true;
+            this.F2moveButton.UseVisualStyleBackColor = false;
             this.F2moveButton.Click += new System.EventHandler(this.F2_Click);
             // 
             // B2moveButton
             // 
-            this.B2moveButton.Location = new System.Drawing.Point(356, 471);
+            this.B2moveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.B2moveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.B2moveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.B2moveButton.FlatAppearance.BorderSize = 0;
+            this.B2moveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.B2moveButton.ForeColor = System.Drawing.Color.White;
+            this.B2moveButton.Location = new System.Drawing.Point(1241, 1026);
             this.B2moveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.B2moveButton.Name = "B2moveButton";
             this.B2moveButton.Size = new System.Drawing.Size(75, 77);
             this.B2moveButton.TabIndex = 40;
             this.B2moveButton.Text = "B2";
-            this.B2moveButton.UseVisualStyleBackColor = true;
+            this.B2moveButton.UseVisualStyleBackColor = false;
             this.B2moveButton.Click += new System.EventHandler(this.B2_Click);
             // 
             // D2moveButton
             // 
-            this.D2moveButton.Location = new System.Drawing.Point(354, 557);
+            this.D2moveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.D2moveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.D2moveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.D2moveButton.FlatAppearance.BorderSize = 0;
+            this.D2moveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.D2moveButton.ForeColor = System.Drawing.Color.White;
+            this.D2moveButton.Location = new System.Drawing.Point(1239, 1113);
             this.D2moveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.D2moveButton.Name = "D2moveButton";
             this.D2moveButton.Size = new System.Drawing.Size(75, 77);
             this.D2moveButton.TabIndex = 41;
             this.D2moveButton.Text = "D2";
-            this.D2moveButton.UseVisualStyleBackColor = true;
+            this.D2moveButton.UseVisualStyleBackColor = false;
             this.D2moveButton.Click += new System.EventHandler(this.D2_Click);
             // 
             // SmoveTimer
@@ -546,46 +738,70 @@
             // 
             // solveButton
             // 
-            this.solveButton.Location = new System.Drawing.Point(1422, 118);
+            this.solveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.solveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.solveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.solveButton.FlatAppearance.BorderSize = 0;
+            this.solveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.solveButton.ForeColor = System.Drawing.Color.White;
+            this.solveButton.Location = new System.Drawing.Point(1736, 223);
             this.solveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.solveButton.Name = "solveButton";
             this.solveButton.Size = new System.Drawing.Size(92, 48);
             this.solveButton.TabIndex = 53;
             this.solveButton.Text = "Solve";
-            this.solveButton.UseVisualStyleBackColor = true;
+            this.solveButton.UseVisualStyleBackColor = false;
             this.solveButton.Click += new System.EventHandler(this.solveButton_Click);
             // 
             // SpMove
             // 
-            this.SpMove.Location = new System.Drawing.Point(439, 192);
+            this.SpMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.SpMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SpMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SpMove.FlatAppearance.BorderSize = 0;
+            this.SpMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SpMove.ForeColor = System.Drawing.Color.White;
+            this.SpMove.Location = new System.Drawing.Point(1656, 853);
             this.SpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SpMove.Name = "SpMove";
             this.SpMove.Size = new System.Drawing.Size(75, 77);
             this.SpMove.TabIndex = 56;
             this.SpMove.Text = "S\'";
-            this.SpMove.UseVisualStyleBackColor = true;
+            this.SpMove.UseVisualStyleBackColor = false;
             this.SpMove.Click += new System.EventHandler(this.SpMove_Click);
             // 
             // EpMove
             // 
-            this.EpMove.Location = new System.Drawing.Point(355, 192);
+            this.EpMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.EpMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.EpMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EpMove.FlatAppearance.BorderSize = 0;
+            this.EpMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EpMove.ForeColor = System.Drawing.Color.White;
+            this.EpMove.Location = new System.Drawing.Point(1573, 853);
             this.EpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EpMove.Name = "EpMove";
             this.EpMove.Size = new System.Drawing.Size(75, 77);
             this.EpMove.TabIndex = 55;
             this.EpMove.Text = "E\'";
-            this.EpMove.UseVisualStyleBackColor = true;
+            this.EpMove.UseVisualStyleBackColor = false;
             this.EpMove.Click += new System.EventHandler(this.EpMove_Click);
             // 
             // MpMove
             // 
-            this.MpMove.Location = new System.Drawing.Point(271, 191);
+            this.MpMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MpMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.MpMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MpMove.FlatAppearance.BorderSize = 0;
+            this.MpMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MpMove.ForeColor = System.Drawing.Color.White;
+            this.MpMove.Location = new System.Drawing.Point(1490, 853);
             this.MpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MpMove.Name = "MpMove";
             this.MpMove.Size = new System.Drawing.Size(75, 77);
             this.MpMove.TabIndex = 54;
             this.MpMove.Text = "M\'";
-            this.MpMove.UseVisualStyleBackColor = true;
+            this.MpMove.UseVisualStyleBackColor = false;
             this.MpMove.Click += new System.EventHandler(this.MpMove_Click);
             // 
             // SpMoveTimer
@@ -607,7 +823,7 @@
             // 
             this.solveLabel.AutoSize = true;
             this.solveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.solveLabel.Location = new System.Drawing.Point(1321, 449);
+            this.solveLabel.Location = new System.Drawing.Point(981, 9);
             this.solveLabel.Name = "solveLabel";
             this.solveLabel.Size = new System.Drawing.Size(304, 46);
             this.solveLabel.TabIndex = 102;
@@ -617,7 +833,7 @@
             // 
             this.solveLabel2.AutoSize = true;
             this.solveLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.solveLabel2.Location = new System.Drawing.Point(1321, 495);
+            this.solveLabel2.Location = new System.Drawing.Point(981, 55);
             this.solveLabel2.Name = "solveLabel2";
             this.solveLabel2.Size = new System.Drawing.Size(335, 46);
             this.solveLabel2.TabIndex = 103;
@@ -625,35 +841,53 @@
             // 
             // ZpMove
             // 
-            this.ZpMove.Location = new System.Drawing.Point(187, 192);
+            this.ZpMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ZpMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ZpMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ZpMove.FlatAppearance.BorderSize = 0;
+            this.ZpMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ZpMove.ForeColor = System.Drawing.Color.White;
+            this.ZpMove.Location = new System.Drawing.Point(1656, 1113);
             this.ZpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ZpMove.Name = "ZpMove";
             this.ZpMove.Size = new System.Drawing.Size(75, 77);
             this.ZpMove.TabIndex = 106;
             this.ZpMove.Text = "z\'";
-            this.ZpMove.UseVisualStyleBackColor = true;
+            this.ZpMove.UseVisualStyleBackColor = false;
             this.ZpMove.Click += new System.EventHandler(this.ZpMove_Click);
             // 
             // YpMove
             // 
-            this.YpMove.Location = new System.Drawing.Point(103, 192);
+            this.YpMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.YpMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.YpMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.YpMove.FlatAppearance.BorderSize = 0;
+            this.YpMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.YpMove.ForeColor = System.Drawing.Color.White;
+            this.YpMove.Location = new System.Drawing.Point(1573, 1113);
             this.YpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.YpMove.Name = "YpMove";
             this.YpMove.Size = new System.Drawing.Size(75, 77);
             this.YpMove.TabIndex = 105;
             this.YpMove.Text = "y\'";
-            this.YpMove.UseVisualStyleBackColor = true;
+            this.YpMove.UseVisualStyleBackColor = false;
             this.YpMove.Click += new System.EventHandler(this.YpMove_Click);
             // 
             // XpMove
             // 
-            this.XpMove.Location = new System.Drawing.Point(19, 192);
+            this.XpMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.XpMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.XpMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.XpMove.FlatAppearance.BorderSize = 0;
+            this.XpMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.XpMove.ForeColor = System.Drawing.Color.White;
+            this.XpMove.Location = new System.Drawing.Point(1490, 1114);
             this.XpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.XpMove.Name = "XpMove";
             this.XpMove.Size = new System.Drawing.Size(75, 77);
             this.XpMove.TabIndex = 104;
             this.XpMove.Text = "x\'";
-            this.XpMove.UseVisualStyleBackColor = true;
+            this.XpMove.UseVisualStyleBackColor = false;
             this.XpMove.Click += new System.EventHandler(this.XpMove_Click);
             // 
             // XpMoveTimer
@@ -673,21 +907,129 @@
             // 
             // fastSolveButton
             // 
-            this.fastSolveButton.Location = new System.Drawing.Point(1322, 176);
+            this.fastSolveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.fastSolveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.fastSolveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fastSolveButton.FlatAppearance.BorderSize = 0;
+            this.fastSolveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fastSolveButton.ForeColor = System.Drawing.Color.White;
+            this.fastSolveButton.Location = new System.Drawing.Point(1636, 281);
             this.fastSolveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fastSolveButton.Name = "fastSolveButton";
             this.fastSolveButton.Size = new System.Drawing.Size(192, 48);
             this.fastSolveButton.TabIndex = 108;
             this.fastSolveButton.Text = "Fast Solve";
-            this.fastSolveButton.UseVisualStyleBackColor = true;
+            this.fastSolveButton.UseVisualStyleBackColor = false;
             this.fastSolveButton.Click += new System.EventHandler(this.fastSolveButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(1739, 1027);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 77);
+            this.button1.TabIndex = 114;
+            this.button1.Text = "Bw";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(1743, 940);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 77);
+            this.button2.TabIndex = 113;
+            this.button2.Text = "Fw";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(1660, 940);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 77);
+            this.button3.TabIndex = 112;
+            this.button3.Text = "Lw";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(1826, 940);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 77);
+            this.button4.TabIndex = 111;
+            this.button4.Text = "Rw";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(1739, 1114);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 77);
+            this.button5.TabIndex = 110;
+            this.button5.Text = "Dw";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(1739, 853);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 77);
+            this.button6.TabIndex = 109;
+            this.button6.Text = "Uw";
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(2135, 840);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.ClientSize = new System.Drawing.Size(2477, 1570);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.fastSolveButton);
             this.Controls.Add(this.ZpMove);
             this.Controls.Add(this.YpMove);
@@ -811,6 +1153,12 @@
         private System.Windows.Forms.Timer YpMoveTimer;
         private System.Windows.Forms.Timer ZpMoveTimer;
         private System.Windows.Forms.Button fastSolveButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 
