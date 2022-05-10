@@ -12,6 +12,9 @@ namespace LicentaV._1
 {
     public partial class Form1 : Form
     {
+        int frameAngle = 90; // Avaliable 1,2,3,5,6,9,10,15,18,30,45,90
+        int waitingTime = 1; // Recomanded 200 for every frameAngle (for 90 1 will be enough)
+        int turningSpeed = 1;
         string[,] whiteFace =
         {
             { "Ac", "As", "Bc" },
@@ -21,31 +24,67 @@ namespace LicentaV._1
         string[,] orangeFace =
 {
             { "Ec", "Es", "Fc" },
-            { "Hc", "0", "Fs" },
+            { "Hs", "1", "Fs" },
             { "Hc", "Gs", "Gc" }
         };
         string[,] greenFace =
 {
             { "Ic", "Is", "Jc" },
-            { "Ls", "0", "Js" },
+            { "Ls", "2", "Js" },
             { "Lc", "Ks",  "Kc"}
         };
         string[,] redFace =
         {
             { "Mc", "Ms", "Nc" },
-            { "Ps", "0", "Ns" },
+            { "Ps", "3", "Ns" },
             { "Pc", "Os", "Oc" }
         };
         string[,] blueFace =
         {
             { "Qc", "Qs", "Rc" },
-            { "Ts", "0", "Rs" },
+            { "Ts", "4", "Rs" },
             { "Tc", "Ss", "Sc" }
         };
         string[,] yellowFace =
 {
             { "Uc", "Us", "Vc" },
-            { "Xs", "0", "Vs" },
+            { "Xs", "5", "Vs" },
+            { "Xc", "Ws", "Wc" }
+        };
+        string[,] topFace =
+        {
+            { "Ac", "As", "Bc" },
+            { "Ds", "0", "Bs" },
+            { "Dc", "Cs", "Cc" }
+        };
+        string[,] leftFace =
+{
+            { "Ec", "Es", "Fc" },
+            { "Hs", "1", "Fs" },
+            { "Hc", "Gs", "Gc" }
+        };
+        string[,] frontFace =
+{
+            { "Ic", "Is", "Jc" },
+            { "Ls", "2", "Js" },
+            { "Lc", "Ks",  "Kc"}
+        };
+        string[,] rightFace =
+        {
+            { "Mc", "Ms", "Nc" },
+            { "Ps", "3", "Ns" },
+            { "Pc", "Os", "Oc" }
+        };
+        string[,] backFace =
+        {
+            { "Qc", "Qs", "Rc" },
+            { "Ts", "4", "Rs" },
+            { "Tc", "Ss", "Sc" }
+        };
+        string[,] bottomFace =
+{
+            { "Uc", "Us", "Vc" },
+            { "Xs", "5", "Vs" },
             { "Xc", "Ws", "Wc" }
         };
 
@@ -385,6 +424,27 @@ namespace LicentaV._1
 
         private void Form1_Load(object sender, EventArgs ea)
         {
+            UmoveTimer.Interval =turningSpeed;
+            LmoveTimer.Interval = turningSpeed;
+            FmoveTimer.Interval = turningSpeed;
+            RmoveTimer.Interval = turningSpeed;
+            BmoveTimer.Interval = turningSpeed;
+            DmoveTimer.Interval = turningSpeed;
+            UpMoveTimer.Interval = turningSpeed;
+            LpMoveTimer.Interval = turningSpeed;
+            FpMoveTimer.Interval = turningSpeed;
+            RpMoveTimer.Interval = turningSpeed;
+            BpMoveTimer.Interval = turningSpeed;
+            DpMoveTimer.Interval = turningSpeed;
+            SmoveTimer.Interval = turningSpeed;
+            EmoveTimer.Interval = turningSpeed;
+            MmoveTimer.Interval = turningSpeed;
+            SpMoveTimer.Interval = turningSpeed;
+            EpMoveTimer.Interval = turningSpeed;
+            MpMoveTimer.Interval = turningSpeed;
+            XmoveTimer.Interval = turningSpeed;
+            YmoveTimer.Interval = turningSpeed;
+            ZmoveTimer.Interval = turningSpeed;
 
             cubes[0] = cube1;
             cubes[1] = cube2;
@@ -451,7 +511,9 @@ namespace LicentaV._1
             SCubes[5] = SCubes[7];
             SCubes[7] = SCubes[2];
             SCubes[2] = aux;
+
             aux = SCubes[1];
+
             SCubes[1] = SCubes[3];
             SCubes[3] = SCubes[6];
             SCubes[6] = SCubes[4];
@@ -471,7 +533,35 @@ namespace LicentaV._1
 
             leftCubes[1] = SCubes[0];
             leftCubes[4] = SCubes[3];
-            leftCubes[7] = SCubes[7];
+            leftCubes[7] = SCubes[5];
+
+            MCubes[1] = SCubes[1];
+            MCubes[6] = SCubes[6];
+
+            ECubes[3] = SCubes[3];
+            ECubes[4] = SCubes[4];
+
+            string auxFace = topFace[1,0];
+
+            topFace[1,0] = leftFace[2,1];
+            leftFace[2,1] = bottomFace[1,2];
+            bottomFace[1,2] = rightFace[0,1];
+            rightFace[0,1] = auxFace;
+
+            auxFace = topFace[1, 1];
+
+            topFace[1, 1] = leftFace[1, 1];
+            leftFace[1, 1] = bottomFace[1, 1];
+            bottomFace[1, 1] = rightFace[1, 1];
+            rightFace[1, 1] = auxFace;
+
+            auxFace = topFace[1, 2];
+
+            topFace[1, 2] = leftFace[0, 1];
+            leftFace[0, 1] = bottomFace[1, 0];
+            bottomFace[1, 0] = rightFace[2, 1];
+            rightFace[2, 1] = auxFace;
+
         }
         private void rotateM()
         {
@@ -502,78 +592,96 @@ namespace LicentaV._1
             frontCubes[1] = MCubes[2];
             frontCubes[4] = MCubes[4];
             frontCubes[7] = MCubes[7];
+
+            SCubes[1] = MCubes[1];
+            SCubes[6] = MCubes[6];
+
+            ECubes[1] = MCubes[3];
+            ECubes[6] = MCubes[4];
+
+            string auxFace = topFace[0, 1];
+
+            topFace[0, 1] = backFace[2, 1];
+            backFace[2, 1] = bottomFace[0, 1];
+            bottomFace[0, 1] = frontFace[0, 1];
+            frontFace[0, 1] = auxFace;
+
+            auxFace = topFace[1, 1];
+
+            topFace[1, 1] = backFace[1, 1];
+            backFace[1, 1] = bottomFace[1, 1];
+            bottomFace[1, 1] = frontFace[1, 1];
+            frontFace[1, 1] = auxFace;
+
+            auxFace = topFace[2, 1];
+
+            topFace[2, 1] = backFace[0, 1];
+            backFace[0, 1] = bottomFace[2, 1];
+            bottomFace[2, 1] = frontFace[2, 1];
+            frontFace[2, 1] = auxFace;
         }
         private void rotateE()
         {
             Cube aux = ECubes[0];
 
-            ECubes[0] = ECubes[5];
-            ECubes[5] = ECubes[7];
-            ECubes[7] = ECubes[2];
-            ECubes[2] = aux;
+            ECubes[0] = ECubes[2];
+            ECubes[2] = ECubes[7];
+            ECubes[7] = ECubes[5];
+            ECubes[5] = aux;
             aux = ECubes[1];
-            ECubes[1] = ECubes[3];
-            ECubes[3] = ECubes[6];
-            ECubes[6] = ECubes[4];
-            ECubes[4] = aux;
+            ECubes[1] = ECubes[4];
+            ECubes[4] = ECubes[6];
+            ECubes[6] = ECubes[3];
+            ECubes[3] = aux;
 
             leftCubes[3] = ECubes[0];
             leftCubes[4] = ECubes[3];
             leftCubes[5] = ECubes[5];
 
-            backCubes[1] = ECubes[0];
+            backCubes[3] = ECubes[0];
             backCubes[4] = ECubes[1];
-            backCubes[7] = ECubes[2];
+            backCubes[5] = ECubes[2];
 
-            bottomCubes[1] = ECubes[5];
-            bottomCubes[4] = ECubes[6];
-            bottomCubes[7] = ECubes[7];
+            frontCubes[3] = ECubes[5];
+            frontCubes[4] = ECubes[6];
+            frontCubes[5] = ECubes[7];
 
-            rightCubes[1] = ECubes[2];
+            rightCubes[3] = ECubes[2];
             rightCubes[4] = ECubes[4];
-            rightCubes[7] = ECubes[7];
+            rightCubes[5] = ECubes[7];
+
+            MCubes[3] = ECubes[1];
+            MCubes[4] = ECubes[6];
+
+            SCubes[3] = ECubes[3];
+            SCubes[4] = ECubes[4];
+
+            string auxFace = leftFace[1, 0];
+
+            leftFace[1, 0] = backFace[1, 0];
+            backFace[1, 0] = rightFace[1, 0];
+            rightFace[1, 0] = frontFace[1, 0];
+            frontFace[1, 0] = auxFace;
+
+            auxFace = leftFace[1, 1];
+
+            leftFace[1, 1] = backFace[1, 1];
+            backFace[1, 1] = rightFace[1, 1];
+            rightFace[1, 1] = frontFace[1, 1];
+            frontFace[1, 1] = auxFace;
+
+            auxFace = leftFace[1, 2];
+
+            leftFace[1, 2] = backFace[1, 2];
+            backFace[1, 2] = rightFace[1, 2];
+            rightFace[1, 2] = frontFace[1, 2];
+            frontFace[1, 2] = auxFace;
         }
         private void rotateDp()
         {
-            Cube aux = bottomCubes[0];
-
-            bottomCubes[0] = bottomCubes[6];
-            bottomCubes[6] = bottomCubes[8];
-            bottomCubes[8] = bottomCubes[2];
-            bottomCubes[2] = aux;
-            aux = bottomCubes[1];
-            bottomCubes[1] = bottomCubes[3];
-            bottomCubes[3] = bottomCubes[7];
-            bottomCubes[7] = bottomCubes[5];
-            bottomCubes[5] = aux;
-
-            backCubes[6] = bottomCubes[0];
-            backCubes[7] = bottomCubes[1];
-            backCubes[8] = bottomCubes[2];
-
-            rightCubes[6] = bottomCubes[2];
-            rightCubes[7] = bottomCubes[5];
-            rightCubes[8] = bottomCubes[8];
-
-            frontCubes[6] = bottomCubes[6];
-            frontCubes[7] = bottomCubes[7];
-            frontCubes[8] = bottomCubes[8];
-
-            leftCubes[6] = bottomCubes[0];
-            leftCubes[7] = bottomCubes[3];
-            leftCubes[8] = bottomCubes[6];
-
-            SCubes[5] = bottomCubes[3];
-            SCubes[6] = bottomCubes[4];
-            SCubes[7] = bottomCubes[5];
-
-            MCubes[5] = bottomCubes[1];
-            MCubes[6] = bottomCubes[4];
-            MCubes[7] = bottomCubes[7];
-
-            ECubes[5] = bottomCubes[1];
-            ECubes[6] = bottomCubes[4];
-            ECubes[7] = bottomCubes[7];
+            rotateD();
+            rotateD();
+            rotateD();
         }
         private void rotateD()
         {
@@ -613,47 +721,47 @@ namespace LicentaV._1
             MCubes[6] = bottomCubes[4];
             MCubes[7] = bottomCubes[7];
 
-            ECubes[5] = bottomCubes[1];
-            ECubes[6] = bottomCubes[4];
-            ECubes[7] = bottomCubes[7];
+            string auxFace = bottomFace[0, 0];
+
+            bottomFace[0, 0] = bottomFace[2, 0];
+            bottomFace[2, 0] = bottomFace[2, 2];
+            bottomFace[2, 2] = bottomFace[0, 2];
+            bottomFace[0, 2] = auxFace;
+
+            auxFace = bottomFace[0, 1];
+
+            bottomFace[0, 1] = bottomFace[1, 0];
+            bottomFace[1, 0] = bottomFace[2, 1];
+            bottomFace[2, 1] = bottomFace[1, 2];
+            bottomFace[1, 2] = auxFace;
+
+            auxFace = leftFace[2, 0];
+
+            leftFace[2, 0] = backFace[2, 0];
+            backFace[2, 0] = rightFace[2, 0];
+            rightFace[2, 0] = frontFace[2, 0];
+            frontFace[2, 0] = auxFace;
+
+            auxFace = leftFace[2, 1];
+
+            leftFace[2, 1] = backFace[2, 1];
+            backFace[2, 1] = rightFace[2, 1];
+            rightFace[2, 1] = frontFace[2, 1];
+            frontFace[2, 1] = auxFace;
+
+            auxFace = leftFace[2, 2];
+
+            leftFace[2, 2] = backFace[2, 2];
+            backFace[2, 2] = rightFace[2, 2];
+            rightFace[2, 2] = frontFace[2, 2];
+            frontFace[2, 2] = auxFace;
+
         }
         private void rotateRp()
         {
-            Cube aux = rightCubes[0];
-
-            rightCubes[0] = rightCubes[6];
-            rightCubes[6] = rightCubes[8];
-            rightCubes[8] = rightCubes[2];
-            rightCubes[2] = aux;
-            aux = rightCubes[1];
-            rightCubes[1] = rightCubes[3];
-            rightCubes[3] = rightCubes[7];
-            rightCubes[7] = rightCubes[5];
-            rightCubes[5] = aux;
-
-            backCubes[2] = rightCubes[0];
-            backCubes[5] = rightCubes[3];
-            backCubes[8] = rightCubes[6];
-
-            topCubes[2] = rightCubes[0];
-            topCubes[5] = rightCubes[1];
-            topCubes[8] = rightCubes[2];
-
-            frontCubes[2] = rightCubes[2];
-            frontCubes[5] = rightCubes[5];
-            frontCubes[8] = rightCubes[8];
-
-            bottomCubes[2] = rightCubes[6];
-            bottomCubes[5] = rightCubes[7];
-            bottomCubes[8] = rightCubes[8];
-
-            SCubes[2] = rightCubes[1];
-            SCubes[4] = rightCubes[4];
-            SCubes[7] = rightCubes[7];
-
-            ECubes[2] = rightCubes[1];
-            ECubes[4] = rightCubes[4];
-            ECubes[7] = rightCubes[7];
+            rotateR();
+            rotateR();
+            rotateR();
         }
         private void rotateL()
         {
@@ -688,40 +796,52 @@ namespace LicentaV._1
             SCubes[0] = leftCubes[1];
             SCubes[3] = leftCubes[4];
             SCubes[5] = leftCubes[7];
+
+            ECubes[0] = leftCubes[3];
+            ECubes[3] = leftCubes[4];
+            ECubes[5] = leftCubes[5];
+
+            string auxFace = leftFace[0, 0];
+
+            leftFace[0, 0] = leftFace[2, 0];
+            leftFace[2, 0] = leftFace[2, 2];
+            leftFace[2, 2] = leftFace[0, 2];
+            leftFace[0, 2] = auxFace;
+
+            auxFace = leftFace[0, 1];
+
+            leftFace[0, 1] = leftFace[1, 0];
+            leftFace[1, 0] = leftFace[2, 1];
+            leftFace[2, 1] = leftFace[1, 2];
+            leftFace[1, 2] = auxFace;
+
+            auxFace = topFace[0, 0];
+
+            topFace[0, 0] = backFace[2, 2];
+            backFace[2, 2] = bottomFace[0, 0];
+            bottomFace[0, 0] = frontFace[0, 0];
+            frontFace[0, 0] = auxFace;
+
+            auxFace = topFace[1, 0];
+
+            topFace[1, 0] = backFace[1, 2];
+            backFace[1, 2] = bottomFace[1, 0];
+            bottomFace[1, 0] = frontFace[1, 0];
+            frontFace[1, 0] = auxFace;
+
+            auxFace = topFace[2, 0];
+
+            topFace[2, 0] = backFace[0, 2];
+            backFace[0, 2] = bottomFace[2, 0];
+            bottomFace[2, 0] = frontFace[2, 0];
+            frontFace[2, 0] = auxFace;
+
         }
         private void rotateLp()
         {
-            Cube aux = leftCubes[0];
-
-            leftCubes[0] = leftCubes[2];
-            leftCubes[2] = leftCubes[8];
-            leftCubes[8] = leftCubes[6];
-            leftCubes[6] = aux;
-            aux = leftCubes[1];
-            leftCubes[1] = leftCubes[5];
-            leftCubes[5] = leftCubes[7];
-            leftCubes[7] = leftCubes[3];
-            leftCubes[3] = aux;
-
-            backCubes[0] = leftCubes[0];
-            backCubes[3] = leftCubes[3];
-            backCubes[6] = leftCubes[6];
-
-            topCubes[0] = leftCubes[0];
-            topCubes[3] = leftCubes[1];
-            topCubes[6] = leftCubes[2];
-
-            frontCubes[0] = leftCubes[2];
-            frontCubes[3] = leftCubes[5];
-            frontCubes[6] = leftCubes[8];
-
-            bottomCubes[0] = leftCubes[6];
-            bottomCubes[3] = leftCubes[7];
-            bottomCubes[6] = leftCubes[8];
-
-            SCubes[0] = leftCubes[1];
-            SCubes[3] = leftCubes[4];
-            SCubes[5] = leftCubes[7];
+            rotateL();
+            rotateL();
+            rotateL();
         }
         private void rotateR()
         {
@@ -757,9 +877,44 @@ namespace LicentaV._1
             SCubes[4] = rightCubes[4];
             SCubes[7] = rightCubes[7];
 
-            ECubes[2] = rightCubes[1];
+            ECubes[2] = rightCubes[3];
             ECubes[4] = rightCubes[4];
-            ECubes[7] = rightCubes[7];
+            ECubes[7] = rightCubes[5];
+
+            string auxFace = rightFace[0, 0];
+
+            rightFace[0, 0] = rightFace[2, 0];
+            rightFace[2, 0] = rightFace[2, 2];
+            rightFace[2, 2] = rightFace[0, 2];
+            rightFace[0, 2] = auxFace;
+
+            auxFace = rightFace[0, 1];
+
+            rightFace[0, 1] = rightFace[1, 0];
+            rightFace[1, 0] = rightFace[2, 1];
+            rightFace[2, 1] = rightFace[1, 2];
+            rightFace[1, 2] = auxFace;
+
+            auxFace = topFace[0, 2];
+
+            topFace[0, 2] = frontFace[0, 2];
+            frontFace[0, 2] = bottomFace[0, 2];
+            bottomFace[0, 2] = backFace[2, 0];
+            backFace[2, 0] = auxFace;
+
+            auxFace = topFace[1, 2];
+
+            topFace[1, 2] = frontFace[1, 2];
+            frontFace[1, 2] = bottomFace[1, 2];
+            bottomFace[1, 2] = backFace[1, 0];
+            backFace[1, 0] = auxFace;
+
+            auxFace = topFace[2, 2];
+
+            topFace[2, 2] = frontFace[2, 2];
+            frontFace[2, 2] = bottomFace[2, 2];
+            bottomFace[2, 2] = backFace[0, 0];
+            backFace[0, 0] = auxFace;
         }
         private void rotateU()
         {
@@ -797,44 +952,48 @@ namespace LicentaV._1
             MCubes[0] = topCubes[1];
             MCubes[1] = topCubes[4];
             MCubes[2] = topCubes[7];
+
+            string auxFace = topFace[0, 0];
+
+            topFace[0, 0] = topFace[2, 0];
+            topFace[2, 0] = topFace[2, 2];
+            topFace[2, 2] = topFace[0, 2];
+            topFace[0, 2] = auxFace;
+
+            auxFace = topFace[0, 1];
+
+            topFace[0, 1] = topFace[1, 0];
+            topFace[1, 0] = topFace[2, 1];
+            topFace[2, 1] = topFace[1, 2];
+            topFace[1, 2] = auxFace;
+
+            auxFace = leftFace[0, 0];
+
+            leftFace[0, 0] = frontFace[0, 0];
+            frontFace[0, 0] = rightFace[0, 0];
+            rightFace[0, 0] = backFace[0, 0];
+            backFace[0, 0] = auxFace;
+
+            auxFace = leftFace[0, 1];
+
+            leftFace[0, 1] = frontFace[0, 1];
+            frontFace[0, 1] = rightFace[0, 1];
+            rightFace[0, 1] = backFace[0, 1];
+            backFace[0, 1] = auxFace;
+
+            auxFace = leftFace[0, 2];
+
+            leftFace[0, 2] = frontFace[0, 2];
+            frontFace[0, 2] = rightFace[0, 2];
+            rightFace[0, 2] = backFace[0, 2];
+            backFace[0, 2] = auxFace;
         }
         private void rotateUp()
         {
-            Cube aux = topCubes[0];
 
-            topCubes[0] = topCubes[2];
-            topCubes[2] = topCubes[8];
-            topCubes[8] = topCubes[6];
-            topCubes[6] = aux;
-            aux = topCubes[1];
-            topCubes[1] = topCubes[5];
-            topCubes[5] = topCubes[7];
-            topCubes[7] = topCubes[3];
-            topCubes[3] = aux;
-
-            backCubes[0] = topCubes[0];
-            backCubes[1] = topCubes[1];
-            backCubes[2] = topCubes[2];
-
-            rightCubes[0] = topCubes[2];
-            rightCubes[1] = topCubes[5];
-            rightCubes[2] = topCubes[8];
-
-            frontCubes[0] = topCubes[6];
-            frontCubes[1] = topCubes[7];
-            frontCubes[2] = topCubes[8];
-
-            leftCubes[0] = topCubes[0];
-            leftCubes[1] = topCubes[3];
-            leftCubes[2] = topCubes[6];
-
-            SCubes[0] = topCubes[3];
-            SCubes[1] = topCubes[4];
-            SCubes[2] = topCubes[5];
-
-            MCubes[0] = topCubes[1];
-            MCubes[1] = topCubes[4];
-            MCubes[2] = topCubes[7];
+            rotateU();
+            rotateU();
+            rotateU();
         }
         private void rotateF()
         {
@@ -868,49 +1027,54 @@ namespace LicentaV._1
 
             MCubes[2] = frontCubes[1];
             MCubes[4] = frontCubes[4];
-            MCubes[6] = frontCubes[7];
+            MCubes[7] = frontCubes[7];
 
-            ECubes[0] = leftCubes[3];
-            ECubes[3] = leftCubes[4];
-            ECubes[5] = leftCubes[5];
+            ECubes[5] = frontCubes[3];
+            ECubes[6] = frontCubes[4];
+            ECubes[7] = frontCubes[5];
+
+            string auxFace = frontFace[0, 0];
+
+            frontFace[0, 0] = frontFace[2, 0];
+            frontFace[2, 0] = frontFace[2, 2];
+            frontFace[2, 2] = frontFace[0, 2];
+            frontFace[0, 2] = auxFace;
+
+            auxFace = frontFace[0, 1];
+
+            frontFace[0, 1] = frontFace[1, 0];
+            frontFace[1, 0] = frontFace[2, 1];
+            frontFace[2, 1] = frontFace[1, 2];
+            frontFace[1, 2] = auxFace;
+
+            auxFace = leftFace[0, 2];
+
+            leftFace[0, 2] = bottomFace[0, 0];
+            bottomFace[0, 0] = rightFace[2, 0];
+            rightFace[2, 0] = topFace[2, 2];
+            topFace[2, 2] = auxFace;
+
+            auxFace = leftFace[1, 2];
+
+            leftFace[1, 2] = bottomFace[0, 1];
+            bottomFace[0, 1] = rightFace[1, 0];
+            rightFace[1, 0] = topFace[2, 1];
+            topFace[2, 1] = auxFace;
+
+            auxFace = leftFace[2, 2];
+
+            leftFace[2, 2] = bottomFace[0, 2];
+            bottomFace[0, 2] = rightFace[0, 0];
+            rightFace[0, 0] = topFace[2, 0];
+            topFace[2, 0] = auxFace;
+
         }
         private void rotateFp()
         {
-            Cube aux = frontCubes[0];
 
-            frontCubes[0] = frontCubes[2];
-            frontCubes[2] = frontCubes[8];
-            frontCubes[8] = frontCubes[6];
-            frontCubes[6] = aux;
-            aux = frontCubes[1];
-            frontCubes[1] = frontCubes[5];
-            frontCubes[5] = frontCubes[7];
-            frontCubes[7] = frontCubes[3];
-            frontCubes[3] = aux;
-
-            topCubes[6] = frontCubes[0];
-            topCubes[7] = frontCubes[1];
-            topCubes[8] = frontCubes[2];
-
-            rightCubes[2] = frontCubes[2];
-            rightCubes[5] = frontCubes[5];
-            rightCubes[8] = frontCubes[8];
-
-            bottomCubes[6] = frontCubes[6];
-            bottomCubes[7] = frontCubes[7];
-            bottomCubes[8] = frontCubes[8];
-
-            leftCubes[2] = frontCubes[0];
-            leftCubes[5] = frontCubes[3];
-            leftCubes[8] = frontCubes[6];
-
-            MCubes[2] = frontCubes[1];
-            MCubes[4] = frontCubes[4];
-            MCubes[6] = frontCubes[7];
-
-            ECubes[0] = leftCubes[3];
-            ECubes[3] = leftCubes[4];
-            ECubes[5] = leftCubes[5];
+            rotateF();
+            rotateF();
+            rotateF();
         }
         private void rotateB()
         {
@@ -946,63 +1110,84 @@ namespace LicentaV._1
             MCubes[3] = backCubes[4];
             MCubes[5] = backCubes[7];
 
-            ECubes[0] = backCubes[1];
+            ECubes[0] = backCubes[3];
             ECubes[1] = backCubes[4];
-            ECubes[2] = backCubes[7];
+            ECubes[2] = backCubes[5];
+
+            string auxFace = backFace[0, 0];
+
+            backFace[0, 0] = backFace[2, 0];
+            backFace[2, 0] = backFace[2, 2];
+            backFace[2, 2] = backFace[0, 2];
+            backFace[0, 2] = auxFace;
+
+            auxFace = backFace[0, 1];
+
+            backFace[0, 1] = backFace[1, 0];
+            backFace[1, 0] = backFace[2, 1];
+            backFace[2, 1] = backFace[1, 2];
+            backFace[1, 2] = auxFace;
+
+            auxFace = leftFace[2, 0];
+
+            leftFace[2, 0] = topFace[0, 0];
+            topFace[0, 0] = rightFace[0, 2];
+            rightFace[0, 2] = bottomFace[2, 2];
+            bottomFace[2, 2] = auxFace;
+
+            auxFace = leftFace[1, 0];
+
+            leftFace[1, 0] = topFace[0, 1];
+            topFace[0, 1] = rightFace[1, 2];
+            rightFace[1, 2] = bottomFace[2, 1];
+            bottomFace[2, 1] = auxFace;
+
+            auxFace = leftFace[0, 0];
+
+            leftFace[0, 0] = topFace[0, 2];
+            topFace[0, 2] = rightFace[2, 2];
+            rightFace[2, 2] = bottomFace[2, 0];
+            bottomFace[2, 0] = auxFace;
+
         }
         private void rotateBp()
         {
-            Cube aux = backCubes[0];
 
-            backCubes[0] = backCubes[6];
-            backCubes[6] = backCubes[8];
-            backCubes[8] = backCubes[2];
-            backCubes[2] = aux;
-            aux = backCubes[1];
-            backCubes[1] = backCubes[3];
-            backCubes[3] = backCubes[7];
-            backCubes[7] = backCubes[5];
-            backCubes[5] = aux;
-
-            topCubes[0] = backCubes[0];
-            topCubes[1] = backCubes[1];
-            topCubes[2] = backCubes[2];
-
-            rightCubes[0] = backCubes[2];
-            rightCubes[3] = backCubes[5];
-            rightCubes[6] = backCubes[8];
-
-            bottomCubes[0] = backCubes[6];
-            bottomCubes[1] = backCubes[7];
-            bottomCubes[2] = backCubes[8];
-
-            leftCubes[0] = backCubes[0];
-            leftCubes[3] = backCubes[3];
-            leftCubes[6] = backCubes[6];
-
-            MCubes[0] = backCubes[1];
-            MCubes[3] = backCubes[4];
-            MCubes[5] = backCubes[7];
-
-            ECubes[0] = backCubes[1];
-            ECubes[1] = backCubes[4];
-            ECubes[2] = backCubes[7];
+            rotateB();
+            rotateB();
+            rotateB();
         }
-        private void rotateX()
+        private void rotateEp()
+        {
+
+            rotateE();
+            rotateE();
+            rotateE();
+        }
+        private void rotateSp()
+        {
+
+            rotateS();
+            rotateS();
+            rotateS();
+        }
+        private void rotateMp()
         {
             rotateM();
             rotateM();
             rotateM();
+        }
+        private void rotateX()
+        {            
+            rotateMp();
             rotateR();
             rotateLp();
         }
         private void rotateY()
         {
-            rotateE();
-            rotateE();
-            rotateE();
+            rotateEp();
             rotateU();
-            rotateBp();
+            rotateDp();
         }
         private void rotateZ()
         {
@@ -1077,14 +1262,27 @@ namespace LicentaV._1
         private void L2_Click(object sender, EventArgs e)
         {
             LmoveTimer.Start();
-            wait(200);
+            wait(waitingTime);
             LmoveTimer.Start();
         }
+        private void SpMove_Click(object sender, EventArgs e)
+        {
+            SpMoveTimer.Start();
+        }
 
+        private void EpMove_Click(object sender, EventArgs e)
+        {
+            EpMoveTimer.Start();
+        }
+
+        private void MpMove_Click(object sender, EventArgs e)
+        {
+            MpMoveTimer.Start();
+        }
         private void U2_Click(object sender, EventArgs e)
         {
             UmoveTimer.Start();
-            wait(200);
+            wait(waitingTime);
             UmoveTimer.Start();
         }
         private void Emove_Click(object sender, EventArgs e)
@@ -1095,28 +1293,28 @@ namespace LicentaV._1
         private void F2_Click(object sender, EventArgs e)
         {
             FmoveTimer.Start();
-            wait(200);
+            wait(waitingTime);
             FmoveTimer.Start();
         }
 
         private void B2_Click(object sender, EventArgs e)
         {
             BmoveTimer.Start();
-            wait(200);
+            wait(waitingTime);
             BmoveTimer.Start();
         }
 
         private void D2_Click(object sender, EventArgs e)
         {
             DmoveTimer.Start();
-            wait(200);
+            wait(waitingTime);
             DmoveTimer.Start();
         }
 
         private void R2_Click(object sender, EventArgs e)
         {
             RmoveTimer.Start();
-            wait(200);
+            wait(waitingTime);
             RmoveTimer.Start();
         }
         private void Mmove_Click(object sender, EventArgs e)
@@ -1130,10 +1328,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in topCubes)
             {
-                cube.RotateCubeY(10);
+                cube.RotateCubeY(frameAngle);
             }
             timerSecondHalf();
-            ccws += 10;
+            ccws += frameAngle;
             if (ccws == 90)
             {
                 rotateUp();
@@ -1147,10 +1345,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in topCubes)
             {
-                cube.RotateCubeY(-10);
+                cube.RotateCubeY(-frameAngle);
             }
             timerSecondHalf();
-            cws -= 10;
+            cws -= frameAngle;
             if (cws == 0)
             {
                 rotateU();
@@ -1163,10 +1361,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in bottomCubes)
             {
-                cube.RotateCubeY(10);
+                cube.RotateCubeY(frameAngle);
             }
             timerSecondHalf();
-            ccws += 10;
+            ccws += frameAngle;
             if (ccws == 90)
             {
                 rotateD();
@@ -1180,10 +1378,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in bottomCubes)
             {
-                cube.RotateCubeY(-10);
+                cube.RotateCubeY(-frameAngle);
             }
             timerSecondHalf();
-            cws -= 10;
+            cws -= frameAngle;
             if (cws == 0)
             {
                 rotateDp();
@@ -1196,10 +1394,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in rightCubes)
             {
-                cube.RotateCubeX(10);
+                cube.RotateCubeX(frameAngle);
             }
             timerSecondHalf();
-            ccws += 10;
+            ccws += frameAngle;
             if (ccws == 90)
             {
                 rotateR();
@@ -1213,10 +1411,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in rightCubes)
             {
-                cube.RotateCubeX(-10);
+                cube.RotateCubeX(-frameAngle);
             }
             timerSecondHalf();
-            cws -= 10;
+            cws -= frameAngle;
             if (cws == 0)
             {
                 rotateRp();
@@ -1230,10 +1428,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in frontCubes)
             {
-                cube.RotateCubeZ(10);
+                cube.RotateCubeZ(frameAngle);
             }
             timerSecondHalf();
-            ccws += 10;
+            ccws += frameAngle;
             if (ccws == 90)
             {
                 rotateF();
@@ -1247,10 +1445,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in frontCubes)
             {
-                cube.RotateCubeZ(-10);
+                cube.RotateCubeZ(-frameAngle);
             }
             timerSecondHalf();
-            cws -= 10;
+            cws -= frameAngle;
             if (cws == 0)
             {
                 rotateFp();
@@ -1264,10 +1462,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in cubes)
             {
-                cube.RotateCubeX(10);
+                cube.RotateCubeX(frameAngle);
             }
             timerSecondHalf();
-            ccws += 10;
+            ccws += frameAngle;
             if (ccws == 90)
             {
                 rotateX();
@@ -1281,10 +1479,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in cubes)
             {
-                cube.RotateCubeY(-10);
+                cube.RotateCubeY(-frameAngle);
             }
             timerSecondHalf();
-            cws -= 10;
+            cws -= frameAngle;
             if (cws == 0)
             {
                 rotateY();
@@ -1298,10 +1496,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in cubes)
             {
-                cube.RotateCubeZ(10);
+                cube.RotateCubeZ(frameAngle);
             }
             timerSecondHalf();
-            ccws += 10;
+            ccws += frameAngle;
             if (ccws == 90)
             {
                 rotateZ();
@@ -1315,10 +1513,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in leftCubes)
             {
-                cube.RotateCubeX(-10);
+                cube.RotateCubeX(-frameAngle);
             }
             timerSecondHalf();
-            cws -= 10;
+            cws -= frameAngle;
             if (cws == 0)
             {
                 rotateL();
@@ -1332,10 +1530,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in leftCubes)
             {
-                cube.RotateCubeX(10);
+                cube.RotateCubeX(frameAngle);
             }
             timerSecondHalf();
-            ccws += 10;
+            ccws += frameAngle;
             if (ccws == 90)
             {
                 rotateLp();
@@ -1349,10 +1547,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in backCubes)
             {
-                cube.RotateCubeZ(-10);
+                cube.RotateCubeZ(-frameAngle);
             }
             timerSecondHalf();
-            cws -= 10;
+            cws -= frameAngle;
             if (cws == 0)
             {
                 rotateB();
@@ -1366,10 +1564,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in backCubes)
             {
-                cube.RotateCubeZ(10);
+                cube.RotateCubeZ(frameAngle);
             }
             timerSecondHalf();
-            ccws += 10;
+            ccws += frameAngle;
             if (ccws == 90)
             {
                 rotateBp();
@@ -1451,8 +1649,8 @@ namespace LicentaV._1
                     }
                     break;                
             }
-            label1.Visible = true;
-            label1.Text = scrambleOutput;
+            scrambleLabel.Visible = true;
+            scrambleLabel.Text = scrambleOutput;
             scrambleOutput = "";
         }
         private void randomRLMove(int randomNumber)
@@ -1462,36 +1660,36 @@ namespace LicentaV._1
             {                
                 case 0:
                     LmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " L";
                     break;
                 case 1:
                     LpMoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " L'";
                     break;
                 case 2:
                     RmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " R";
                     break;
                 case 3:
                     RpMoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " R'";
                     break;
                 case 4:
                     RmoveTimer.Start();
-                    wait(200); 
+                    wait(waitingTime); 
                     RmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " R2";
                     break;
                 case 5:
                     LmoveTimer.Start();
-                    wait(200); 
+                    wait(waitingTime); 
                     LmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " L2";
                     break;
             }
@@ -1504,36 +1702,36 @@ namespace LicentaV._1
 
                 case 0:
                     UmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " U";
                     break;
                 case 1:
                     UpMoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " U'";
                     break;
                 case 2:
                     DmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " D";
                     break;
                 case 3:
                     DpMoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " D'";
                     break;
                 case 4:
                     UmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     UmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " U2";
                     break;
                 case 5:
                     DmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     DmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " D2";
                     break;
             }
@@ -1545,36 +1743,36 @@ namespace LicentaV._1
             {                             
                 case 0:
                     BmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " B";
                     break;
                 case 1:
                     BpMoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " B'";
                     break;
                 case 2:
                     FmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " F";
                     break;
                 case 3:
                     FpMoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " F'";
                     break;
                 case 4:
                     BmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     BmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " B2";
                     break;
                 case 5:
                     FmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     FmoveTimer.Start();
-                    wait(200);
+                    wait(waitingTime);
                     scrambleOutput += " F2";
                     break;
             }
@@ -1586,10 +1784,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in SCubes)
             {
-                cube.RotateCubeZ(10);
+                cube.RotateCubeZ(frameAngle);
             }
             timerSecondHalf();
-            ccws += 10;
+            ccws += frameAngle;
             if (ccws == 90)
             {
                 rotateS();
@@ -1598,40 +1796,209 @@ namespace LicentaV._1
             }
 
         }
+        private void U()
+        {
+            UmoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void Up()
+        {
+            UpMoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void U2()
+        {
+            UmoveTimer.Start();
+            wait(waitingTime);
+            UmoveTimer.Start();
+            wait(waitingTime);
+        }
 
+        private void L()
+        {
+            LmoveTimer.Start();
+            wait(waitingTime);
+        }
+
+        private void Lp()
+        {
+            LpMoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void L2()
+        {
+            LmoveTimer.Start();
+            wait(waitingTime);
+            LmoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void F()
+        {
+            FmoveTimer.Start();
+            wait(waitingTime);
+        }
+
+        private void Fp()
+        {
+            FpMoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void F2()
+        {
+            FmoveTimer.Start();
+            wait(waitingTime);
+            FmoveTimer.Start();
+            wait(waitingTime);
+        }
+
+        private void R()
+        {
+            RmoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void Rp()
+        {
+            RpMoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void R2()
+        {
+            RmoveTimer.Start();
+            wait(waitingTime);
+            RmoveTimer.Start();
+            wait(waitingTime);
+        }
+
+        private void B()
+        {
+            BmoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void Bp()
+        {
+            BpMoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void B2()
+        {
+            BmoveTimer.Start();
+            wait(waitingTime);
+            BmoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void D()
+        {
+            DmoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void Dp()
+        {
+            DpMoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void D2()
+        {
+            DmoveTimer.Start();
+            wait(waitingTime);
+            DmoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void M()
+        {
+            MmoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void Mp()
+        {
+            MpMoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void M2()
+        {
+            MmoveTimer.Start();
+            wait(waitingTime);
+            MmoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void E()
+        {
+            EmoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void Ep()
+        {
+            EpMoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void E2()
+        {
+            EmoveTimer.Start();
+            wait(waitingTime);
+            EmoveTimer.Start();
+            wait(waitingTime);
+        }
+        private void Tperm()
+        {
+            /* R U R' U' R' F R2 U' R' U' R U R' F' */
+            R();
+            U();
+            Rp();
+            Up();
+            Rp();
+            F();
+            R2();
+            Up();
+            Rp();
+            Up();
+            R();
+            U();
+            Rp();
+            Fp();
+        }
+        private void Rperm()
+        {
+            //R U' R' U' R U R D R' U' R D' R' U2 R'
+            R();
+            Up();
+            Rp();
+            Up();
+            R();
+            U();
+            R();
+            D();
+            Rp();
+            Up();
+            R();
+            Dp();
+            Rp();
+            U2();
+            Rp();
+            Up();
+        }
+        private void Yperm()
+        {
+            //R U' R' U' R U R' F' R U R' U' R' F R
+            R();
+            Up();
+            Rp();
+            Up();
+            R();
+            U();
+            Rp();
+            Fp();
+            R();
+            U();
+            Rp();
+            Up();
+            Rp();
+            F();
+            R();           
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            /* R U R' U' R' F R2 U' R' U' R U R' F*/
-            RmoveTimer.Start();
-            wait(200);
-            UmoveTimer.Start();
-            wait(200);
-            RpMoveTimer.Start();
-            wait(200);
-            UpMoveTimer.Start();
-            wait(200);
-            RpMoveTimer.Start();
-            wait(200);
-            FmoveTimer.Start();
-            wait(200);
-            RmoveTimer.Start();
-            wait(200);
-            RmoveTimer.Start();
-            wait(200);
-            UpMoveTimer.Start();
-            wait(200);
-            RpMoveTimer.Start();
-            wait(200);
-            UpMoveTimer.Start();
-            wait(200);
-            RmoveTimer.Start();
-            wait(200);
-            UmoveTimer.Start();
-            wait(200);
-            RpMoveTimer.Start();
-            wait(200);
-            FpMoveTimer.Start();
-            wait(200);
+            button1.Enabled = false;
+            Tperm();
+            button1.Enabled = true;
         }
 
         private void MmoveTimer_Tick(object sender, EventArgs e)
@@ -1639,10 +2006,10 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in MCubes)
             {
-                cube.RotateCubeX(-10);
+                cube.RotateCubeX(-frameAngle);
             }
             timerSecondHalf();
-            cws -= 10;
+            cws -= frameAngle;
             if (cws == 0)
             {
                 rotateM();
@@ -1656,16 +2023,846 @@ namespace LicentaV._1
             timerFirstHalf();
             foreach (Cube cube in ECubes)
             {
-                cube.RotateCubeY(-10);
+                cube.RotateCubeY(frameAngle);
             }
             timerSecondHalf();
-            cws -= 10;
-            if (cws == 0)
+            ccws += frameAngle;
+            if (ccws == 90)
             {
                 rotateE();
-                cws = 90;
+                ccws = 0;
                 EmoveTimer.Stop();
             }
+        }
+        private void SpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in SCubes)
+            {
+                cube.RotateCubeZ(-frameAngle);
+            }
+            timerSecondHalf();
+            cws -= frameAngle;
+            if (cws == 0)
+            {
+                rotateSp();
+                cws = 90;
+                SpMoveTimer.Stop();
+            }
+        }
+
+        private void MpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in MCubes)
+            {
+                cube.RotateCubeX(frameAngle);
+            }
+            timerSecondHalf();
+            ccws += frameAngle;
+            if (ccws == 90)
+            {
+                rotateMp();
+                ccws = 0;
+                MpMoveTimer.Stop();
+            }
+        }
+
+        private void EpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in ECubes)
+            {
+                cube.RotateCubeY(-frameAngle);
+            }
+            timerSecondHalf();
+            cws -= frameAngle;
+            if (cws == 0)
+            {
+                rotateEp();
+                cws = 90;
+                EpMoveTimer.Stop();
+            }
+        }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            l1.Text = leftFace[0, 0];
+            left2.Text = leftFace[0, 1];
+            l3.Text = leftFace[0, 2];
+            l4.Text = leftFace[1, 0];
+            l5.Text = leftFace[1, 1];
+            l6.Text = leftFace[1, 2];
+            l7.Text = leftFace[2, 0];
+            l8.Text = leftFace[2, 1];
+            l9.Text = leftFace[2, 2];
+
+            f1.Text = frontFace[0, 0];
+            front2.Text = frontFace[0, 1];
+            f3.Text = frontFace[0, 2];
+            f4.Text = frontFace[1, 0];
+            f5.Text = frontFace[1, 1];
+            f6.Text = frontFace[1, 2];
+            f7.Text = frontFace[2, 0];
+            f8.Text = frontFace[2, 1];
+            f9.Text = frontFace[2, 2];
+
+            r1.Text = rightFace[0, 0];
+            right2.Text = rightFace[0, 1];
+            r3.Text = rightFace[0, 2];
+            r4.Text = rightFace[1, 0];
+            r5.Text = rightFace[1, 1];
+            r6.Text = rightFace[1, 2];
+            r7.Text = rightFace[2, 0];
+            r8.Text = rightFace[2, 1];
+            r9.Text = rightFace[2, 2];
+
+            b1.Text = backFace[0, 0];
+            back2.Text = backFace[0, 1];
+            b3.Text = backFace[0, 2];
+            b4.Text = backFace[1, 0];
+            b5.Text = backFace[1, 1];
+            b6.Text = backFace[1, 2];
+            b7.Text = backFace[2, 0];
+            b8.Text = backFace[2, 1];
+            b9.Text = backFace[2, 2];
+
+            t1.Text = topFace[0, 0];
+            t2.Text = topFace[0, 1];
+            t3.Text = topFace[0, 2];
+            t4.Text = topFace[1, 0];
+            t5.Text = topFace[1, 1];
+            t6.Text = topFace[1, 2];
+            t7.Text = topFace[2, 0];
+            t8.Text = topFace[2, 1];
+            t9.Text = topFace[2, 2];
+
+            d1.Text = bottomFace[0, 0];
+            down2.Text = bottomFace[0, 1];
+            d3.Text = bottomFace[0, 2];
+            d4.Text = bottomFace[1, 0];
+            d5.Text = bottomFace[1, 1];
+            d6.Text = bottomFace[1, 2];
+            d7.Text = bottomFace[2, 0];
+            d8.Text = bottomFace[2, 1];
+            d9.Text = bottomFace[2, 2];
+        }
+        private void solve(string bumper)
+        {           
+            string exeption;
+            switch (bumper)
+            {
+                case "Ac":
+                    exeption = "exeption";
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            if ((i + j) % 2 == 0 && (i!=1 && j!=1))
+                            {
+                                if (topFace[i, j] != whiteFace[i, j] && (i != 0 && j != 0))
+                                {
+                                    exeption = topFace[i, j];
+                                }
+                                else
+                                if (leftFace[i, j] != orangeFace[i, j] && (i != 0 && j != 0))
+                                {
+                                    exeption = leftFace[i, j];
+
+                                }
+                                else
+                                if (frontFace[i, j] != greenFace[i, j])
+                                {
+                                    exeption = frontFace[i, j];
+
+                                }
+                                else
+                                if (rightFace[i, j] != redFace[i, j])
+                                {
+                                    exeption = rightFace[i, j];
+                                }
+                                else
+                                if (backFace[i, j] != blueFace[i, j] && (i != 0 && j != 2))
+                                {
+                                    exeption = backFace[i, j];
+
+                                }
+                                else
+                                if (bottomFace[i, j] != yellowFace[i, j])
+                                {
+                                    exeption = bottomFace[i, j];
+
+                                }
+                            }
+                        }
+                    }
+                    solve(exeption);
+                    break;
+
+                case "As":
+                    M2();
+                    Dp();
+                    L2();
+                    Tperm();
+                    L2();
+                    D();
+                    M2();
+                    solveLabel.Text += " A";
+                    break;
+
+                case "Bc":
+                    R2();                   
+                    Yperm();                    
+                    R2();
+                    solveLabel2.Text += " B";
+                    break;
+
+                case "Bs":
+                    exeption = "exeption";
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            if ((i + j) % 2 != 0)
+                            {
+                                if (topFace[i, j] != whiteFace[i, j])
+                                {
+                                    exeption = topFace[i, j];
+                                }
+                                else
+                                if (leftFace[i, j] != orangeFace[i, j])
+                                {
+                                    exeption = leftFace[i, j];
+
+                                }
+                                else
+                                if (frontFace[i, j] != greenFace[i, j])
+                                {
+                                    exeption = frontFace[i, j];
+
+                                }
+                                else
+                                if (rightFace[i, j] != redFace[i, j])
+                                {
+                                    exeption = rightFace[i, j];
+                                }
+                                else
+                                if (backFace[i, j] != blueFace[i, j])
+                                {
+                                    exeption = backFace[i, j];
+
+                                }
+                                else
+                                if (bottomFace[i, j] != yellowFace[i, j])
+                                {
+                                    exeption = bottomFace[i, j];
+
+                                }
+                            }
+                        }
+                    }
+                    solve(exeption);
+                    break;
+
+                case "Cc":
+                    R2();
+                    Dp();
+                    Yperm();
+                    D();
+                    R2();
+                    solveLabel2.Text += " C";
+                    break;
+
+                case "Cs":
+                    M2();
+                    D();
+                    L2();
+                    Tperm();
+                    L2();
+                    Dp();
+                    M2();
+                    solveLabel.Text += " C";
+                    break;
+
+                case "Dc":
+                    F2();                    
+                    Yperm();                    
+                    F2();
+                    solveLabel2.Text += " D";
+                    break;
+
+                case "Ds":
+                    Tperm();
+                    solveLabel.Text += " D";
+                    break;
+
+                case "Ec":
+                    exeption = "exeption";
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            if ((i + j) % 2 == 0 && (i != 1 && j != 1))
+                            {
+                                if (topFace[i, j] != whiteFace[i, j] && (i != 0 && j != 0))
+                                {
+                                    exeption = topFace[i, j];
+                                }
+                                else
+                                if (leftFace[i, j] != orangeFace[i, j] && (i != 0 && j != 0))
+                                {
+                                    exeption = leftFace[i, j];
+
+                                }
+                                else
+                                if (frontFace[i, j] != greenFace[i, j])
+                                {
+                                    exeption = frontFace[i, j];
+
+                                }
+                                else
+                                if (rightFace[i, j] != redFace[i, j])
+                                {
+                                    exeption = rightFace[i, j];
+                                }
+                                else
+                                if (backFace[i, j] != blueFace[i, j] && (i != 0 && j != 2))
+                                {
+                                    exeption = backFace[i, j];
+
+                                }
+                                else
+                                if (bottomFace[i, j] != yellowFace[i, j])
+                                {
+                                    exeption = bottomFace[i, j];
+
+                                }
+                            }
+                        }
+                    }
+                    solve(exeption);
+                    break;
+
+                case "Es":
+                    Lp();
+                    E();
+                    Lp();
+                    Tperm();
+                    L();
+                    Ep();
+                    L();
+                    solveLabel.Text += " E";
+                    break;
+
+                case "Fc":
+                    Fp();
+                    D();
+                    Yperm();
+                    Dp();
+                    F();
+                    solveLabel2.Text += " F";
+                    break;
+
+                case "Fs":
+                    Ep();                    
+                    L();
+                    Tperm();
+                    Lp();
+                    E();
+                    solveLabel.Text += " F";
+                    break;
+
+                case "Gc":
+                    Fp();                    
+                    Yperm();                    
+                    F();                                       
+                    solveLabel2.Text += " G";
+                    break;
+
+                case "Gs":
+                    L();
+                    E();
+                    Lp();
+                    Tperm();
+                    L();
+                    Ep();
+                    Lp();
+                    solveLabel.Text += " G";
+                    break;
+
+                case "Hc":
+                    Dp();
+                    R();
+                    Yperm();
+                    Rp();
+                    D();
+                    solveLabel2.Text += " H";
+                    break;
+
+
+                case "Hs":
+                    E();
+                    Lp();
+                    Tperm();
+                    L();
+                    Ep();
+                    solveLabel.Text += " H";
+                    break;
+
+                case "Ic":
+                    F();
+                    Rp();
+                    Yperm();
+                    R();
+                    Fp();
+                    solveLabel2.Text += " I";
+                    break;
+
+                case "Is":
+                    M();
+                    Dp();
+                    L2();
+                    Tperm();
+                    L2();
+                    D();
+                    Mp();
+                    solveLabel.Text += " I";
+                    break;
+
+                case "Jc":                    
+                    Rp();
+                    Yperm();
+                    R();                    
+                    solveLabel2.Text += " J";
+                    break;
+
+                case "Js":
+                    E2();
+                    L();
+                    Tperm();
+                    Lp();
+                    E2();
+                    solveLabel.Text += " J";
+                    break;
+
+                case "Kc":
+                    Rp();
+                    Dp();
+                    Yperm();
+                    D();
+                    R();
+                    solveLabel2.Text += " K";
+                    break;
+
+                case "Ks":
+                    M();
+                    D();
+                    L2();
+                    Tperm();
+                    L2();
+                    Dp();
+                    Mp();
+                    solveLabel.Text += " K";
+                    break;
+
+                case "Lc":
+                    F2();
+                    Rp();
+                    Yperm();
+                    R();
+                    F2();
+                    solveLabel2.Text += " L";
+                    break;
+
+                case "Ls":
+                    Lp();
+                    Tperm();
+                    L();
+                    solveLabel.Text += " L";
+                    break;
+
+                case "Mc":
+                    F();                    
+                    Yperm();                    
+                    Fp();
+                    solveLabel2.Text += " M";
+                    break;
+
+                case "Ms":
+                    exeption = "exeption";
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            if ((i + j) % 2 != 0)
+                            {
+                                if (topFace[i, j] != whiteFace[i, j])
+                                {
+                                    if(topFace[i, j] != topFace[1,2])
+                                    exeption = topFace[i, j];
+                                } else
+                                if (leftFace[i, j] != orangeFace[i, j])
+                                {
+                                    exeption = leftFace[i, j];
+
+                                } else
+                                if (frontFace[i, j] != greenFace[i, j])
+                                {
+                                    exeption = frontFace[i, j];
+
+                                } else
+                                if (rightFace[i, j] != redFace[i, j])
+                                {
+                                    exeption = rightFace[i, j];
+                                } else                               
+                                if (backFace[i, j] != blueFace[i, j])
+                                {
+                                    exeption = backFace[i, j];
+
+                                } else
+                                if (bottomFace[i, j] != yellowFace[i, j])
+                                {
+                                    exeption = bottomFace[i, j];
+
+                                }
+                            }
+                        }
+                    }
+                    solve(exeption);
+                    break;
+
+                case "Nc":
+                    Rp();
+                    F();                    
+                    Yperm();                    
+                    Fp();
+                    R();
+                    solveLabel2.Text += " N";
+                    break;
+
+                case "Ns":
+                    E();
+                    L();
+                    Tperm();
+                    Lp();
+                    Ep();
+                    solveLabel.Text += " N";
+                    break;
+
+                case "Oc":
+                    R2();
+                    F();
+                    Yperm();
+                    Fp();
+                    R2();
+                    solveLabel2.Text += " O";
+                    break;
+
+                case "Os":
+                    Dp();
+                    M();
+                    D();
+                    L2();
+                    Tperm();
+                    L2();
+                    Dp();
+                    Mp();
+                    D();
+                    solveLabel.Text += " O";
+                    break;
+
+                case "Pc":
+                    R();
+                    F();
+                    Yperm();
+                    Fp();
+                    Rp();
+                    solveLabel2.Text += " P";
+                    break;
+
+                case "Ps":
+                    Ep();
+                    Lp();
+                    Tperm();
+                    L();                    
+                    E();
+                    solveLabel.Text += " P";
+                    break;
+
+                case "Qc":
+                    R();
+                    Dp();
+                    Yperm();
+                    D();
+                    Rp();
+                    solveLabel2.Text += " Q";
+                    break;
+
+                case "Qs":
+                    Mp();
+                    D();
+                    L2();
+                    Tperm();
+                    L2();
+                    Dp();
+                    M();
+                    solveLabel.Text += " Q";
+                    break;
+
+                case "Rc":
+                    exeption = "exeption";
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            if ((i + j) % 2 == 0 && (i != 1 && j != 1))
+                            {
+                                if (topFace[i, j] != whiteFace[i, j] && (i != 0 && j != 0))
+                                {
+                                    exeption = topFace[i, j];
+                                }
+                                else
+                                if (leftFace[i, j] != orangeFace[i, j] && (i != 0 && j != 0))
+                                {
+                                    exeption = leftFace[i, j];
+
+                                }
+                                else
+                                if (frontFace[i, j] != greenFace[i, j])
+                                {
+                                    exeption = frontFace[i, j];
+
+                                }
+                                else
+                                if (rightFace[i, j] != redFace[i, j])
+                                {
+                                    exeption = rightFace[i, j];
+                                }
+                                else
+                                if (backFace[i, j] != blueFace[i, j] && (i != 0 && j != 2))
+                                {
+                                    exeption = backFace[i, j];
+
+                                }
+                                else
+                                if (bottomFace[i, j] != yellowFace[i, j])
+                                {
+                                    exeption = bottomFace[i, j];
+
+                                }
+                            }
+                        }
+                    }
+                    solve(exeption);
+                    break;
+
+                case "Rs":
+                    L();                   
+                    Tperm();
+                    Lp();
+                    solveLabel.Text += " R";
+                    break;
+
+                case "Sc":
+                    D();
+                    Fp();
+                    Yperm();
+                    F();
+                    Dp();
+                    solveLabel2.Text += " S";
+                    break;
+
+                case "Ss":
+                    Mp();
+                    Dp();
+                    L2();
+                    Tperm();
+                    L2();
+                    D();
+                    M();
+                    solveLabel.Text += " S";
+                    break;
+
+                case "Tc":
+                    R();
+                    Yperm();                    
+                    Rp();
+                    solveLabel2.Text += " T";
+                    break;
+
+                case "Ts":
+                    E2();
+                    Lp();
+                    Tperm();
+                    L();
+                    E2();
+                    solveLabel.Text += " T";
+                    break;
+
+                case "Uc":
+                    D();
+                    Yperm();
+                    Dp();
+                    solveLabel2.Text += " U";
+                    break;
+
+                case "Us":
+                    Dp();
+                    L2();
+                    Tperm();
+                    L2();
+                    D();
+                    solveLabel.Text += " U";
+                    break;
+
+                case "Vc":                    
+                    Yperm();                    
+                    solveLabel2.Text += " V";
+                    break;
+
+                case "Vs":
+                    D2();
+                    L2();
+                    Tperm();
+                    L2();
+                    D2();
+                    solveLabel.Text += " V";
+                    break;
+
+                case "Wc":
+                    Dp();
+                    Yperm();
+                    D();
+                    solveLabel2.Text += " W";
+                    break;
+
+                case "Ws":
+                    D();
+                    L2();
+                    Tperm();
+                    L2();
+                    Dp();
+                    solveLabel.Text += " W";
+                    break;
+
+
+                case "Xc":
+                    D2();
+                    Yperm();
+                    D2();
+                    solveLabel2.Text += " X";
+                    break;
+
+                case "Xs":                    
+                    L2();
+                    Tperm();
+                    L2();
+                    solveLabel.Text += " X";
+                    break;
+            }
+        }
+        private void solveButton_Click(object sender, EventArgs e)
+        {
+            int moveCounter = 0;
+            solveButton.Enabled = false;
+            solveLabel.Text = "";
+            solveLabel2.Text = "";
+            bool ok = false;
+            while(!ok)
+            {
+                solve(topFace[1, 2]);
+                moveCounter++;
+                ok = true;
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {                        
+                        if ((i + j) % 2 != 0)
+                        {
+                            if (topFace[i, j] != whiteFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (leftFace[i, j] != orangeFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (frontFace[i, j] != greenFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (rightFace[i, j] != redFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (backFace[i, j] != blueFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (bottomFace[i, j] != yellowFace[i, j])
+                            {
+                                ok = false;
+                            }
+                        }
+                    }
+                }
+            }
+            if (moveCounter % 2 != 0)
+            {
+                Rperm();
+                solveLabel.Text += " Ra";
+            }
+            ok = false;
+            while (!ok)
+            {
+                solve(leftFace[0, 0]);
+                ok = true;
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if ((i + j) % 2 == 0 && (i != 1 && j != 1))
+                        {
+                            if (topFace[i, j] != whiteFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (leftFace[i, j] != orangeFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (frontFace[i, j] != greenFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (rightFace[i, j] != redFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (backFace[i, j] != blueFace[i, j])
+                            {
+                                ok = false;
+                            }
+
+                            if (bottomFace[i, j] != yellowFace[i, j])
+                            {
+                                ok = false;
+                            }
+                        }
+                    }
+                }
+            }
+            solveButton.Enabled = true;
         }
     }
 }
