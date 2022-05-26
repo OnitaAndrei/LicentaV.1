@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LicentaV._1
+namespace CubeSimulator
 {
-    public partial class Form1 : Form
+    public partial class wfMain : Form
     {
         int frameAngle = 10; // Avaliable 1,2,3,5,6,9,10,15,18,30,45,90
         int waitingTime = 200; // Recomanded 200 for every frameAngle (for 90 1 will be enough)
@@ -91,7 +91,7 @@ namespace LicentaV._1
             { "Xc", "Ws", "Wc" }
         };
        
-        public Form1()
+        public wfMain()
         {            
             InitializeComponent();
         }
@@ -424,10 +424,10 @@ namespace LicentaV._1
         Cube[] MCubes;
         Cube[] ECubes;
 
-        private void Form1_Load(object sender, EventArgs ea)
+        private void wfMain_Load(object sender, EventArgs ea)
         {
             this.BackColor = backgroundColor;
-            UmoveTimer.Interval =turningSpeed;
+            UmoveTimer.Interval = turningSpeed;
             LmoveTimer.Interval = turningSpeed;
             FmoveTimer.Interval = turningSpeed;
             RmoveTimer.Interval = turningSpeed;
@@ -1217,6 +1217,65 @@ namespace LicentaV._1
             rotateZ();
             rotateZ();
         }
+        private void FWmove_Click(object sender, EventArgs e)
+        {
+            FwMoveTimer.Start();
+        }
+
+        private void BWmove_Click(object sender, EventArgs e)
+        {
+            BwMoveTimer.Start();
+        }
+
+        private void LWmove_Click(object sender, EventArgs e)
+        {
+            LwMoveTimer.Start();
+        }
+
+        private void DWmove_Click(object sender, EventArgs e)
+        {
+            DwMoveTimer.Start();
+        }
+
+        private void UWmove_Click(object sender, EventArgs e)
+        {
+            UwMoveTimer.Start();
+        }
+
+        private void BWpMove_Click(object sender, EventArgs e)
+        {
+            BwpMoveTimer.Start();
+        }
+
+        private void FWpMove_Click(object sender, EventArgs e)
+        {
+            FwpMoveTimer.Start();
+        }
+
+        private void RWpMove_Click(object sender, EventArgs e)
+        {
+            RwpMoveTimer.Start();
+        }
+
+        private void DWpMove_Click(object sender, EventArgs e)
+        {
+            DwpMoveTimer.Start();
+        }
+
+        private void UWpMove_Click(object sender, EventArgs e)
+        {
+            UwpMoveTimer.Start();
+        }
+
+        private void LWpMove_Click(object sender, EventArgs e)
+        {
+            LwpMoveTimer.Start();
+        }
+
+        private void RWmove_Click(object sender, EventArgs e)
+        {
+            RwMoveTimer.Start();
+        }
         private void Smove_Click(object sender, EventArgs em)
         {
             SmoveTimer.Start();            
@@ -1358,8 +1417,7 @@ namespace LicentaV._1
         {
             MmoveTimer.Start();
         }
-        int cws = 90;
-        int ccws = 0;
+        int angle90 = 0;
         private void UpMoveTimer_Tick(object sender, EventArgs e)
         {
             timerFirstHalf();
@@ -1368,11 +1426,11 @@ namespace LicentaV._1
                 cube.RotateCubeY(frameAngle);
             }
             timerSecondHalf();
-            ccws += frameAngle;
-            if (ccws == 90)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateUp();
-                ccws = 0;
+                angle90 = 0;
                 UpMoveTimer.Stop();
             }
         }
@@ -1385,11 +1443,11 @@ namespace LicentaV._1
                 cube.RotateCubeY(-frameAngle);
             }
             timerSecondHalf();
-            cws -= frameAngle;
-            if (cws == 0)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateU();
-                cws = 90;
+                angle90 = 0;
                 UmoveTimer.Stop();
             }
         }        
@@ -1401,11 +1459,11 @@ namespace LicentaV._1
                 cube.RotateCubeY(frameAngle);
             }
             timerSecondHalf();
-            ccws += frameAngle;
-            if (ccws == 90)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateD();
-                ccws = 0;
+                angle90 = 0;
                 DmoveTimer.Stop();
             }
         }
@@ -1418,11 +1476,11 @@ namespace LicentaV._1
                 cube.RotateCubeY(-frameAngle);
             }
             timerSecondHalf();
-            cws -= frameAngle;
-            if (cws == 0)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateDp();
-                cws = 90;
+                angle90 = 0;
                 DpMoveTimer.Stop();
             }
         }
@@ -1434,11 +1492,11 @@ namespace LicentaV._1
                 cube.RotateCubeX(frameAngle);
             }
             timerSecondHalf();
-            ccws += frameAngle;
-            if (ccws == 90)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateR();
-                ccws = 0;
+                angle90 = 0;
                 RmoveTimer.Stop();
             }
         }
@@ -1451,11 +1509,11 @@ namespace LicentaV._1
                 cube.RotateCubeX(-frameAngle);
             }
             timerSecondHalf();
-            cws -= frameAngle;
-            if (cws == 0)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateRp();
-                cws = 90;
+                angle90 = 0;
                 RpMoveTimer.Stop();
             }
         }
@@ -1468,11 +1526,11 @@ namespace LicentaV._1
                 cube.RotateCubeZ(frameAngle);
             }
             timerSecondHalf();
-            ccws += frameAngle;
-            if (ccws == 90)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateF();
-                ccws = 0;
+                angle90 = 0;
                 FmoveTimer.Stop();
             }
         }
@@ -1485,11 +1543,11 @@ namespace LicentaV._1
                 cube.RotateCubeZ(-frameAngle);
             }
             timerSecondHalf();
-            cws -= frameAngle;
-            if (cws == 0)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateFp();
-                cws = 90;
+                angle90 = 0;
                 FpMoveTimer.Stop();
             }
         }
@@ -1502,11 +1560,11 @@ namespace LicentaV._1
                 cube.RotateCubeX(frameAngle);
             }
             timerSecondHalf();
-            ccws += frameAngle;
-            if (ccws == 90)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateX();
-                ccws = 0;
+                angle90 = 0;
                 XmoveTimer.Stop();
             }
         }
@@ -1519,11 +1577,11 @@ namespace LicentaV._1
                 cube.RotateCubeY(-frameAngle);
             }
             timerSecondHalf();
-            cws -= frameAngle;
-            if (cws == 0)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateY();
-                cws = 90;
+                angle90 = 0;
                 YmoveTimer.Stop();
             }
         }
@@ -1536,11 +1594,11 @@ namespace LicentaV._1
                 cube.RotateCubeZ(frameAngle);
             }
             timerSecondHalf();
-            ccws += frameAngle;
-            if (ccws == 90)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateZ();
-                ccws = 0;
+                angle90 = 0;
                 ZmoveTimer.Stop();
             }
         }
@@ -1553,11 +1611,11 @@ namespace LicentaV._1
                 cube.RotateCubeX(-frameAngle);
             }
             timerSecondHalf();
-            cws -= frameAngle;
-            if (cws == 0)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateL();
-                cws = 90;
+                angle90 = 0;
                 LmoveTimer.Stop();
             }
         }
@@ -1569,11 +1627,11 @@ namespace LicentaV._1
                 cube.RotateCubeX(-frameAngle);
             }
             timerSecondHalf();
-            cws -= frameAngle;
-            if (cws == 0)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateXp();
-                cws = 90;
+                angle90 = 00;
                 XpMoveTimer.Stop();
             }
         }
@@ -1586,11 +1644,11 @@ namespace LicentaV._1
                 cube.RotateCubeY(frameAngle);
             }
             timerSecondHalf();
-            ccws += frameAngle;
-            if (ccws == 90)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateYp();
-                ccws = 0;
+                angle90 = 0;
                 YpMoveTimer.Stop();
             }
         }
@@ -1603,11 +1661,11 @@ namespace LicentaV._1
                 cube.RotateCubeZ(-frameAngle);
             }
             timerSecondHalf();
-            cws -= frameAngle;
-            if (cws == 0)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateZp();
-                cws = 90;
+                angle90 = 0;
                 ZpMoveTimer.Stop();
             }
         }
@@ -1620,11 +1678,11 @@ namespace LicentaV._1
                 cube.RotateCubeX(frameAngle);
             }
             timerSecondHalf();
-            ccws += frameAngle;
-            if (ccws == 90)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateLp();
-                ccws = 0;
+                angle90 = 0;
                 LpMoveTimer.Stop();
             }
         }
@@ -1637,11 +1695,11 @@ namespace LicentaV._1
                 cube.RotateCubeZ(-frameAngle);
             }
             timerSecondHalf();
-            cws -= frameAngle;
-            if (cws == 0)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateB();
-                cws = 90;
+                angle90 = 0;
                 BmoveTimer.Stop();
             }
         }
@@ -1654,22 +1712,21 @@ namespace LicentaV._1
                 cube.RotateCubeZ(frameAngle);
             }
             timerSecondHalf();
-            ccws += frameAngle;
-            if (ccws == 90)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateBp();
-                ccws = 0;
+                angle90 = 0;
                 BpMoveTimer.Stop();
             }
         }
         string scrambleOutput;
-        private void Scramble_Click(object sender, EventArgs e)
+        private void scramble()
         {
             fastSolve();
             frameAngle = 10;
             waitingTime = 200;
             turningSpeed = 1;
-
             Random randomGenerator = new Random();
             int randomNumber = randomGenerator.Next(6); ;
             switch (randomNumber)
@@ -1689,7 +1746,7 @@ namespace LicentaV._1
                     for (int i = 0; i < 5; i++)
                     {
                         randomNumber = randomGenerator.Next(6);
-                        randomUDMove(randomNumber);                       
+                        randomUDMove(randomNumber);
                         randomNumber = randomGenerator.Next(6);
                         randomFBMove(randomNumber);
                         randomNumber = randomGenerator.Next(6);
@@ -1737,13 +1794,35 @@ namespace LicentaV._1
                         randomNumber = randomGenerator.Next(6);
                         randomRLMove(randomNumber);
                         randomNumber = randomGenerator.Next(6);
-                        randomUDMove(randomNumber);                        
+                        randomUDMove(randomNumber);
                     }
-                    break;                
+                    break;
             }
             scrambleLabel.Visible = true;
             scrambleLabel.Text = scrambleOutput;
             scrambleOutput = "";
+
+        }
+        private void Scramble_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in Controls)
+            {
+                Button btn = ctrl as Button;
+                if (btn != null)
+                {
+                    btn.Enabled = false;
+                }
+            }
+            scramble();
+            foreach (Control ctrl in Controls)
+            {
+                Button btn = ctrl as Button;
+                if (btn != null)
+                {
+                    btn.Enabled = true;
+                }
+            }
+
         }
         private void randomRLMove(int randomNumber)
         {
@@ -1879,11 +1958,11 @@ namespace LicentaV._1
                 cube.RotateCubeZ(frameAngle);
             }
             timerSecondHalf();
-            ccws += frameAngle;
-            if (ccws == 90)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateS();
-                ccws = 0;
+                angle90 = 0;
                 SmoveTimer.Stop();
             }
 
@@ -2113,11 +2192,11 @@ namespace LicentaV._1
                 cube.RotateCubeX(-frameAngle);
             }
             timerSecondHalf();
-            cws -= frameAngle;
-            if (cws == 0)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateM();
-                cws = 90;
+                angle90 = 0;
                 MmoveTimer.Stop();
             }
         }
@@ -2130,11 +2209,11 @@ namespace LicentaV._1
                 cube.RotateCubeY(frameAngle);
             }
             timerSecondHalf();
-            ccws += frameAngle;
-            if (ccws == 90)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateE();
-                ccws = 0;
+                angle90 = 0;
                 EmoveTimer.Stop();
             }
         }
@@ -2146,11 +2225,11 @@ namespace LicentaV._1
                 cube.RotateCubeZ(-frameAngle);
             }
             timerSecondHalf();
-            cws -= frameAngle;
-            if (cws == 0)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateSp();
-                cws = 90;
+                angle90 = 0;
                 SpMoveTimer.Stop();
             }
         }
@@ -2163,11 +2242,11 @@ namespace LicentaV._1
                 cube.RotateCubeX(frameAngle);
             }
             timerSecondHalf();
-            ccws += frameAngle;
-            if (ccws == 90)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateMp();
-                ccws = 0;
+                angle90 = 0;
                 MpMoveTimer.Stop();
             }
         }
@@ -2180,11 +2259,11 @@ namespace LicentaV._1
                 cube.RotateCubeY(-frameAngle);
             }
             timerSecondHalf();
-            cws -= frameAngle;
-            if (cws == 0)
+            angle90 += frameAngle;
+            if (angle90 == 90)
             {
                 rotateEp();
-                cws = 90;
+                angle90 = 0;
                 EpMoveTimer.Stop();
             }
         }       
@@ -2804,11 +2883,18 @@ namespace LicentaV._1
         }
         private void solveButton_Click(object sender, EventArgs e)
         {
+            foreach (Control ctrl in Controls)
+            {
+                Button btn = ctrl as Button;
+                if (btn != null)
+                {
+                    btn.Enabled = false;
+                }
+            }
             frameAngle = 10;
             waitingTime = 200;
             turningSpeed = 1;
             int moveCounter = 0;
-            solveButton.Enabled = false;
             while(frontFace[1,1] != "2")
             {
                 X();
@@ -2819,8 +2905,8 @@ namespace LicentaV._1
             {                             
                     Z();
             }
-            solveLabel.Text = "Edges solution:";
-            solveLabel2.Text = "Corners solution:";
+            solveLabel.Text = "Edges Solution:";
+            solveLabel2.Text = "Corners Solution:";
             bool ok = true;
             for (int i = 0; i < 3; i++)
             {
@@ -2953,10 +3039,25 @@ namespace LicentaV._1
                     }
                 }
             }
-            solveButton.Enabled = true;
+            foreach (Control ctrl in Controls)
+            {
+                Button btn = ctrl as Button;
+                if (btn != null)
+                {
+                    btn.Enabled = true;
+                }
+            }
         }
         private void fastSolve()
         {
+            foreach (Control ctrl in Controls)
+            {
+                Button btn = ctrl as Button;
+                if (btn != null)
+                {
+                    btn.Enabled = false;
+                }
+            }
             frameAngle = 90;
             waitingTime = 1;
             turningSpeed = 1;
@@ -2972,8 +3073,8 @@ namespace LicentaV._1
             {
                 Z();
             }
-            solveLabel.Text = "Edges solution:";
-            solveLabel2.Text = "Corners solution:";
+            solveLabel.Text = "Edges Solution:";
+            solveLabel2.Text = "Corners Solution:";
             bool ok = true;
             for (int i = 0; i < 3; i++)
             {
@@ -3106,11 +3207,304 @@ namespace LicentaV._1
                     }
                 }
             }
-            solveButton.Enabled = true;
+            foreach (Control ctrl in Controls)
+            {
+                Button btn = ctrl as Button;
+                if (btn != null)
+                {
+                    btn.Enabled = true;
+                }
+            }
         }
         private void fastSolveButton_Click(object sender, EventArgs e)
         {
+            foreach (Control ctrl in Controls)
+            {
+                Button btn = ctrl as Button;
+                if (btn != null)
+                {
+                    btn.Enabled = false;
+                }
+            }
             fastSolve();
+            foreach (Control ctrl in Controls)
+            {
+                Button btn = ctrl as Button;
+
+
+
+
+                if (btn != null)
+                {
+                    btn.Enabled = true;
+                }
+            }
         }
+
+        private void UwMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in topCubes)
+            {
+                cube.RotateCubeY(-frameAngle);
+            }
+            foreach (Cube cube in ECubes)
+            {
+                cube.RotateCubeY(-frameAngle);
+            }
+            timerSecondHalf();
+            angle90 += frameAngle;
+            if (angle90 == 90)
+            {
+                rotateU();
+                rotateEp();
+                angle90 = 0;
+                UwMoveTimer.Stop();
+            }
+        }
+
+        private void BwMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in backCubes)
+            {
+                cube.RotateCubeZ(-frameAngle);
+            }
+            foreach (Cube cube in SCubes)
+            {
+                cube.RotateCubeZ(-frameAngle);
+            }
+            timerSecondHalf();
+            angle90 += frameAngle;
+            if (angle90 == 90)
+            {
+                rotateB();
+                rotateSp();
+                angle90 = 0;
+                BwMoveTimer.Stop();
+            }
+        }
+
+        private void RwpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in rightCubes)
+            {
+                cube.RotateCubeX(-frameAngle);
+            }
+            foreach (Cube cube in MCubes)
+            {
+                cube.RotateCubeX(-frameAngle);
+            }
+            timerSecondHalf();
+            angle90 += frameAngle;
+            if (angle90 == 90)
+            {
+                rotateRp();
+                rotateM();
+                angle90 = 0;
+                RwpMoveTimer.Stop();
+            }
+        }
+
+        private void FwpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in frontCubes)
+            {
+                cube.RotateCubeZ(-frameAngle);
+            }
+            foreach (Cube cube in SCubes)
+            {
+                cube.RotateCubeZ(-frameAngle);
+            }
+            timerSecondHalf();
+            angle90 += frameAngle;
+            if (angle90 == 90)
+            {
+                rotateFp();
+                rotateSp();
+                angle90 = 0;
+                FwpMoveTimer.Stop();
+            }
+        }
+
+        private void LwpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in leftCubes)
+            {
+                cube.RotateCubeX(frameAngle);
+            }
+            foreach (Cube cube in MCubes)
+            {
+                cube.RotateCubeX(frameAngle);
+            }
+            timerSecondHalf();
+            angle90 += frameAngle;
+            if (angle90 == 90)
+            {
+                rotateLp();
+                rotateMp();
+                angle90 = 0;
+                LwpMoveTimer.Stop();
+            }
+        }
+
+        private void UwpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in topCubes)
+            {
+                cube.RotateCubeY(frameAngle);
+            }
+            foreach (Cube cube in ECubes)
+            {
+                cube.RotateCubeY(frameAngle);
+            }
+            timerSecondHalf();
+            angle90 += frameAngle;
+            if (angle90 == 90)
+            {
+                rotateUp();
+                rotateE();
+                angle90 = 0;
+                UwpMoveTimer.Stop();
+            }
+        }
+
+        private void DwMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in bottomCubes)
+            {
+                cube.RotateCubeY(frameAngle);
+            }
+            foreach (Cube cube in ECubes)
+            {
+                cube.RotateCubeY(frameAngle);
+            }
+            timerSecondHalf();
+            angle90 += frameAngle;
+            if (angle90 == 90)
+            {
+                rotateD();
+                rotateE();
+                angle90 = 0;
+                DwMoveTimer.Stop();
+            }
+        }
+
+        private void BwpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in backCubes)
+            {
+                cube.RotateCubeZ(frameAngle);
+            }
+            foreach (Cube cube in SCubes)
+            {
+                cube.RotateCubeZ(frameAngle);
+            }
+            timerSecondHalf();
+            angle90 += frameAngle;
+            if (angle90 == 90)
+            {
+                rotateBp();
+                rotateS();
+                angle90 = 0;
+                BwpMoveTimer.Stop();
+            }
+        }
+
+        private void RwMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in rightCubes)
+            {
+                cube.RotateCubeX(frameAngle);
+            }
+            foreach (Cube cube in MCubes)
+            {
+                cube.RotateCubeX(frameAngle);
+            }
+            timerSecondHalf();
+            angle90 += frameAngle;
+            if (angle90 == 90)
+            {
+                rotateR();
+                rotateMp();
+                angle90 = 0;
+                RwMoveTimer.Stop();
+            }
+        }
+
+        private void FwMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in frontCubes)
+            {
+                cube.RotateCubeZ(frameAngle);
+            }
+            foreach (Cube cube in SCubes)
+            {
+                cube.RotateCubeZ(frameAngle);
+            }
+            timerSecondHalf();
+            angle90 += frameAngle;
+            if (angle90 == 90)
+            {
+                rotateF();
+                rotateS();
+                angle90 = 0;
+                FwMoveTimer.Stop();
+            }
+        }
+
+        private void LwMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in leftCubes)
+            {
+                cube.RotateCubeX(-frameAngle);
+            }
+            foreach (Cube cube in MCubes)
+            {
+                cube.RotateCubeX(-frameAngle);
+            }
+            timerSecondHalf();
+            angle90 += frameAngle;
+            if (angle90 == 90)
+            {
+                rotateL();
+                rotateM();
+                angle90 = 0;
+                LwMoveTimer.Stop();
+            }
+        }
+
+        private void DwpMoveTimer_Tick(object sender, EventArgs e)
+        {
+            timerFirstHalf();
+            foreach (Cube cube in bottomCubes)
+            {
+                cube.RotateCubeY(-frameAngle);
+            }
+            foreach (Cube cube in ECubes)
+            {
+                cube.RotateCubeY(-frameAngle);
+            }
+            timerSecondHalf();
+            angle90 += frameAngle;
+            if (angle90 == 90)
+            {
+                rotateDp();
+                rotateEp();
+                angle90 = 0;
+                DwpMoveTimer.Stop();
+            }
+        }
+
+      
     }
 }

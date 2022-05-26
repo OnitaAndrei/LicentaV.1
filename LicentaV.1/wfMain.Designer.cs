@@ -1,6 +1,6 @@
-﻿namespace LicentaV._1
+﻿namespace CubeSimulator
 {
-    partial class Form1
+    partial class wfMain
     {
         /// <summary>
         /// Required designer variable.
@@ -96,12 +96,24 @@
             this.YpMoveTimer = new System.Windows.Forms.Timer(this.components);
             this.ZpMoveTimer = new System.Windows.Forms.Timer(this.components);
             this.fastSolveButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.BWpMove = new System.Windows.Forms.Button();
+            this.FWpMove = new System.Windows.Forms.Button();
+            this.LWpMove = new System.Windows.Forms.Button();
+            this.RWpMove = new System.Windows.Forms.Button();
+            this.DWpMove = new System.Windows.Forms.Button();
+            this.UWpMove = new System.Windows.Forms.Button();
+            this.UwMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.LwMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.FwMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.RwMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.BwMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.DwMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.UwpMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.LwpMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.FwpMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.RwpMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.BwpMoveTimer = new System.Windows.Forms.Timer(this.components);
+            this.DwpMoveTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -231,6 +243,7 @@
             this.BWmove.TabIndex = 21;
             this.BWmove.Text = "Bw";
             this.BWmove.UseVisualStyleBackColor = false;
+            this.BWmove.Click += new System.EventHandler(this.BWmove_Click);
             // 
             // FWmove
             // 
@@ -247,6 +260,7 @@
             this.FWmove.TabIndex = 20;
             this.FWmove.Text = "Fw";
             this.FWmove.UseVisualStyleBackColor = false;
+            this.FWmove.Click += new System.EventHandler(this.FWmove_Click);
             // 
             // LWmove
             // 
@@ -263,6 +277,7 @@
             this.LWmove.TabIndex = 19;
             this.LWmove.Text = "Lw";
             this.LWmove.UseVisualStyleBackColor = false;
+            this.LWmove.Click += new System.EventHandler(this.LWmove_Click);
             // 
             // RWmove
             // 
@@ -279,6 +294,7 @@
             this.RWmove.TabIndex = 18;
             this.RWmove.Text = "Rw";
             this.RWmove.UseVisualStyleBackColor = false;
+            this.RWmove.Click += new System.EventHandler(this.RWmove_Click);
             // 
             // DWmove
             // 
@@ -295,6 +311,7 @@
             this.DWmove.TabIndex = 17;
             this.DWmove.Text = "Dw";
             this.DWmove.UseVisualStyleBackColor = false;
+            this.DWmove.Click += new System.EventHandler(this.DWmove_Click);
             // 
             // UWmove
             // 
@@ -311,6 +328,7 @@
             this.UWmove.TabIndex = 16;
             this.UWmove.Text = "Uw";
             this.UWmove.UseVisualStyleBackColor = false;
+            this.UWmove.Click += new System.EventHandler(this.UWmove_Click);
             // 
             // Smove
             // 
@@ -612,7 +630,7 @@
             // 
             this.scrambleLabel.AutoSize = true;
             this.scrambleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scrambleLabel.Location = new System.Drawing.Point(1616, 172);
+            this.scrambleLabel.Location = new System.Drawing.Point(1616, 333);
             this.scrambleLabel.Name = "scrambleLabel";
             this.scrambleLabel.Size = new System.Drawing.Size(209, 46);
             this.scrambleLabel.TabIndex = 35;
@@ -631,7 +649,7 @@
             this.U2moveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.U2moveButton.Name = "U2moveButton";
             this.U2moveButton.Size = new System.Drawing.Size(75, 77);
-            this.U2moveButton.TabIndex = 36;
+            this.U2moveButton.TabIndex = 1;
             this.U2moveButton.Text = "U2";
             this.U2moveButton.UseVisualStyleBackColor = false;
             this.U2moveButton.Click += new System.EventHandler(this.U2_Click);
@@ -825,9 +843,9 @@
             this.solveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.solveLabel.Location = new System.Drawing.Point(981, 9);
             this.solveLabel.Name = "solveLabel";
-            this.solveLabel.Size = new System.Drawing.Size(304, 46);
+            this.solveLabel.Size = new System.Drawing.Size(316, 46);
             this.solveLabel.TabIndex = 102;
-            this.solveLabel.Text = "Edges Solution";
+            this.solveLabel.Text = "Edges Solution:";
             // 
             // solveLabel2
             // 
@@ -835,9 +853,9 @@
             this.solveLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.solveLabel2.Location = new System.Drawing.Point(981, 55);
             this.solveLabel2.Name = "solveLabel2";
-            this.solveLabel2.Size = new System.Drawing.Size(335, 46);
+            this.solveLabel2.Size = new System.Drawing.Size(347, 46);
             this.solveLabel2.TabIndex = 103;
-            this.solveLabel2.Text = "Corners Solution";
+            this.solveLabel2.Text = "Corners Solution:";
             // 
             // ZpMove
             // 
@@ -922,101 +940,167 @@
             this.fastSolveButton.UseVisualStyleBackColor = false;
             this.fastSolveButton.Click += new System.EventHandler(this.fastSolveButton_Click);
             // 
-            // button1
+            // BWpMove
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1739, 1027);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 77);
-            this.button1.TabIndex = 114;
-            this.button1.Text = "Bw";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BWpMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BWpMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BWpMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BWpMove.FlatAppearance.BorderSize = 0;
+            this.BWpMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BWpMove.ForeColor = System.Drawing.Color.White;
+            this.BWpMove.Location = new System.Drawing.Point(1739, 1027);
+            this.BWpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BWpMove.Name = "BWpMove";
+            this.BWpMove.Size = new System.Drawing.Size(75, 77);
+            this.BWpMove.TabIndex = 114;
+            this.BWpMove.Text = "Bw\'";
+            this.BWpMove.UseVisualStyleBackColor = false;
+            this.BWpMove.Click += new System.EventHandler(this.BWpMove_Click);
             // 
-            // button2
+            // FWpMove
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1743, 940);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 77);
-            this.button2.TabIndex = 113;
-            this.button2.Text = "Fw";
-            this.button2.UseVisualStyleBackColor = false;
+            this.FWpMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FWpMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.FWpMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FWpMove.FlatAppearance.BorderSize = 0;
+            this.FWpMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FWpMove.ForeColor = System.Drawing.Color.White;
+            this.FWpMove.Location = new System.Drawing.Point(1743, 940);
+            this.FWpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FWpMove.Name = "FWpMove";
+            this.FWpMove.Size = new System.Drawing.Size(75, 77);
+            this.FWpMove.TabIndex = 113;
+            this.FWpMove.Text = "Fw\'";
+            this.FWpMove.UseVisualStyleBackColor = false;
+            this.FWpMove.Click += new System.EventHandler(this.FWpMove_Click);
             // 
-            // button3
+            // LWpMove
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1660, 940);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 77);
-            this.button3.TabIndex = 112;
-            this.button3.Text = "Lw";
-            this.button3.UseVisualStyleBackColor = false;
+            this.LWpMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LWpMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LWpMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LWpMove.FlatAppearance.BorderSize = 0;
+            this.LWpMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LWpMove.ForeColor = System.Drawing.Color.White;
+            this.LWpMove.Location = new System.Drawing.Point(1660, 940);
+            this.LWpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LWpMove.Name = "LWpMove";
+            this.LWpMove.Size = new System.Drawing.Size(75, 77);
+            this.LWpMove.TabIndex = 112;
+            this.LWpMove.Text = "Lw\'";
+            this.LWpMove.UseVisualStyleBackColor = false;
+            this.LWpMove.Click += new System.EventHandler(this.LWpMove_Click);
             // 
-            // button4
+            // RWpMove
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1826, 940);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 77);
-            this.button4.TabIndex = 111;
-            this.button4.Text = "Rw";
-            this.button4.UseVisualStyleBackColor = false;
+            this.RWpMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RWpMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.RWpMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RWpMove.FlatAppearance.BorderSize = 0;
+            this.RWpMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RWpMove.ForeColor = System.Drawing.Color.White;
+            this.RWpMove.Location = new System.Drawing.Point(1826, 940);
+            this.RWpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RWpMove.Name = "RWpMove";
+            this.RWpMove.Size = new System.Drawing.Size(75, 77);
+            this.RWpMove.TabIndex = 111;
+            this.RWpMove.Text = "Rw\'";
+            this.RWpMove.UseVisualStyleBackColor = false;
+            this.RWpMove.Click += new System.EventHandler(this.RWpMove_Click);
             // 
-            // button5
+            // DWpMove
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1739, 1114);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 77);
-            this.button5.TabIndex = 110;
-            this.button5.Text = "Dw";
-            this.button5.UseVisualStyleBackColor = false;
+            this.DWpMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DWpMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.DWpMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DWpMove.FlatAppearance.BorderSize = 0;
+            this.DWpMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DWpMove.ForeColor = System.Drawing.Color.White;
+            this.DWpMove.Location = new System.Drawing.Point(1739, 1114);
+            this.DWpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DWpMove.Name = "DWpMove";
+            this.DWpMove.Size = new System.Drawing.Size(75, 77);
+            this.DWpMove.TabIndex = 110;
+            this.DWpMove.Text = "Dw\'";
+            this.DWpMove.UseVisualStyleBackColor = false;
+            this.DWpMove.Click += new System.EventHandler(this.DWpMove_Click);
             // 
-            // button6
+            // UWpMove
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1739, 853);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 77);
-            this.button6.TabIndex = 109;
-            this.button6.Text = "Uw";
-            this.button6.UseVisualStyleBackColor = false;
+            this.UWpMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.UWpMove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.UWpMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UWpMove.FlatAppearance.BorderSize = 0;
+            this.UWpMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UWpMove.ForeColor = System.Drawing.Color.White;
+            this.UWpMove.Location = new System.Drawing.Point(1739, 853);
+            this.UWpMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.UWpMove.Name = "UWpMove";
+            this.UWpMove.Size = new System.Drawing.Size(75, 77);
+            this.UWpMove.TabIndex = 109;
+            this.UWpMove.Text = "Uw\'";
+            this.UWpMove.UseVisualStyleBackColor = false;
+            this.UWpMove.Click += new System.EventHandler(this.UWpMove_Click);
+            // 
+            // UwMoveTimer
+            // 
+            this.UwMoveTimer.Interval = 10;
+            this.UwMoveTimer.Tick += new System.EventHandler(this.UwMoveTimer_Tick);
+            // 
+            // LwMoveTimer
+            // 
+            this.LwMoveTimer.Interval = 10;
+            this.LwMoveTimer.Tick += new System.EventHandler(this.LwMoveTimer_Tick);
+            // 
+            // FwMoveTimer
+            // 
+            this.FwMoveTimer.Interval = 10;
+            this.FwMoveTimer.Tick += new System.EventHandler(this.FwMoveTimer_Tick);
+            // 
+            // RwMoveTimer
+            // 
+            this.RwMoveTimer.Interval = 10;
+            this.RwMoveTimer.Tick += new System.EventHandler(this.RwMoveTimer_Tick);
+            // 
+            // BwMoveTimer
+            // 
+            this.BwMoveTimer.Interval = 10;
+            this.BwMoveTimer.Tick += new System.EventHandler(this.BwMoveTimer_Tick);
+            // 
+            // DwMoveTimer
+            // 
+            this.DwMoveTimer.Interval = 10;
+            this.DwMoveTimer.Tick += new System.EventHandler(this.DwMoveTimer_Tick);
+            // 
+            // UwpMoveTimer
+            // 
+            this.UwpMoveTimer.Interval = 10;
+            this.UwpMoveTimer.Tick += new System.EventHandler(this.UwpMoveTimer_Tick);
+            // 
+            // LwpMoveTimer
+            // 
+            this.LwpMoveTimer.Interval = 10;
+            this.LwpMoveTimer.Tick += new System.EventHandler(this.LwpMoveTimer_Tick);
+            // 
+            // FwpMoveTimer
+            // 
+            this.FwpMoveTimer.Interval = 10;
+            this.FwpMoveTimer.Tick += new System.EventHandler(this.FwpMoveTimer_Tick);
+            // 
+            // RwpMoveTimer
+            // 
+            this.RwpMoveTimer.Interval = 10;
+            this.RwpMoveTimer.Tick += new System.EventHandler(this.RwpMoveTimer_Tick);
+            // 
+            // BwpMoveTimer
+            // 
+            this.BwpMoveTimer.Interval = 10;
+            this.BwpMoveTimer.Tick += new System.EventHandler(this.BwpMoveTimer_Tick);
+            // 
+            // DwpMoveTimer
+            // 
+            this.DwpMoveTimer.Interval = 10;
+            this.DwpMoveTimer.Tick += new System.EventHandler(this.DwpMoveTimer_Tick);
             // 
             // Form1
             // 
@@ -1024,12 +1108,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.ClientSize = new System.Drawing.Size(2477, 1570);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.BWpMove);
+            this.Controls.Add(this.FWpMove);
+            this.Controls.Add(this.LWpMove);
+            this.Controls.Add(this.RWpMove);
+            this.Controls.Add(this.DWpMove);
+            this.Controls.Add(this.UWpMove);
             this.Controls.Add(this.fastSolveButton);
             this.Controls.Add(this.ZpMove);
             this.Controls.Add(this.YpMove);
@@ -1077,7 +1161,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.wfMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1153,12 +1237,24 @@
         private System.Windows.Forms.Timer YpMoveTimer;
         private System.Windows.Forms.Timer ZpMoveTimer;
         private System.Windows.Forms.Button fastSolveButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button BWpMove;
+        private System.Windows.Forms.Button FWpMove;
+        private System.Windows.Forms.Button LWpMove;
+        private System.Windows.Forms.Button RWpMove;
+        private System.Windows.Forms.Button DWpMove;
+        private System.Windows.Forms.Button UWpMove;
+        private System.Windows.Forms.Timer UwMoveTimer;
+        private System.Windows.Forms.Timer LwMoveTimer;
+        private System.Windows.Forms.Timer FwMoveTimer;
+        private System.Windows.Forms.Timer RwMoveTimer;
+        private System.Windows.Forms.Timer BwMoveTimer;
+        private System.Windows.Forms.Timer DwMoveTimer;
+        private System.Windows.Forms.Timer UwpMoveTimer;
+        private System.Windows.Forms.Timer LwpMoveTimer;
+        private System.Windows.Forms.Timer FwpMoveTimer;
+        private System.Windows.Forms.Timer RwpMoveTimer;
+        private System.Windows.Forms.Timer BwpMoveTimer;
+        private System.Windows.Forms.Timer DwpMoveTimer;
     }
 }
 
