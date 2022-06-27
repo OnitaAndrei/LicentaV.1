@@ -58,15 +58,15 @@ namespace CubeSimulator
         public void RotatePointX(float[] point, int angle)
         {
             double radian = angle * Math.PI / 180.0;
-            float aux1 = point[1] - 100;
-            float aux2 = point[2] - 100;
+            float aux1 = point[1] - 200;
+            float aux2 = point[2] - 200;
             float[] result = new float[3];
 
             result[1] = (float)Math.Cos(radian) * aux1 - (float)Math.Sin(radian) * aux2;
             result[2] = (float)Math.Sin(radian) * aux1 + (float)Math.Cos(radian) * aux2;
 
-            result[1] = result[1] + 100;
-            result[2] = result[2] + 100;
+            result[1] = result[1] + 200;
+            result[2] = result[2] + 200;
 
             point[1] = result[1];
             point[2] = result[2];

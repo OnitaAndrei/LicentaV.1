@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.canvas = new System.Windows.Forms.PictureBox();
             this.UmoveButton = new System.Windows.Forms.Button();
             this.DmoveButton = new System.Windows.Forms.Button();
             this.RmoveButton = new System.Windows.Forms.Button();
@@ -114,17 +114,17 @@
             this.RwpMoveTimer = new System.Windows.Forms.Timer(this.components);
             this.BwpMoveTimer = new System.Windows.Forms.Timer(this.components);
             this.DwpMoveTimer = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // canvas
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(989, 209);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(639, 722);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.canvas.Location = new System.Drawing.Point(989, 209);
+            this.canvas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.canvas.Name = "canvas";
+            this.canvas.Size = new System.Drawing.Size(639, 722);
+            this.canvas.TabIndex = 0;
+            this.canvas.TabStop = false;
             // 
             // UmoveButton
             // 
@@ -1102,12 +1102,12 @@
             this.DwpMoveTimer.Interval = 10;
             this.DwpMoveTimer.Tick += new System.EventHandler(this.DwpMoveTimer_Tick);
             // 
-            // Form1
+            // wfMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.ClientSize = new System.Drawing.Size(2477, 1570);
+            this.ClientSize = new System.Drawing.Size(2477, 1061);
             this.Controls.Add(this.BWpMove);
             this.Controls.Add(this.FWpMove);
             this.Controls.Add(this.LWpMove);
@@ -1156,13 +1156,13 @@
             this.Controls.Add(this.RmoveButton);
             this.Controls.Add(this.DmoveButton);
             this.Controls.Add(this.UmoveButton);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.canvas);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form1";
+            this.Name = "wfMain";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.wfMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1170,7 +1170,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox canvas;
         private System.Windows.Forms.Button UmoveButton;
         private System.Windows.Forms.Button DmoveButton;
         private System.Windows.Forms.Button RmoveButton;
